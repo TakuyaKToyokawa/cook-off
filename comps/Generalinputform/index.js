@@ -9,29 +9,41 @@ const Labeldiv = styled.h4`
 margin-bottom:5px;
 `;
 
-const Inputdiv = styled.div`
+const Inputdiv = styled.input.attrs({
+  type: "text",
+})`
+width:100%;
 border: 1px solid #D06BFF;
 box-sizing: border-box;
 border-radius: 13px;
 padding:20px;
 color:gray;
+&:focus{
+  outline: none;
+}
 `;
 
 const Linkdiv = styled.h4`
 color: #D06BFF;
-margin-top:10px;
-padding-left:273px;
+width:100%;
+text-align:right;
 `;
 
-const Generalinputform = () => {
+const Generalinputform = ({label, placeholder, link }) => {
   return <div>
       <Maindiv>
-          <Labeldiv>Label</Labeldiv>
-          <Inputdiv> Placeholder</Inputdiv>
-          <Linkdiv> Link </Linkdiv>
+          <Labeldiv>{label}</Labeldiv>
+          <Inputdiv placeholder={placeholder}></Inputdiv>
+          <Linkdiv>{link}</Linkdiv>
       </Maindiv>
     
   </div>;
 };
+
+Generalinputform.defaultProps = {
+  label: "label",
+  placeholder: "placeholder",
+  link: "link"
+}
 
 export default Generalinputform;
