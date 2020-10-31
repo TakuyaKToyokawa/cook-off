@@ -1,9 +1,9 @@
-// import React from 'react';
-// import Template from '../comps/Template';
+import React from 'react';
+import Logos from '../comps/Logos';
 
-// export default {
-//   title: 'Example/Template',
-//   component: Template,
-// };
+export default {
+  title: 'Cookoff/Logos',
+  component: Logos,
+};
 
-// export const TemplateBasic = () => <Template/>;
+export const BasicLogos = () => <Logos/>;
