@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Maindiv = styled.div`
-width: 305px;
+width: 100%;
 `;
 
 const Labeldiv = styled.h4`
@@ -29,12 +29,12 @@ width:100%;
 text-align:right;
 `;
 
-const Generalinputform = ({label, placeholder, link }) => {
-  return <div>
+const Generalinputform = ({label, placeholder, link, displayLink }) => {
+  return <div style={{width: "100%"}}>
       <Maindiv>
           <Labeldiv>{label}</Labeldiv>
           <Inputdiv placeholder={placeholder}></Inputdiv>
-          <Linkdiv>{link}</Linkdiv>
+          {displayLink == "true" ? <Linkdiv>{link}</Linkdiv> : undefined }
       </Maindiv>
     
   </div>;
@@ -43,7 +43,8 @@ const Generalinputform = ({label, placeholder, link }) => {
 Generalinputform.defaultProps = {
   label: "label",
   placeholder: "placeholder",
-  link: "link"
+  link: "link",
+  displayLink: false,
 }
 
 export default Generalinputform;
