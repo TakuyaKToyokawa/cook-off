@@ -1,31 +1,47 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+h1{
+    color: #A904F8;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.vMargin{
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
 .main{
-    width:90%;
-    margin: auto;
-    .header{
-        min-height: 200px;
-        background-color: #DDD;
-    }
-    .contents {
-        display:flex;
-        min-height: 500px;
-        background-color:#aaa;
-        flex-wrap: wrap;
-        & > div{
-            background-color: #ABC;
-            flex:1 0 100px;
-            height: 100px;
-            margin: 10px;
-            & > div:first-child{
-                font-size: $fs;
-                font-weight: bold;
-                margin-bottom: 5px;
-                @include flexIt();
-            }
-            & > div:nth-child(2){
-                font-size: $fs/1.3;
-                color:rgba(0,0,0,0.7);
-                @include flexIt();
-            }
-        }
-    }
+    @include flexIt();
+    width: 100%;
+    background-image: url('../public/Background.png');
+}
+
+.flexColumn{
+    @include flexIt();
+    flex-direction: column;
+}
+
+.content {
+    @include flexIt();
+    flex-direction: column;
+    width: 400px;
 }

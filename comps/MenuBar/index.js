@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
+const Position = styled.div`
+  position: fixed;
+  bottom: 0px;
+  width:100%;
+`;
+
 const Container = styled.div`
   position: relative;
   display: flex;
@@ -71,45 +77,47 @@ const MenuBar = ({}) => {
   const [events, setEvents] = useState(0);
   const [profile, setProfile] = useState(0);
   return (
-    <Container>
-      <OptionContainer>
-        <IconContainer
-          onClick={() => {
-            setRecipe(1);
-            setEvents(0);
-            setProfile(0);
-          }}
-        >
-          <RecipeIcon src="./recipe.svg" active={recipe}></RecipeIcon>
-          <Text>Recipe</Text>
-        </IconContainer>
-        <IconContainer
-          onClick={() => {
-            setRecipe(0);
-            setEvents(0);
-            setProfile(1);
-          }}
-        >
-          <ProfileIcon src="./profile.svg" active={profile}></ProfileIcon>
-          <Text>Profile</Text>
-        </IconContainer>
-        <IconContainer
-          onClick={() => {
-            setRecipe(0);
-            setEvents(1);
-            setProfile(0);
-          }}
-        >
-          <EventsIcon src="./events.svg" active={events}></EventsIcon>
-          <Text>Events</Text>
-        </IconContainer>
-      </OptionContainer>
-      <OptionContainer>
-        <AnimatedLine active={recipe}></AnimatedLine>
-        <AnimatedLine active={profile}></AnimatedLine>
-        <AnimatedLine active={events}></AnimatedLine>
-      </OptionContainer>
-    </Container>
+    <Position>
+      <Container>
+        <OptionContainer>
+          <IconContainer
+            onClick={() => {
+              setRecipe(1);
+              setEvents(0);
+              setProfile(0);
+            }}
+          >
+            <RecipeIcon src="./recipe.svg" active={recipe}></RecipeIcon>
+            <Text>Recipe</Text>
+          </IconContainer>
+          <IconContainer
+            onClick={() => {
+              setRecipe(0);
+              setEvents(0);
+              setProfile(1);
+            }}
+          >
+            <ProfileIcon src="./profile.svg" active={profile}></ProfileIcon>
+            <Text>Profile</Text>
+          </IconContainer>
+          <IconContainer
+            onClick={() => {
+              setRecipe(0);
+              setEvents(1);
+              setProfile(0);
+            }}
+          >
+            <EventsIcon src="./events.svg" active={events}></EventsIcon>
+            <Text>Events</Text>
+          </IconContainer>
+        </OptionContainer>
+        <OptionContainer>
+          <AnimatedLine active={recipe}></AnimatedLine>
+          <AnimatedLine active={profile}></AnimatedLine>
+          <AnimatedLine active={events}></AnimatedLine>
+        </OptionContainer>
+      </Container>
+    </Position>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const ButtonDiv = styled.h2`
-  width: 288px;
+  width: 100%;
   background: ${(props) =>
     props.color
       ? props.color
@@ -22,7 +22,7 @@ const ButtonDiv = styled.h2`
 
 const Gradientbutton = ({ text, color }) => {
   return (
-    <div>
+    <div style={{width: "100%"}}>
       <ButtonDiv color={color}> {text} </ButtonDiv>
     </div>
   );
