@@ -40,7 +40,7 @@ padding:3px;
 position:relative;
 top:5px;
 `;
-S
+
 const Seconddiv = styled.div`
 width:30px;
 background: ${(props) =>
