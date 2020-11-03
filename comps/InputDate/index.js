@@ -20,15 +20,14 @@ position: absolute;
 height: 50px;
 width: 270px;
 padding-top:50px;
-border-radius: 15px;
-border: 1px solid;
-border-image-source: linear-gradient(270deg, #C95CFC -27.53%, #F14B4A 81.06%);
+
 
 `; 
-const InputDateFormInput = styled.input`
-
-display:flex;
-position: absolute;
+const InputDateFormInput = styled.input.attrs({
+  type: "date",
+})`
+border-radius: 15px;
+border: 1px solid red;
 
 
 `; 
@@ -36,7 +35,7 @@ const InputDate = ({}) => {
   return <InputDateBox>
   <InputDateLabel>Label</InputDateLabel>
   <InputDateForm>
-    <InputDateFormInput type="date" format="mm/dd/yyyy">
+    <InputDateFormInput format="mm/dd/yyyy">
         
     </InputDateFormInput>
   </InputDateForm>
