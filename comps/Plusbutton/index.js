@@ -22,9 +22,6 @@ cursor: pointer;
 `;
 
 const Plussign = styled.div`
-align-items:center
-display:flex;
-justify-content:center;
 `;
 
 const Firstdiv = styled.div`
@@ -54,7 +51,7 @@ padding:3px;
 `;
 
 
-const Plusbutton = ({color, border, plusColor}) => {
+const PlusButton = ({color, border, plusColor}) => {
   return <div>
     <ButtonDiv color={color} border={border} > 
         <Plussign>
@@ -67,4 +64,4 @@ const Plusbutton = ({color, border, plusColor}) => {
 
 
 
-export default Plusbutton;
+export default PlusButton;

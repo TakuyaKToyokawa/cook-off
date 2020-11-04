@@ -34,7 +34,7 @@ const Generalinputform = ({label, placeholder, link, displayLink }) => {
       <Maindiv>
           <Labeldiv>{label}</Labeldiv>
           <Inputdiv placeholder={placeholder}></Inputdiv>
-          {displayLink == "true" ? <Linkdiv>{link}</Linkdiv> : undefined }
+          {displayLink == true ? <Linkdiv>{link}</Linkdiv> : undefined }
       </Maindiv>
     
   </div>;

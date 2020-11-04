@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const ButtonDiv = styled.h2`
-  width: 288px;
   background: ${(props) =>
     props.color
       ? props.color
@@ -20,7 +19,7 @@ const ButtonDiv = styled.h2`
   justify-content: center;
 `;
 
-const Gradientroundedbutton = ({text, color}) => {
+const SecondaryButton = ({text, color}) => {
   return (
     <div color={color}>
       <ButtonDiv>{text}</ButtonDiv>
@@ -28,8 +27,8 @@ const Gradientroundedbutton = ({text, color}) => {
   );
 };
 
-Gradientroundedbutton.defaultProps = {
+SecondaryButton.defaultProps = {
  text: "text"
 }
 
-export default Gradientroundedbutton;
+export default SecondaryButton;
