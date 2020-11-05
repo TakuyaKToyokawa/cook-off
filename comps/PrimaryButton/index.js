@@ -20,7 +20,7 @@ const ButtonDiv = styled.h2`
   justify-content: center;
 `;
 
-const Gradientbutton = ({ text, color }) => {
+const PrimaryButton = ({ text, color }) => {
   return (
     <div style={{width: "100%"}}>
       <ButtonDiv color={color}> {text} </ButtonDiv>
@@ -29,9 +29,9 @@ const Gradientbutton = ({ text, color }) => {
 };
 
 
-Gradientbutton.defaultProps = {
-  text: "text"
+PrimaryButton.defaultProps = {
+  text: "text",
  }
  
 
-export default Gradientbutton;
+export default PrimaryButton;

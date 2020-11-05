@@ -6,10 +6,27 @@ export default {
   component: StepsDots,
 };
 
-export const BaseStepDots = () => <StepsDots/>;
+const Template = (args) => <StepsDots {...args}/>;
 
-export const Step1 = () => <StepsDots step1={true}/>;
+export const BaseStepDots = Template.bind({});
+export const Step1 = Template.bind({});
+export const Step2 = Template.bind({});
+export const Step3 = Template.bind({});
 
-export const Step2 = () => <StepsDots step2={true}/>;
+Step1.args = {
+  step1:true,
+  step2:false,
+  step3:false
+}
 
-export const Step3 = () => <StepsDots step3={true}/>;
+Step2.args = {
+  step1:false,
+  step2:true,
+  step3:false
+}
+
+Step3.args = {
+  step1:false,
+  step2:true,
+  step3:false
+}

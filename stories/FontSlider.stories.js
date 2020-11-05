@@ -1,9 +1,9 @@
 import React from 'react';
-import FontSlider from '../comps/FontSlider';
+import FontSizeSlider from '../comps/FontSizeSlider';
 
 export default {
-  title: 'Inputs/FontSlider',
-  component: FontSlider,
+  title: 'Inputs/FontSizeSlider',
+  component: FontSizeSlider,
 };
 
-export const BaseFontSlider = () => <FontSlider/>;
+export const BaseFontSizeSlider = () => <FontSizeSlider/>;

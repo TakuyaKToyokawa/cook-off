@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Maindiv = styled.div`
-  width: 100%
+  width: 100%;
   padding: 15px;
   background-color: #f04b4a;
 `;
@@ -26,6 +26,7 @@ const Textdiv = styled.div`
 const Title = styled.h2`
   margin-bottom: 5px;
 `;
+
 const Borderbox = styled.div`
   border: 1px solid #ffffff;
   box-sizing: border-box;
@@ -54,7 +55,7 @@ const Arrow = styled.img`
 
 const Textmini = styled.p``;
 
-const Headerforprivacy = ({ name, title, viewers }) => {
+const StreamHeader = ({ name, title, viewers }) => {
   return (
     <div>
       <Maindiv>
@@ -73,10 +74,10 @@ const Headerforprivacy = ({ name, title, viewers }) => {
   );
 };
 
-Headerforprivacy.defaultProps = {
+StreamHeader.defaultProps = {
   viewers: "999",
   name: "Lily Lee",
   title: "Chef Lily",
 };
 
-export default Headerforprivacy;
+export default StreamHeader;
