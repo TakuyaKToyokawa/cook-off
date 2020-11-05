@@ -6,4 +6,4 @@ export default {
   component: Ingredients,
 };
 
-export const BasicIngredients = () => <Ingredients text="Ingredients"/>;
+export const BasicIngredients = () => <Ingredients  textOne="Baking Powder" textTwo="4.00"/>;

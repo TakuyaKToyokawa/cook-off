@@ -13,15 +13,16 @@ align-items:center;
 border-radius: 50%;
 `; 
 const ButtonPhoneImage = styled.img`
-max-height: 12px;
-  border-radius: 50%;
+ max-height: 30px;
+  border-radius: 30%;
+
 `; 
 
-const ButtonPhone = ({}) => {
+const ButtonMic = ({}) => {
   return <ButtonPhoneContainer>
-      <ButtonPhoneImage src ="./phone.svg"/>
+      <ButtonPhoneImage src="./micro.svg"/>
  </ButtonPhoneContainer>
 
 }
 
-export default ButtonPhone;
+export default ButtonMic;

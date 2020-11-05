@@ -22,9 +22,7 @@ const RecipeBuyListHeader = styled.div`
   display: inline-flex;
 `;
 
-const RecipeBuyListList = styled.div`
-  display: row;
-`;
+
 
 const AddIngBox = styled.div`
   display: flex;
@@ -41,6 +39,7 @@ const AddIng = () => {
     <RecipeBuyListBigContainer>
       <RecipeBuyListHeader><h2>Add Ingredients</h2></RecipeBuyListHeader>
       <RecipeBuyListContainer>
+       
       </RecipeBuyListContainer>
       <div style={{display:"flex"}}>
         <Generalinputform label="tags" displayLink="true"/>
