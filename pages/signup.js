@@ -1,8 +1,8 @@
 import MenuBar from "../comps/MenuBar";
 import PlusButton from "../comps/PlusButton";
-import Generalinputform from "../comps/Generalinputform";
+import InputForm from "../comps/InputForm";
 import Logos from "../comps/Logos";
-import Gradientbutton from "../comps/Gradientbutton";
+import PrimaryButton from "../comps/PrimaryButton";
 
 function SignUp() {
   return (
@@ -16,11 +16,11 @@ function SignUp() {
           <PlusButton border="2px solid #D680FF" color="transparent" plusColor="#D680FF"/>
           <p>Add Profile Picture</p>
         </div>
-        <Generalinputform label="Email" placeholder="Email"/>
-        <Generalinputform label="Password" placeholder="Password"/>
-        <Generalinputform label="Confirm Password" placeholder="Confirm Password"/>
+        <InputForm label="Email" placeholder="Email"/>
+        <InputForm label="Password" placeholder="Password"/>
+        <InputForm label="Confirm Password" placeholder="Confirm Password"/>
         <div className="vMargin">
-          <Gradientbutton text="Signup"></Gradientbutton>
+          <PrimaryButton text="Signup"></PrimaryButton>
         </div>
       </div>
     </main>

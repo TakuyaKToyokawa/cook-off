@@ -2,7 +2,7 @@ import React from 'react';
 import MenuBar from '../comps/MenuBar';
 
 export default {
-  title: 'General/MenuBar',
+  title: 'Footer/MenuBar',
   component: MenuBar,
 };
 

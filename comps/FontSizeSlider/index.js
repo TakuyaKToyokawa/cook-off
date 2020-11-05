@@ -13,6 +13,7 @@ const Input = styled.input.attrs({
   -webkit-appearance: none;
   margin: 0px;
   width: 100%;
+  outline: none;
   &::-webkit-slider-thumb {
     appearance: none;
     height: 10px;
@@ -43,7 +44,7 @@ const BigA = styled.p`
   margin-left: 20px;
 `;
 
-const FontSlider = ({}) => {
+const FontSizeSlider = ({}) => {
   return (
     <Container>
       <SmallA>A</SmallA>
@@ -53,4 +54,4 @@ const FontSlider = ({}) => {
   );
 };
 
-export default FontSlider;
+export default FontSizeSlider;
