@@ -4,23 +4,21 @@ import styled from "styled-components";
 
 const InputDateBox = styled.div`
 
-display:flex;
-position: absolute;
+display: block;
+position: relative;
 `; 
 const InputDateLabel = styled.h3`
+margin-left:3px;
 
-display:flex;
-position: relative;
 `; 
 
 const InputDateForm = styled.form`
 
 display:flex;
-position: absolute;
-height: 50px;
-width: 270px;
-padding-top:50px;
-
+position: relative;
+min-height: 50px;
+min-width: 270px;
+margin-top:20px;
 
 `; 
 const InputDateFormInput = styled.input.attrs({

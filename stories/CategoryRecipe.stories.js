@@ -6,4 +6,5 @@ export default {
   component: CategoryRecipe,
 };
 
-export const BasicCategoryRecipe = () => <CategoryRecipe text="Japanese"/>;
+export const BasicJapaneseRecipe= () => <CategoryRecipe text="Japanese"/>;
+export const BasicChineseRecipe = () => <CategoryRecipe text="Japanese" img="./chinese.svg"/>;

@@ -4,42 +4,33 @@ import styled from "styled-components";
 const RecipePostBox = styled.div`
 
 display:flex;
-position: absolute;
+position: relative;
 
 `; 
-const RecipePostImg = styled.div`
+const RecipePostImg = styled.img`
 
 display:flex;
 position: relative;
-height:
-height: 104px;
-width: 104px;
-left: -12px;
-top: 5px;
+min-height: 104px;
+min-width: 104px;
+margin-right:10px;
 border-radius: 9px;
 
 
 `; 
 
 const RecipePostContent = styled.div`
-
 display:row;
-row
-position: absolute;
-left: 35.81%;
-right: 8.71%;
-top: 7%;
-bottom: 3%;
+position: relative;
+
 
 `; 
 const RecipePostHeader = styled.div`
 
 display:flex;
-position: absolute;
-height: 26px;
-width: 163px;
-padding-left: 2px;
-top: 7px;
+position: relative;
+min-height:10px;
+
 
 
 `; 
@@ -47,7 +38,7 @@ const RecipePostDetails = styled.div`
 
 display:flex;
 position: relative;
-padding-top:41px;
+padding-top:20px;
 
 `; 
 const RecipePostDetailsMin = styled.div`
@@ -62,7 +53,7 @@ color: #7D7D7D;
 const RecipePostUpDown = styled.div`
 
 display:flex;
-position: absolute;
+
 
 `; 
 const RecipePostUp = styled.div`
@@ -82,31 +73,39 @@ margin:5px;
 
 `; 
 
-const RecipePost = ({}) => {
+const RecipePost = ({title, time,name, img}) => {
     return <RecipePostBox>
-    <RecipePostImg><img src="/mooncake.png"></img></RecipePostImg>
+    <RecipePostImg src={img}/>
 
     <RecipePostContent>
 
-        <RecipePostHeader>Mooncake quickly</RecipePostHeader>
+        <RecipePostHeader>{title}</RecipePostHeader>
 
         <RecipePostDetails>
-            <RecipePostDetailsMin>30 mins</RecipePostDetailsMin>
-            <RecipePostDetailsMin>by Jenny Tran</RecipePostDetailsMin>
+<RecipePostDetailsMin>{time}</RecipePostDetailsMin>
+<RecipePostDetailsMin>{name}</RecipePostDetailsMin>
         </RecipePostDetails>
 
         <RecipePostUpDown>
             <RecipePostUp>
                 <img src="/upvote.svg"></img>
+                {/* get Data from database */}
                 <RecipePostUpText>225</RecipePostUpText>
                 </RecipePostUp>
             <RecipePostUp>
                 <img src="/downvote.svg"></img>
+                {/* get Data from database */}
                 <RecipePostUpText>15</RecipePostUpText>
                 </RecipePostUp>
         </RecipePostUpDown>
     </RecipePostContent>
    </RecipePostBox> 
-  }
+  };
+  RecipePost.defaultProps = {
+    title: "Mooncake quickly",
+    time: "40m",
+    img: "./mooncake.png",
+    name: "by Jenny Tran"
+  };
  
   export default RecipePost;

@@ -2,40 +2,44 @@ import React from "react";
 import styled from "styled-components";
 
 const CategoryRecipeContainer = styled.div`
+justify-content:center;
+display:row;
+`; 
+const Categorybox = styled.div`
 
 display:flex;
-position: absolute;
+position: relative;
 background: #FCE8E8;
 border-radius: 9px;
-width: 94px;
-height: 124px;
+max-width: 94px;
+min-height: 124px;
+justify-content:center;
+align-items:center;
 `; 
-const CategoryRecipeImage = styled.div`
-position:absolute;
-height: 62px;
-width: 56px;
-left: 20.21%;
-right: 20.21%;
-top: 25%;
-bottom: 25%;
-background-image: url(/sushi.svg);
+const CategoryRecipeImage = styled.img`
+position:relative;
+min-height: 62px;
+max-width: 56px;
+
+
 `; 
 const CategoryRecipeText = styled.div`
-position:absolute;
+position:relative;
+margin-top:10px;
 color: #7D7D7D;
-padding-top:128px;
-padding-left:10px;
+
 
 `; 
 
-const CategoryRecipe = ({text}) => {
+const CategoryRecipe = ({text,img}) => {
   return <CategoryRecipeContainer>
-      <CategoryRecipeImage></CategoryRecipeImage>
+      <Categorybox><CategoryRecipeImage src={img}/></Categorybox>
       <CategoryRecipeText>{text}</CategoryRecipeText>
  </CategoryRecipeContainer>
  
 }
 CategoryRecipe.defaultProps = {
-    text:""
-}
+    text:"",
+    img: "./sushi.svg"
+};
 export default CategoryRecipe;
