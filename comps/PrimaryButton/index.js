@@ -18,6 +18,11 @@ const ButtonDiv = styled.h2`
   padding: 20px;
   display: flex;
   justify-content: center;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    transform: scale(0.99);
+  }
 `;
 
 const PrimaryButton = ({ text, color }) => {

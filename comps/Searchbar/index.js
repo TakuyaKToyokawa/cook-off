@@ -29,7 +29,9 @@ const Icondiv = styled.img`
 
 const Container = styled.div`
   position: relative;
-
+  &:hover{
+    transform: scale(0.99);
+  }
 `;
 
 const Searchbar = ({placeholder}) => {

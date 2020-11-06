@@ -27,6 +27,6 @@ Step2.args = {
 
 Step3.args = {
   step1:false,
-  step2:true,
-  step3:false
+  step2:false,
+  step3:true
 }

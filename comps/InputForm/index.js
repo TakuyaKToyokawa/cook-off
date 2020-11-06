@@ -27,6 +27,7 @@ const Linkdiv = styled.h4`
 color: #D06BFF;
 width:100%;
 text-align:right;
+margin-top: 5px;
 `;
 
 const Generalinputform = ({label, placeholder, link, displayLink }) => {

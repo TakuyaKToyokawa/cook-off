@@ -13,7 +13,7 @@ const Textdiv = styled.div`
 display:flex;
 flex-direction:column;
 width:50px;
-padding-left:15px;
+padding-left:25px;
 `;
 
 const Arrow = styled.img `
@@ -27,7 +27,7 @@ const NavigationHeader = ({text, displayArrow}) => {
   return <div>
     <Maindiv> 
         {displayArrow == true ? <Arrow src="./redarrow.png"/> : undefined}
-        <Textdiv> Text </Textdiv>
+        <Textdiv> {text} </Textdiv>
     </Maindiv>
   </div>;
 };

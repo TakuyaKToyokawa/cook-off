@@ -2,6 +2,8 @@ import React from "react";
 import PrimaryButton from "../comps/PrimaryButton";
 import SecondaryButton from "../comps/SecondaryButton";
 import PlusButton from "../comps/PlusButton";
+import ButtonMic from '../comps/ButtonMic';
+import ButtonPhone from '../comps/ButtonPhone';
 
 export default {
   title: "Inputs/Buttons",
@@ -15,6 +17,8 @@ const ThirdTemplate = (args) => <PlusButton {...args}/>
 export const Primary = Template.bind({});
 export const Secondary = SecondTemplate.bind({});
 export const Plus = ThirdTemplate.bind({});
+export const StreamingMic = () => <ButtonMic/>;
+export const StreamingPhone = () => <ButtonPhone/>;
 
 Primary.args = {
   text: "Primary",

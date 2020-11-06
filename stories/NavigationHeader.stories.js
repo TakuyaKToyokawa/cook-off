@@ -13,11 +13,11 @@ export const NoArrow = Template.bind({});
 
 WithArrow.args = {
     displayArrow: true,
-    text: "Default Header"
+    text: "Header"
 }
 
 NoArrow.args = {
     displayArrow: false,
-    text: "Default Header"
+    text: "Header"
 }
 

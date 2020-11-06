@@ -26,8 +26,9 @@ const InputDateFormInput = styled.input.attrs({
 })`
 border-radius: 15px;
 border: 1px solid red;
-
-
+padding: 5px 15px;
+width:100%;
+outline: none;
 `; 
 const InputDate = ({}) => {
   return <InputDateBox>
