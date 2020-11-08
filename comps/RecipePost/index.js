@@ -4,16 +4,17 @@ import styled from "styled-components";
 const RecipePostBox = styled.div`
   display: flex;
   position: relative;
+  width: 100%;
+  border-radius: 9px;
 `;
 
 const RecipePostImg = styled.img`
   display: flex;
   position: relative;
   object-fit: cover;
-  max-width: 200px;
   margin-right: 10px;
+  flex:3;
   border-radius: 9px;
-  flex:1;
 `;
 
 const RecipePostContent = styled.div`
@@ -23,16 +24,9 @@ const RecipePostContent = styled.div`
   flex: 5;
 `;
 
-const RecipePostHeader = styled.h3`
-  display: flex;
-  position: relative;
-  min-height: 10px;
-  margin: 5px 0px;
-`;
-
 const RecipePostDetails = styled.div`
   display: flex;
-  padding-top: 20px;
+  padding-top: 2%;
   align-items:center;
 `;
 
@@ -49,7 +43,7 @@ const RecipePostUpDown = styled.div`
 const RecipePostUp = styled.div`
   display: flex;
   position: relative;
-  padding-right: 60px;
+  padding-right: 10%;
   padding-top: 21px;
 `;
 
@@ -58,6 +52,12 @@ const RecipePostUpText = styled.div`
   position: relative;
   margin: 5px;
 `;
+
+
+const Title = styled.h3 ` 
+margin-top: 0px;
+`
+
 
 const Icon = styled.img`
   transition: 0.2s ease-in-out;
@@ -71,7 +71,7 @@ const RecipePost = ({ title, time, name, img }) => {
     <RecipePostBox>
       <RecipePostImg src={img} />
       <RecipePostContent>
-        <RecipePostHeader>{title}</RecipePostHeader>
+  <Title>{title}</Title>
         <RecipePostDetails>
           <RecipePostDetailsMin>{time}</RecipePostDetailsMin>
           <RecipePostDetailsMin>{name}</RecipePostDetailsMin>
