@@ -106,7 +106,7 @@ h1{
   font-size: 2rem;
 }
 h2 {
-  font-size:1.3rem;
+  font-size:1.7rem;
 }
 .recipePost{
   width:90%;
@@ -114,4 +114,38 @@ h2 {
 .navigationBar{
   width: 95%;
 }
+}
+
+
+//Simon CSS stuff
+// for setting page
+.settingList {
+  @include flexIt();
+  width:100%;
+justify-content: center;
+  height:9%;
+  
+
+}
+.headerSetting {
+  @include flexIt();
+  width:100%;
+  margin-top: 15px;
+  justify-content: left;
+}
+
+.title {
+  @include flexIt();
+  margin-top:50px;
+  margin-bottom:10px;
+  
+}
+
+// for setting > appearance  page
+// for setting > account  page
+.accountList{
+  
+  width:100%;
+  justify-content: center;
+    height:9%;
 }
