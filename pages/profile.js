@@ -1,4 +1,3 @@
-import MenuBar from "../comps/MenuBar";
 import Generalinputform from "../comps/Generalinputform";
 import Logos from "../comps/Logos";
 import Gradientbutton from "../comps/Gradientbutton";
