@@ -28,10 +28,15 @@ h1{
     margin: 1.5rem 0;
     width: 100%;
 }
+.smallVMargin{
+  margin: .5rem 0;
+}
 
 .main{
     @include flexIt();
+
     width: 100%;
+    height: 100vh;
     background-image: url('../public/Background.png');
 }
 
@@ -40,8 +45,107 @@ h1{
     flex-direction: column;
 }
 
+.flexRow{
+  width:100%;
+  @include flexIt();
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .content {
     @include flexIt();
+    justify-content: flex-start;
     flex-direction: column;
-    width: 400px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0px 35px; 
+    height: 100%;
+}
+
+//Takuya CSS stuff
+.navigationBar {
+  @include flexIt();
+  width:100%;
+  margin: 15px 20px;
+  justify-content: space-between;
+}
+
+.categories {
+  @include flexIt();
+  margin: 2% 0px;
+  min-height: 160px;
+  width: 80%;
+  max-width:430px;
+  flex-direction: row;
+  overflow-x: auto;
+  div{ 
+    margin: 0px 10px;
+  }
+}
+
+.recipePost {
+  @include flexIt();
+  align-items: flex-start;
+  margin: 10px 20px;
+  max-width: 480px;
+  width:100%;
+  flex-direction: column;
+  & > div{ 
+    margin: 15px 0px;
+  }
+}
+
+.plusButton{
+  position: fixed;
+  bottom: 130px;
+  right: 5%;
+}
+
+@media only screen and (max-width: 420px){
+h1{
+  font-size: 2rem;
+}
+h2 {
+  font-size:1.7rem;
+}
+.recipePost{
+  width:90%;
+}
+.navigationBar{
+  width: 95%;
+}
+}
+
+
+//Simon CSS stuff
+// for setting page
+.settingList {
+  @include flexIt();
+  width:100%;
+justify-content: center;
+  height:9%;
+  
+
+}
+.headerSetting {
+  @include flexIt();
+  width:100%;
+  margin-top: 15px;
+  justify-content: left;
+}
+
+.title {
+  @include flexIt();
+  margin-top:50px;
+  margin-bottom:10px;
+  
+}
+
+// for setting > appearance  page
+// for setting > account  page
+.accountList{
+  
+  width:100%;
+  justify-content: center;
+    height:9%;
 }

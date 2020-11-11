@@ -1,7 +1,7 @@
 import MenuBar from "../comps/MenuBar";
-import Generalinputform from "../comps/Generalinputform";
+import Inputform from "../comps/Inputform";
 import Logos from "../comps/Logos";
-import Gradientbutton from "../comps/Gradientbutton";
+import PrimaryButton from "../comps/PrimaryButton";
 
 function Login2() {
   return (
@@ -13,11 +13,10 @@ function Login2() {
         </div>
         <div className="flexColumn">
         </div>
-        <Generalinputform label="Email or Username" placeholder="Email"/>
-        <Generalinputform label="Password" placeholder="Password"/>
-        <Generalinputform label="Confirm Password" placeholder="Confirm Password"/>
+        <Inputform label="Email or Username" placeholder="Email"/>
+        <Inputform label="Password" placeholder="Password"/>
         <div className="vMargin">
-          <Gradientbutton text="Login"></Gradientbutton>
+          <PrimaryButton text="Login"></PrimaryButton>
         </div>
       </div>
     </main>

@@ -20,8 +20,9 @@ const Categorybox = styled.div`
 
 const CategoryRecipeImage = styled.img`
   position: relative;
-  min-height: 62px;
-  max-width: 56px;
+  min-height: 80%;
+  max-width: 80%;
+  object-fit:contain;
 `;
 
 const CategoryRecipeText = styled.div`

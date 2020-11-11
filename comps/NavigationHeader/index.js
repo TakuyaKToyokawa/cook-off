@@ -17,8 +17,8 @@ padding-left:25px;
 `;
 
 const Arrow = styled.img `
-width: 30px;
-height: 50px;
+width: 18px;
+height: 36px;
 cursor:pointer;
 `;
 

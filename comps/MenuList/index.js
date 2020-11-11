@@ -17,6 +17,7 @@ const Text1div = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 12px;
+  min-width:77vw;
 `;
 
 const Icon = styled.img`

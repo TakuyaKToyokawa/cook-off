@@ -1,20 +1,18 @@
-
 import Logos from "../comps/Logos";
-import Gradientbutton from "../comps/Gradientbutton";
+import PrimaryButton from "../comps/PrimaryButton";
 
 function LoginOrSignUp() {
   return (
     <main className="main">
       <div className="content">
-      <div className="vMargin flexColumn">
+        <div className="vMargin flexColumn">
           <Logos />
         </div>
-        <h1 >Cookoff !</h1>
-        <h4 >the best cooking app ever</h4>
- 
+        <h1>Cookoff !</h1>
+        <h4>the best cooking app ever</h4>
         <div className="vMargin">
-          <Gradientbutton text="Sign up"></Gradientbutton>
-          <Gradientbutton text="Log in"></Gradientbutton>
+          <PrimaryButton text="Sign up"></PrimaryButton>
+          <PrimaryButton text="Log in"></PrimaryButton>
         </div>
       </div>
     </main>
