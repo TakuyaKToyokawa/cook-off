@@ -2,11 +2,24 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+`;
+
+const NameCont = styled(Container)`
+  flex-direction: row;
+`;
+
+const LevelContainer = styled.div`
   border: 1px solid #c95cfc;
   border-radius: 63.5px;
   width: 100%;
   height: 20px;
 `;
+
 const LevelMeter = styled.div`
   background: linear-gradient(
     90deg,
@@ -18,15 +31,42 @@ const LevelMeter = styled.div`
   width: ${(props) => (props.width ? props.width : "0%")};
   height: 100%;
   border-radius: 63.5px;
-  transition: width .2s ease-in-out;
+  transition: width 0.2s ease-in-out;
 `;
 
-const LevelBar = ({ width }) => {
+const Name = styled.h2`
+  text-align: center;
+  color: #f14b4a;
+  margin-right: 10px;
+`;
+
+const TagLine = styled.p`
+  margin: 0px 0px 15px 0px;
+`;
+const Icon = styled.img``;
+
+const LevelBar = ({ width, name, tagline, level }) => {
   return (
     <Container>
-      <LevelMeter width={width}></LevelMeter>
+      <NameCont>
+        <Name>{name}</Name>
+        <Icon src="./Edit.svg" />
+      </NameCont>
+      <TagLine>{tagline}</TagLine>
+      <TagLine>
+        Lvl. <span style={{ color: "#f14b4a" }}>{level}</span>
+      </TagLine>
+      <LevelContainer>
+        <LevelMeter width={width}></LevelMeter>
+      </LevelContainer>
     </Container>
   );
+};
+
+LevelBar.defaultProps = {
+  name: "Default Name",
+  tagline: "Master Chef",
+  level: "9",
 };
 
 export default LevelBar;
