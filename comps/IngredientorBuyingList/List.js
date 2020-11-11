@@ -5,8 +5,13 @@ const RecipeBuyListBigContainer = styled.div`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px 10px;
   border-bottom: 1px solid #ddd;
+  transition: .3s ease-in-out;
+  border-radius: 5px;
+  &:hover{
+    background-color: rgba(0,0,0,0.1)
+  }
 `;
 
 const RecipeBuyListList = styled.div`
@@ -41,7 +46,11 @@ const IconCont = styled.div`
   
 `;
 
-const List = ({ textOne, textTwo, Icon, displayIcon }) => {
+const Arrow = styled.img `
+ object-fit: cover;
+`
+
+const List = ({ textOne, textTwo, Icon, displayIcon, displayPrice}) => {
   return (
     <RecipeBuyListBigContainer>
       <RecipeBuyListList>
@@ -50,7 +59,10 @@ const List = ({ textOne, textTwo, Icon, displayIcon }) => {
             {displayIcon == true ? <IconShop src={Icon} /> : undefined}
             <RecipeBuyListContentText>{textOne}</RecipeBuyListContentText>
           </IconCont>
-          <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice>
+          <IconCont>
+          {displayPrice == true ? <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice> : undefined}
+          {displayIcon == true ? <Arrow src="./Arrow.svg" /> : undefined}
+          </IconCont>
         </RecipeBuyListContent>
       </RecipeBuyListList>
     </RecipeBuyListBigContainer>
@@ -62,6 +74,7 @@ List.defaultProps = {
   textOne: "egg",
   textTwo: "$3.55",
   displayIcon: false,
+  displayPrice: true,
   Icon: "./walmart.svg"
 };
 export default List;
