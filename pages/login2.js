@@ -2,6 +2,7 @@ import MenuBar from "../comps/MenuBar";
 import Inputform from "../comps/Inputform";
 import Logos from "../comps/Logos";
 import PrimaryButton from "../comps/PrimaryButton";
+import Switch from "react-switch";
 
 function Login2() {
   return (
@@ -18,9 +19,11 @@ function Login2() {
         <div className="vMargin">
           <PrimaryButton text="Login"></PrimaryButton>
         </div>
+        <Switch onChange={undefined}/>
       </div>
     </main>
   );
 }
 
 export default Login2;
+ 

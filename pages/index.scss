@@ -28,13 +28,13 @@ h1{
     margin: 1.5rem 0;
     width: 100%;
 }
+
 .smallVMargin{
   margin: .5rem 0;
 }
 
 .main{
     @include flexIt();
-
     width: 100%;
     height: 100vh;
     background-image: url('../public/Background.png');
@@ -58,7 +58,7 @@ h1{
     flex-direction: column;
     max-width: 600px;
     width: 100%;
-    margin: 0px 35px; 
+    margin: 0px 50px; 
     height: 100%;
 }
 
