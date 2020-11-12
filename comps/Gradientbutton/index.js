@@ -18,9 +18,14 @@ const ButtonDiv = styled.h2`
   padding: 20px;
   display: flex;
   justify-content: center;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    transform: scale(0.99);
+  }
 `;
 
-const Gradientbutton = ({ text, color }) => {
+const PrimaryButton = ({ text, color }) => {
   return (
     <div style={{width: "100%"}}>
       <ButtonDiv color={color}> {text} </ButtonDiv>
@@ -29,9 +34,9 @@ const Gradientbutton = ({ text, color }) => {
 };
 
 
-Gradientbutton.defaultProps = {
-  text: "text"
+PrimaryButton.defaultProps = {
+  text: "text",
  }
  
 
-export default Gradientbutton;
+export default PrimaryButton;

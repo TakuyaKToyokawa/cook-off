@@ -2,7 +2,7 @@ import React from 'react';
 import InputDate from '../comps/InputDate';
 
 export default {
-  title: 'Cookoff/InputDate',
+  title: 'Inputs/InputDate',
   component: InputDate,
 };
 

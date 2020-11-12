@@ -2,31 +2,32 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonPhoneContainer = styled.div`
-display:flex;
-position:absolute;
-height: 86px;
-width: 86px;
-background: linear-gradient(180deg, #D06BFF 0%, rgba(255, 255, 255, 0) 100%),
-linear-gradient(0deg, #F04B4A, #F04B4A);
-justify-content:center;
-align-items:center;
-border-radius: 50%;
-`; 
-const ButtonPhoneImage = styled.div`
-background-image: url(/phone.svg);
-display:flex;
-position: absolute;
-left: 16.28%;
-right: 17.36%;
-top: 38.37%;
-bottom: 39.53%;
-`; 
+  display: flex;
+  position: relative;
+  min-height: 50px;
+  max-width: 50px;
+  background: linear-gradient(180deg, #d06bff 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(0deg, #f04b4a, #f04b4a);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    transform: scale(0.90);
+  }
+`;
+const ButtonPhoneImage = styled.img`
+  max-height: 12px;
+  border-radius: 50%;
+`;
 
 const ButtonPhone = ({}) => {
-  return <ButtonPhoneContainer>
-      <ButtonPhoneImage></ButtonPhoneImage>
- </ButtonPhoneContainer>
-
-}
+  return (
+    <ButtonPhoneContainer>
+      <ButtonPhoneImage src="./phone.svg" />
+    </ButtonPhoneContainer>
+  );
+};
 
 export default ButtonPhone;

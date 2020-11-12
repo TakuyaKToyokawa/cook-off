@@ -11,7 +11,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 120px;
+  height: 110px;
   justify-content: center;
   align-items: center;
   background-color: #f14b4a;
@@ -37,24 +37,24 @@ const RecipeIcon = styled.img`
   transition: 0.3s ease-in-out;
   filter: ${(props) =>
     props.active
-      ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #621212)"
-      : "drop-shadow(0 5px 0px #621212)"};
+      ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #8B3B3A)"
+      : "drop-shadow(0 5px 0px #8B3B3A)"};
 `;
 
 const EventsIcon = styled.img`
   transition: 0.3s ease-in-out;
   filter: ${(props) =>
     props.active
-      ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #621212)"
-      : "drop-shadow(0 5px 0px #621212)"};
+      ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #8B3B3A)"
+      : "drop-shadow(0 5px 0px #8B3B3A)"};
 `;
 
 const ProfileIcon = styled.img`
   transition: 0.3s ease-in-out;
   filter: ${(props) =>
     props.active
-      ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #621212)"
-      : "drop-shadow(0 5px 0px #621212)"};
+      ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #8B3B3A)"
+      : "drop-shadow(0 5px 0px #8B3B3A)"};
 `;
 
 const AnimatedLine = styled.div`

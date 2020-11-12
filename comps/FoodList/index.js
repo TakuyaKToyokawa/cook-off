@@ -17,7 +17,8 @@ const Time = styled.img`
 `;
 
 const Arrow = styled.img`
-cursor:pointer;`;
+  cursor: pointer;
+`;
 
 const InfoContainer = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const InfoContainer = styled.div`
 `;
 
 const Button = styled.button`
-border: none;
+  border: none;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -42,10 +43,10 @@ border: none;
   color: white;
   flex: 1;
   margin-right: 50%;
-  transition: .3s ease-in-out;
-  cursor:pointer;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
   &:hover{
-    box-shadow: inset 1px 1px  10px #333;
+    transform: scale(0.99);
   }
 `;
 

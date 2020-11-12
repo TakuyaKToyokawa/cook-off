@@ -2,7 +2,7 @@ import React from 'react';
 import RecipePost from '../comps/RecipePost';
 
 export default {
-  title: 'Cookoff/RecipePost',
+  title: 'Recipe/RecipePost',
   component: RecipePost,
 };
 

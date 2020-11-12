@@ -2,40 +2,48 @@ import React from "react";
 import styled from "styled-components";
 
 const CategoryRecipeContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
-display:flex;
-position: absolute;
-background: #FCE8E8;
-border-radius: 9px;
-width: 94px;
-height: 124px;
-`; 
-const CategoryRecipeImage = styled.div`
-position:absolute;
-height: 62px;
-width: 56px;
-left: 20.21%;
-right: 20.21%;
-top: 25%;
-bottom: 25%;
-background-image: url(/sushi.svg);
-`; 
+const Categorybox = styled.div`
+  display: flex;
+  position: relative;
+  background: #fce8e8;
+  border-radius: 9px;
+  min-width: 94px;
+  min-height: 124px;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CategoryRecipeImage = styled.img`
+  position: relative;
+  min-height: 80%;
+  max-width: 80%;
+  object-fit:contain;
+`;
+
 const CategoryRecipeText = styled.div`
-position:absolute;
-color: #7D7D7D;
-padding-top:128px;
-padding-left:10px;
+  margin-top: 10px;
+  color: #7d7d7d;
+  text-align: center;
+`;
 
-`; 
-
-const CategoryRecipe = ({text}) => {
-  return <CategoryRecipeContainer>
-      <CategoryRecipeImage></CategoryRecipeImage>
+const CategoryRecipe = ({ text, img }) => {
+  return (
+    <CategoryRecipeContainer>
+      <Categorybox>
+        <CategoryRecipeImage src={img} />
+      </Categorybox>
       <CategoryRecipeText>{text}</CategoryRecipeText>
- </CategoryRecipeContainer>
- 
-}
+    </CategoryRecipeContainer>
+  );
+};
+
 CategoryRecipe.defaultProps = {
-    text:""
-}
+  text: "",
+  img: "./sushi.svg",
+};
 export default CategoryRecipe;

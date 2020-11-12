@@ -4,39 +4,37 @@ import styled from "styled-components";
 
 const InputDateBox = styled.div`
 
-display:flex;
-position: absolute;
+display: block;
+position: relative;
 `; 
 const InputDateLabel = styled.h3`
+margin-left:3px;
 
-display:flex;
-position: relative;
 `; 
 
 const InputDateForm = styled.form`
 
 display:flex;
-position: absolute;
-height: 50px;
-width: 270px;
-padding-top:50px;
-border-radius: 15px;
-border: 1px solid;
-border-image-source: linear-gradient(270deg, #C95CFC -27.53%, #F14B4A 81.06%);
+position: relative;
+min-height: 50px;
+min-width: 270px;
+margin-top:20px;
 
 `; 
-const InputDateFormInput = styled.input`
-
-display:flex;
-position: absolute;
-
-
+const InputDateFormInput = styled.input.attrs({
+  type: "date",
+})`
+border-radius: 15px;
+border: 1px solid red;
+padding: 5px 15px;
+width:100%;
+outline: none;
 `; 
 const InputDate = ({}) => {
   return <InputDateBox>
   <InputDateLabel>Label</InputDateLabel>
   <InputDateForm>
-    <InputDateFormInput type="date" format="mm/dd/yyyy">
+    <InputDateFormInput format="mm/dd/yyyy">
         
     </InputDateFormInput>
   </InputDateForm>
