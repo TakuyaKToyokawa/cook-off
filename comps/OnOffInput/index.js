@@ -1,11 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Toggle from 'react-styled-toggle';
-/*https://github.com/guillaumemorin/react-styled-toggle*/
+import Switch from "react-switch";
 
 const OnOffInput = ({}) => {
   return (
-    <Toggle backgroundColorChecked="#F14B4A"></Toggle>
+    <Switch backgroundColorChecked="#F14B4A"/>
   );
 };
 
