@@ -41,7 +41,11 @@ const IconCont = styled.div`
   
 `;
 
-const List = ({ textOne, textTwo, Icon, displayIcon }) => {
+const Arrow = styled.img `
+ object-fit: cover;
+`
+
+const List = ({ textOne, textTwo, Icon, displayIcon, displayPrice}) => {
   return (
     <RecipeBuyListBigContainer>
       <RecipeBuyListList>
@@ -50,7 +54,10 @@ const List = ({ textOne, textTwo, Icon, displayIcon }) => {
             {displayIcon == true ? <IconShop src={Icon} /> : undefined}
             <RecipeBuyListContentText>{textOne}</RecipeBuyListContentText>
           </IconCont>
-          <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice>
+          <IconCont>
+          {displayPrice == true ? <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice> : undefined}
+          {displayIcon == true ? <Arrow src="./Arrow.svg" /> : undefined}
+          </IconCont>
         </RecipeBuyListContent>
       </RecipeBuyListList>
     </RecipeBuyListBigContainer>
@@ -62,6 +69,8 @@ List.defaultProps = {
   textOne: "egg",
   textTwo: "$3.55",
   displayIcon: false,
+  displayPrice: true,
   Icon: "./walmart.svg"
 };
+
 export default List;

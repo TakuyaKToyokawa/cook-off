@@ -22,7 +22,6 @@ const Icondiv = styled.img`
   bottom:5px;
   padding:3px;
   margin-right:10px;
-
 `;
 
 const Container = styled.div`
@@ -45,7 +44,6 @@ const Searchbar = ({placeholder}) => {
 
 Searchbar.defaultProps = {
   placeholder : "Search...",
-  
 }
 
 export default Searchbar;

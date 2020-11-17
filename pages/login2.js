@@ -18,9 +18,11 @@ function Login2() {
         <div className="vMargin">
           <PrimaryButton text="Login"></PrimaryButton>
         </div>
+        <Switch onChange={undefined}/>
       </div>
     </main>
   );
 }
 
 export default Login2;
+ 

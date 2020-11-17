@@ -1,28 +1,24 @@
-import MenuBar from "../comps/MenuBar";
-import Generalinputform from "../comps/Generalinputform";
-import Logos from "../comps/Logos";
-import Gradientbutton from "../comps/Gradientbutton";
+import NavigationHeader from "../comps/NavigationHeader";
+import SettingsIcon from "../comps/SettingsIcon";
+import Avatar from "../comps/Avatar";
+import LevelBar from "../comps/LevelBar";
+import ProfileList from "../comps/ProfileList";
 
-
-function Login2() {
+function Profile() {
   return (
     <main className="main">
       <div className="content">
-        <h1 >Welcome back!</h1>
-        <div className="vMargin flexColumn">
-          <Logos />
-        </div>
-        <div className="flexColumn">
-        </div>
-        <Generalinputform label="Email or Username" placeholder="Email"/>
-        <Generalinputform label="Password" placeholder="Password"/>
-        <Generalinputform label="Confirm Password" placeholder="Confirm Password"/>
-        <div className="vMargin">
-          <Gradientbutton text="Login"></Gradientbutton>
-        </div>
+        <nav className="navigationBar">
+          <NavigationHeader text="Profile" displayArrow={false} />
+          <SettingsIcon />
+        </nav>
+        <Avatar />
+        <LevelBar />
+        <ProfileList />
+        <MenuBar />
       </div>
     </main>
   );
 }
 
-export default Login2;
+export default Profile;

@@ -8,7 +8,7 @@ export default {
 };
 
 export const NoIconIngredientsList = () => (
-  <IngredientorBuyingList title="Used for Ingredients Lists">
+  <IngredientorBuyingList title="Used for Ingredients Lists" >
     <List />
     <List />
     <List />
@@ -27,5 +27,16 @@ export const IconIngredientsList = () => (
     <List displayIcon={true}/>
     <List displayIcon={true}/>
     <List displayIcon={true}/>
+  </IngredientorBuyingList>
+);
+
+export const NoPriceList= () => (
+  <IngredientorBuyingList title="Used for Cooking Steps">
+    <List displayPrice={false}/>
+    <List displayPrice={false}/>
+    <List displayPrice={false}/>
+    <List displayPrice={false}/>
+    <List displayPrice={false}/>
+    <List displayPrice={false}/>
   </IngredientorBuyingList>
 );
