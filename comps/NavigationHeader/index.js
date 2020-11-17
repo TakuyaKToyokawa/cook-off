@@ -39,4 +39,5 @@ NavigationHeader.defaultProps = {
   displayArrow: true,
 };
 
+
 export default NavigationHeader;

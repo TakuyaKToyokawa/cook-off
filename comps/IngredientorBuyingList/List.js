@@ -5,13 +5,8 @@ const RecipeBuyListBigContainer = styled.div`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 0px;
   border-bottom: 1px solid #ddd;
-  transition: .3s ease-in-out;
-  border-radius: 5px;
-  &:hover{
-    background-color: rgba(0,0,0,0.1)
-  }
 `;
 
 const RecipeBuyListList = styled.div`
@@ -77,4 +72,5 @@ List.defaultProps = {
   displayPrice: true,
   Icon: "./walmart.svg"
 };
+
 export default List;

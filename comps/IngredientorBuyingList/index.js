@@ -8,7 +8,6 @@ const IngredientsListBigBox = styled.div`
 
 const RecipeBuyListHeader = styled.h3`
   display: flex;
-  color: #F04B4A;
 `;
 
 const IngredientorBuyingList = ({ title, children, height }) => {

@@ -31,7 +31,7 @@ const LevelMeter = styled.div`
   width: ${(props) => (props.width ? props.width : "0%")};
   height: 100%;
   border-radius: 63.5px;
-  transition: width 0.2s ease-in-out;
+  transition: width .2s ease-in-out;
 `;
 
 const Name = styled.h2`

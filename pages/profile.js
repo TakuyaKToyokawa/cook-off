@@ -1,4 +1,3 @@
-import MenuBar from "../comps/MenuBar";
 import NavigationHeader from "../comps/NavigationHeader";
 import SettingsIcon from "../comps/SettingsIcon";
 import Avatar from "../comps/Avatar";

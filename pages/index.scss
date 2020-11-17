@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -18,54 +18,58 @@ h1, h2, h3, h4, h5, h6,p, button {
     font-family: 'Red Hat Display', sans-serif;
 }
 
-h1{
-    color: #A904F8;
-    font-size: 3rem;
-    margin: 1rem;
+h1 {
+  color: #a904f8;
+  font-size: 3rem;
+  margin: 1rem;
 }
 
-.vMargin{
-    margin: 1.5rem 0;
-    width: 100%;
+.vMargin {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+.smallVMargin {
+  margin: 0.5rem 0;
 }
 
-.smallVMargin{
-  margin: .5rem 0;
+.smallVMargin {
+  margin: 0.5rem 0;
 }
 
-.main{
-    @include flexIt();
-    width: 100%;
-    height: 100vh;
-    background-image: url('../public/Background.png');
+.main {
+  @include flexIt();
+
+  width: 100%;
+  height: 100vh;
+  background-image: url("../public/Background.png");
 }
 
-.flexColumn{
-    @include flexIt();
-    flex-direction: column;
+.flexColumn {
+  @include flexIt();
+  flex-direction: column;
 }
 
-.flexRow{
-  width:100%;
+.flexRow {
+  width: 100%;
   @include flexIt();
   flex-direction: row;
   justify-content: space-between;
 }
 
 .content {
-    @include flexIt();
-    justify-content: flex-start;
-    flex-direction: column;
-    max-width: 600px;
-    width: 100%;
-    margin: 0px 50px; 
-    height: 100%;
+  @include flexIt();
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  margin: 0px 50px;
+  height: 100%;
 }
 
 //Takuya CSS stuff
 .navigationBar {
   @include flexIt();
-  width:100%;
+  width: 100%;
   margin: 15px 20px;
   justify-content: space-between;
 }
@@ -75,10 +79,10 @@ h1{
   margin: 2% 0px;
   min-height: 160px;
   width: 80%;
-  max-width:430px;
+  max-width: 430px;
   flex-direction: row;
   overflow-x: auto;
-  div{ 
+  div {
     margin: 0px 10px;
   }
 }
@@ -88,58 +92,111 @@ h1{
   align-items: flex-start;
   margin: 10px 20px;
   max-width: 480px;
-  width:100%;
+  width: 100%;
   flex-direction: column;
-  & > div{ 
+  & > div {
     margin: 15px 0px;
   }
 }
 
-.plusButton{
+.plusButton {
   position: fixed;
   bottom: 130px;
   right: 5%;
 }
 
-@media only screen and (max-width: 420px){
-h1{
-  font-size: 2rem;
-}
-h2 {
-  font-size:1.7rem;
-}
-.recipePost{
-  width:90%;
-}
-.navigationBar{
-  width: 95%;
-}
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  .recipePost {
+    width: 90%;
+  }
+  .navigationBar {
+    width: 95%;
+  }
 }
 
+//amina css stuff
+
+.topmenu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.positionplusbutton {
+  position: absolute;
+  bottom: 130px;
+  right: 5%;
+  z-index: 1;
+}
+
+.searchbarbox {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.ImagecardList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.ImagecardList {
+  & div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+  }
+}
+
+.ImageBadgeList {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
 
 //Simon CSS stuff
 // for setting page
+
 .settingList {
   @include flexIt();
-  width:100%;
-justify-content: center;
-  height:9%;
-  
-
+  width: 100%;
+  justify-content: center;
+  height: 9%;
 }
+
 .headerSetting {
   @include flexIt();
-  width:100%;
+  width: 100%;
   margin-top: 15px;
   justify-content: left;
 }
 
 .title {
   @include flexIt();
-  margin-top:50px;
-  margin-bottom:10px;
-  
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
+
+
+// for setting > appearance  page
+.accountList {
+  width: 100%;
+  justify-content: center;
+  height: 9%;
 
 // for setting > appearance light mode page
 // for setting > account  page

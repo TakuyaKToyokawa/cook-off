@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   height: 100%;
   min-height: 200px;
-  max-height: 300px;
+  max-height: 400px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: inset 400px 400px 4px rgba(0, 0, 0, 0.4);
@@ -26,7 +26,7 @@ const Container = styled.div`
 const ImageButton = ({ text, image }) => {
   return (
     <Container image={image}>
-      <h2 style={{ color: "white" }}>{text}</h2>
+      <h2 style={{ color: "white"}}>{text}</h2>
     </Container>
   );
 };
