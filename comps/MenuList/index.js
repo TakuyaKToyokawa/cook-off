@@ -25,14 +25,22 @@ const Icon = styled.img`
   width: 30px;
   margin-right: 20px;
 `;
-
+const Arrow = styled.img`
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+`;
 const IconTextCont = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
 `;
-
-const MenuList = ({ displayIcon, icon, text, onClick }) => {
+const ArrowTextCont = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`;
+const MenuList = ({ displayIcon, icon,arrow, displayArrow, text, onClick }) => {
   return (
     <div>
       <Maindiv onClick={onClick}>
@@ -41,7 +49,7 @@ const MenuList = ({ displayIcon, icon, text, onClick }) => {
             {displayIcon == true ? <Icon src={icon} /> : undefined}
             <p>{text}</p>
           </IconTextCont>
-          <img src="./arrow.svg" />{" "}
+          <ArrowTextCont>{displayArrow == true ? <Arrow src={arrow} /> : undefined}</ArrowTextCont>
         </Text1div>
       </Maindiv>
     </div>
@@ -52,6 +60,8 @@ MenuList.defaultProps = {
   icon: "./appearance.svg",
   displayIcon: true,
   text: "Text",
+  arrow: "./arrow.svg",
+  displayArrow: true,
 };
 
 export default MenuList;
