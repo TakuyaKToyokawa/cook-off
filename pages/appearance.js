@@ -2,6 +2,9 @@ import NavigationHeader from "../comps/NavigationHeader";
 import MenuBar from "../comps/MenuBar";
 import MenuList from "../comps/MenuList";
 import FontSizeSlider from "../comps/FontSizeSlider";
+import OnOffInput from "../comps/OnOffInput";
+
+
 
 function Appearance() {
   return (

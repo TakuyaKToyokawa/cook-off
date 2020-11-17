@@ -3,7 +3,7 @@ import MenuList from "../comps/MenuList";
 import MenuBar from "../comps/MenuBar";
 
 
-function Account() {
+function Notification() {
   return (
     <main className="main">
     <div className="content">
@@ -15,10 +15,10 @@ function Account() {
       </div>
 
 <div className="title">
-<div className="titleImg"><img src="./account.svg"/></div>
-  <h2>Account</h2></div>
-<div className="accountList"><MenuList displayIcon="false" text="Change username"/></div>
-<div className="accountList"><MenuList displayIcon="false" text="Change password"/></div>
+<div className="titleImg"><img src="./notification.svg"/></div>
+  <h2>Notification</h2></div>
+<div className="accountList"><MenuList displayIcon="false" text="Messaging"/></div>
+<div className="accountList"><MenuList displayIcon="false" text="Followed USers Events"/></div>
 <MenuBar/>
       </div>
   </main>
@@ -26,4 +26,4 @@ function Account() {
   );
 }
 
-export default Account;
+export default Notification;
