@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-
+import Link from "next/link";
 const ButtonDiv = styled.h2`
   background: ${(props) =>
     props.color
@@ -17,23 +17,26 @@ const ButtonDiv = styled.h2`
   padding: 20px;
   display: flex;
   justify-content: center;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
-  &:hover{
+  &:hover {
     transform: scale(0.99);
   }
 `;
 
-const SecondaryButton = ({text, color}) => {
+const SecondaryButton = ({ text, color, link }) => {
   return (
-    <div color={color}>
-      <ButtonDiv>{text}</ButtonDiv>
-    </div>
+    <Link href={link}>
+      <div color={color}>
+        <ButtonDiv>{text}</ButtonDiv>
+      </div>
+    </Link>
   );
 };
 
 SecondaryButton.defaultProps = {
- text: "text"
-}
+  text: "text",
+  link: "default",
+};
 
 export default SecondaryButton;

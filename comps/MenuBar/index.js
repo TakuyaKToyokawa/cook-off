@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const Position = styled.div`
   position: fixed;
   bottom: 0px;
-  width:100%;
+  width: 100%;
 `;
 
 const Container = styled.div`
@@ -80,36 +81,42 @@ const MenuBar = ({}) => {
     <Position>
       <Container>
         <OptionContainer>
-          <IconContainer
-            onClick={() => {
-              setRecipe(1);
-              setEvents(0);
-              setProfile(0);
-            }}
-          >
-            <RecipeIcon src="./recipe.svg" active={recipe}></RecipeIcon>
-            <Text>Recipe</Text>
-          </IconContainer>
-          <IconContainer
-            onClick={() => {
-              setRecipe(0);
-              setEvents(0);
-              setProfile(1);
-            }}
-          >
-            <ProfileIcon src="./profile.svg" active={profile}></ProfileIcon>
-            <Text>Profile</Text>
-          </IconContainer>
-          <IconContainer
-            onClick={() => {
-              setRecipe(0);
-              setEvents(1);
-              setProfile(0);
-            }}
-          >
-            <EventsIcon src="./events.svg" active={events}></EventsIcon>
-            <Text>Events</Text>
-          </IconContainer>
+          <Link href="/recipepage">
+            <IconContainer
+              onClick={() => {
+                setRecipe(1);
+                setEvents(0);
+                setProfile(0);
+              }}
+            >
+              <RecipeIcon src="./recipe.svg" active={recipe}></RecipeIcon>
+              <Text>Recipe</Text>
+            </IconContainer>
+          </Link>
+          <Link href="/profile">
+            <IconContainer
+              onClick={() => {
+                setRecipe(0);
+                setEvents(0);
+                setProfile(1);
+              }}
+            >
+              <ProfileIcon src="./profile.svg" active={profile}></ProfileIcon>
+              <Text>Profile</Text>
+            </IconContainer>
+          </Link>
+          <Link href="/Events">
+            <IconContainer
+              onClick={() => {
+                setRecipe(0);
+                setEvents(1);
+                setProfile(0);
+              }}
+            >
+              <EventsIcon src="./events.svg" active={events}></EventsIcon>
+              <Text>Events</Text>
+            </IconContainer>
+          </Link>
         </OptionContainer>
         <OptionContainer>
           <AnimatedLine active={recipe}></AnimatedLine>

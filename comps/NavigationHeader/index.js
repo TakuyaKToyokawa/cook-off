@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const Maindiv = styled.h1`
   width: 100px;
@@ -14,6 +15,7 @@ const Textdiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 50px;
+  margin-left: 20px;
   padding-left: ${(props) => (props.displayArrow ? "25px" : "0px")};
 `;
 
@@ -23,11 +25,15 @@ const Arrow = styled.img`
   cursor: pointer;
 `;
 
-const NavigationHeader = ({ text, displayArrow }) => {
+const NavigationHeader = ({ text, displayArrow, link }) => {
   return (
     <div>
       <Maindiv>
-        {displayArrow == true ? <Arrow src="./redarrow.png" /> : undefined}
+        {displayArrow == true ? (
+          <Link href={link}>
+            <Arrow src="./redarrow.png" />
+          </Link>
+        ) : undefined}
         <Textdiv> {text} </Textdiv>
       </Maindiv>
     </div>
@@ -37,7 +43,7 @@ const NavigationHeader = ({ text, displayArrow }) => {
 NavigationHeader.defaultProps = {
   text: "text",
   displayArrow: true,
+  link: "default",
 };
-
 
 export default NavigationHeader;

@@ -11,7 +11,7 @@ function RecipeIngredients() {
     <main className="main">
       <div className="content">
         <nav className="navigationBar">
-          <NavigationHeader text="Recipe" />
+          <NavigationHeader text="Recipe" link="/recipepage"/>
           <SettingsIcon />
         </nav>
         <RecipePost />

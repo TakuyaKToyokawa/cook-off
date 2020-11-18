@@ -11,8 +11,8 @@ function LoginOrSignUp() {
         <h1>Cookoff !</h1>
         <h4>the best cooking app ever</h4>
         <div className="vMargin">
-          <PrimaryButton text="Sign up"></PrimaryButton>
-          <PrimaryButton text="Log in"></PrimaryButton>
+          <PrimaryButton text="Sign up" link="/signup"></PrimaryButton>
+          <PrimaryButton text="Log in" link="/login2"></PrimaryButton>
         </div>
       </div>
     </main>
