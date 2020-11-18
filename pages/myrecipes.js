@@ -5,9 +5,6 @@ import Searchbar from "../comps/Searchbar";
 import NavigationHeader from "../comps/NavigationHeader";
 import ImageCard from "../comps/ImageCard";
 
-
-
-
 function MyRecipes() {
   return (
     <main className="main">
@@ -17,7 +14,7 @@ function MyRecipes() {
         <NavigationHeader text="My Recipes"> </NavigationHeader>
         <SettingsIcon> </SettingsIcon>
         </div>
-
+      
         <div className="searchbarbox">
         <Searchbar></Searchbar>
         </div>
@@ -31,6 +28,7 @@ function MyRecipes() {
         <ImageCard text="Italian" image="url('./pasta.jpg')"></ImageCard>
         <ImageCard text="Asian" image="url('./asianfood.jpg')"></ImageCard>
         </div>
+      
   
       </div>
       <MenuBar></MenuBar>
