@@ -37,6 +37,7 @@ const ProfileContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
   max-width: 100px;
   max-height: 100px;
 `;
@@ -44,8 +45,7 @@ const ProfileContainer = styled.div`
 const InfoContainer = styled.div`
   display: flex;
   width: 100%;
-
-  flex: 6;
+  flex: 10;
   align-items: flex-end;
 `;
 
@@ -82,6 +82,7 @@ const Profile = styled.div`
   min-height: 100px;
   border-radius: 50%;
   z-index: 0;
+  background-size:cover;
   background-image: ${(props) =>
     props.profile ? props.profile : "url('./BackgroundImage.png')"};
 `;
@@ -100,6 +101,14 @@ const BadgeText = styled.p`
   margin: 0px 5px;
 `;
 
+const Title = styled.h2 `
+margin: 10px 0px;
+`
+
+const Username = styled.p `
+font-weight: 0; 
+margin: 5px 0 ;
+`
 const ImageButton = ({profile, viewers, image, date, title, user }) => {
   return (
     <Container image={image}>
@@ -121,8 +130,8 @@ const ImageButton = ({profile, viewers, image, date, title, user }) => {
           </Profile>
         </ProfileContainer>
         <TextContainer>
-          <h2>{title}</h2>
-  <h3>{user}</h3>
+          <Title>{title}</Title>
+  <Username>{user}</Username>
         </TextContainer>
       </InfoContainer>
     </Container>

@@ -3,6 +3,7 @@ import SettingsIcon from "../comps/SettingsIcon";
 import Avatar from "../comps/Avatar";
 import LevelBar from "../comps/LevelBar";
 import ProfileList from "../comps/ProfileList";
+import MenuBar from "../comps/MenuBar";
 
 function Profile() {
   return (

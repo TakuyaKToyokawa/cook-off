@@ -1,13 +1,14 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const Maindiv = styled.h5`
   width: 100%;
   border-bottom: 1px solid #e2e2e2;
-  transition: .1s ease-in-out;
-  cursor:pointer;
-  &:hover{
-    background-color: #EEE;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #eee;
   }
 `;
 
@@ -17,7 +18,7 @@ const Text1div = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 12px;
-  min-width:77vw;
+  min-width: 77vw;
 `;
 
 const Icon = styled.img`
@@ -40,19 +41,31 @@ const ArrowTextCont = styled.div`
   align-items: center;
   justify-content: flex-start;
 `;
-const MenuList = ({ displayIcon, icon,arrow, displayArrow, text, onClick }) => {
+const MenuList = ({
+  displayIcon,
+  icon,
+  arrow,
+  displayArrow,
+  text,
+  onClick,
+  link
+}) => {
   return (
-    <div>
-      <Maindiv onClick={onClick}>
-        <Text1div>
-          <IconTextCont>
-            {displayIcon == true ? <Icon src={icon} /> : undefined}
-            <p>{text}</p>
-          </IconTextCont>
-          <ArrowTextCont>{displayArrow == true ? <Arrow src={arrow} /> : undefined}</ArrowTextCont>
-        </Text1div>
-      </Maindiv>
-    </div>
+    <Link href={link}>
+      <div>
+        <Maindiv onClick={onClick}>
+          <Text1div>
+            <IconTextCont>
+              {displayIcon == true ? <Icon src={icon} /> : undefined}
+              <p>{text}</p>
+            </IconTextCont>
+            <ArrowTextCont>
+              {displayArrow == true ? <Arrow src={arrow} /> : undefined}
+            </ArrowTextCont>
+          </Text1div>
+        </Maindiv>
+      </div>
+    </Link>
   );
 };
 
@@ -62,6 +75,7 @@ MenuList.defaultProps = {
   text: "Text",
   arrow: "./arrow.svg",
   displayArrow: true,
+  link: "/welcome"
 };
 
 export default MenuList;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const ButtonDiv = styled.h2`
   width: 100%;
@@ -18,25 +19,27 @@ const ButtonDiv = styled.h2`
   padding: 20px;
   display: flex;
   justify-content: center;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
-  &:hover{
+  &:hover {
     transform: scale(0.99);
   }
 `;
 
-const PrimaryButton = ({ text, color }) => {
+const PrimaryButton = ({ text, color, link, onClick }) => {
   return (
-    <div style={{width: "100%"}}>
-      <ButtonDiv color={color}> {text} </ButtonDiv>
-    </div>
+    <Link href={link}>
+      <div style={{ width: "100%" }}>
+        <ButtonDiv color={color}> {text} </ButtonDiv>
+      </div>
+    </Link>
   );
 };
 
-
 PrimaryButton.defaultProps = {
   text: "text",
- }
- 
+  link: "default",
+  onClick: () => {},
+};
 
 export default PrimaryButton;
