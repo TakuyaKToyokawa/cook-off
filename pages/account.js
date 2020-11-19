@@ -10,7 +10,7 @@ function Account() {
      
     <div className="headerSetting">
     
-      <NavigationHeader text="Setting"/>
+      <NavigationHeader text="Setting"link="/setting.js"/>
       
       </div>
 

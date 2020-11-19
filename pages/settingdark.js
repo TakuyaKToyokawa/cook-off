@@ -9,7 +9,7 @@ function AppearanceDark() {
   return (
     <main className="mainDark">
     <div className="contentDark">
-    <div className="headerSettingDark"><NavigationHeader text="Setting"/></div>
+    <div className="headerSettingDark"><NavigationHeader text="Setting"link="/setting"/></div>
 
      <div className="titleDark">
      <div className="titleImgDark"><img src="./appearance.svg"/></div>
