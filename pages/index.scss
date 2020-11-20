@@ -14,58 +14,64 @@ a {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, button {
-    font-family: 'Red Hat Display', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: 'Red Hat Display', sans-serif;
 }
 
-h1{
-    color: #A904F8;
-    font-size: 3rem;
-    margin: 1rem;
+h1 {
+  color: #A904F8;
+  font-size: 3rem;
+  margin: 1rem;
 }
 
-.vMargin{
-    margin: 1.5rem 0;
-    width: 100%;
+.vMargin {
+  margin: 1.5rem 0;
+  width: 100%;
 }
 
-.smallVMargin{
+.smallVMargin {
   margin: .5rem 0;
 }
 
-.main{
-    @include flexIt();
-    width: 100%;
-    height: 100vh;
-    background-image: url('../public/Background.png');
+.main {
+  @include flexIt();
+  width: 100%;
+  height: 100vh;
+  background-image: url('../public/Background.png');
 }
 
-.flexColumn{
-    @include flexIt();
-    flex-direction: column;
+.flexColumn {
+  @include flexIt();
+  flex-direction: column;
 }
 
-.flexRow{
-  width:100%;
+.flexRow {
+  width: 100%;
   @include flexIt();
   flex-direction: row;
   justify-content: space-between;
 }
 
 .content {
-    @include flexIt();
-    justify-content: flex-start;
-    flex-direction: column;
-    max-width: 600px;
-    width: 100%;
-    margin: 0px 50px; 
-    height: 100%;
+  @include flexIt();
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  margin: 0px 50px;
+  height: 100%;
 }
 
 //Takuya CSS stuff
 .navigationBar {
   @include flexIt();
-  width:100%;
+  width: 100%;
   margin: 15px 20px;
   justify-content: space-between;
 }
@@ -75,10 +81,11 @@ h1{
   margin: 2% 0px;
   min-height: 160px;
   width: 80%;
-  max-width:430px;
+  max-width: 430px;
   flex-direction: row;
   overflow-x: auto;
-  div{ 
+
+  div {
     margin: 0px 10px;
   }
 }
@@ -88,32 +95,36 @@ h1{
   align-items: flex-start;
   margin: 10px 20px;
   max-width: 480px;
-  width:100%;
+  width: 100%;
   flex-direction: column;
-  & > div{ 
+
+  &>div {
     margin: 15px 0px;
   }
 }
 
-.plusButton{
+.plusButton {
   position: fixed;
   bottom: 130px;
   right: 5%;
 }
 
-@media only screen and (max-width: 420px){
-h1{
-  font-size: 2rem;
-}
-h2 {
-  font-size:1.7rem;
-}
-.recipePost{
-  width:90%;
-}
-.navigationBar{
-  width: 95%;
-}
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .recipePost {
+    width: 90%;
+  }
+
+  .navigationBar {
+    width: 95%;
+  }
 }
 
 
@@ -121,31 +132,50 @@ h2 {
 // for setting page
 .settingList {
   @include flexIt();
-  width:100%;
-justify-content: center;
-  height:9%;
-  
+  width: 100%;
+  justify-content: center;
+  height: 9%;
+
 
 }
+
 .headerSetting {
   @include flexIt();
-  width:100%;
+  width: 100%;
   margin-top: 15px;
   justify-content: left;
 }
 
 .title {
   @include flexIt();
-  margin-top:50px;
-  margin-bottom:10px;
-  
+  margin-top: 50px;
+  margin-bottom: 10px;
+
 }
 
 // for setting > appearance  page
 // for setting > account  page
-.accountList{
-  
-  width:100%;
+.accountList {
+  width: 100%;
   justify-content: center;
-    height:9%;
+  height: 9%;
+}
+
+//events cards
+.eventsCards {
+  list-style: none;
+  height: 450px;
+  overflow-y: scroll;
+  padding: 0;
+  justify-content: center;
+}
+
+.eventCard {
+  margin: 0 0 10px 0;
+}
+
+.rightBias {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
 }
