@@ -12,7 +12,7 @@ function CreateRecipe() {
     <main className="main">
       <div className="content">
         <nav className="navigationBar">
-          <NavigationHeader text="Recipe" link="/recipepage"/>
+          <NavigationHeader text="Recipe" link="/recipepage" />
           <SettingsIcon />
         </nav>
         <InputForm label="Name" />
@@ -20,16 +20,15 @@ function CreateRecipe() {
         <AddIng title="Add Ingredients">
           <NewIng />
         </AddIng>
-        <AddIng title="Add Images">
-        </AddIng>
+        <AddIng title="Add Images"></AddIng>
         <div className="plusButton">
           <PlusButton />
         </div>
         <div className="vMargin">
           <PrimaryButton text="Publish"></PrimaryButton>
         </div>
-        <MenuBar />
       </div>
+      <MenuBar />
     </main>
   );
 }

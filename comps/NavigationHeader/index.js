@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import Link from "next/link";
 
 const Maindiv = styled.div`
-  width: 100px;
+  width: 100%;
   color: #f04b4a;
   display: inline-flex;
   flex-direction: row;
@@ -15,9 +15,9 @@ const Textdiv = styled.h1`
   display: flex;
   color: #f14b4a;
   flex-direction: column;
-  width: 50px;
+  width: 100%;
   margin: 0px;
-  margin-left: 20px;
+margin-left: ${props => props.displayArrow ? "20px" : "0px"};
   padding-left: ${(props) => (props.displayArrow ? "25px" : "0px")};
 `;
 

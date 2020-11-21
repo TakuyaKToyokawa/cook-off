@@ -14,8 +14,15 @@ a {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6,p, button {
-    font-family: 'Red Hat Display', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  font-family: "Red Hat Display", sans-serif;
 }
 
 h1 {
@@ -42,6 +49,19 @@ h1 {
   width: 100%;
   height: 100vh;
   background-image: url("../public/Background.png");
+  .content {
+    justify-content: flex-start;
+    max-width: 600px;
+    width: 100%;
+    padding: 0px 25px;
+    height: 100%;
+    .alignCenter{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .flexColumn {
@@ -56,29 +76,20 @@ h1 {
   justify-content: space-between;
 }
 
-.content {
-  @include flexIt();
-  justify-content: flex-start;
-  flex-direction: column;
-  max-width: 600px;
-  width: 100%;
-  margin: 0px 50px;
-  height: 100%;
-}
-
 //Takuya CSS stuff
 .navigationBar {
   @include flexIt();
   width: 100%;
-  margin: 20px 20px;
+  margin: 20px 0px;
   justify-content: space-between;
 }
 
 .categories {
   @include flexIt();
-  margin: 2% 0px;
+  align-items: center;
   min-height: 160px;
-  width: 80%;
+  width: 100%;
+  margin: 0px;
   max-width: 430px;
   flex-direction: row;
   overflow-x: auto;
@@ -90,7 +101,6 @@ h1 {
 .recipePost {
   @include flexIt();
   align-items: flex-start;
-  margin: 10px 20px;
   max-width: 480px;
   width: 100%;
   flex-direction: column;
@@ -105,20 +115,7 @@ h1 {
   right: 5%;
 }
 
-@media only screen and (max-width: 420px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.7rem;
-  }
-  .recipePost {
-    width: 90%;
-  }
-  .navigationBar {
-    width: 95%;
-  }
-}
+
 
 //amina css stuff
 
@@ -157,7 +154,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin: 15px;
-    
   }
 }
 
@@ -167,12 +163,10 @@ h1 {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  & > div{
+  & > div {
     margin: 15px 0px;
   }
 }
-
-
 
 //Simon CSS stuff
 // for setting page
@@ -197,71 +191,76 @@ h1 {
   margin-bottom: 10px;
 }
 
-
 // for setting > appearance  page
 .accountList {
   width: 100%;
   justify-content: center;
   height: 9%;
 
-// for setting > appearance light mode page
-// for setting > account  page
+  // for setting > appearance light mode page
+  // for setting > account  page
 
-
-.accountList{
-  
-  width:100%;
-  justify-content: center;
-    height:9%;
-}
-
-.titleImg{
-  margin:10px;
-}
-
-// appearance dark mode page 
-
-.mainDark{
-  @include flexIt();
-  width: 100%;
-  height: 100vh;
-  background-color:black;
-  background-image: url('../public/Background.png');
-
-.contentDark{
-  @include flexIt();
-  justify-content: flex-start;
-  flex-direction: column;
-  max-width: 600px;
-  width: 100%;
-  color:white;
-  margin: 0px 50px; 
-  height: 100%;
-
-
-  .headerSettingDark{
-    @include flexIt();
-    width:100%;
-    margin-top: 15px;
-    justify-content: left;
+  .accountList {
+    width: 100%;
+    justify-content: center;
+    height: 9%;
   }
 
-  .titleDark{
+  .titleImg {
+    margin: 10px;
+  }
+
+  // appearance dark mode page
+
+  .mainDark {
     @include flexIt();
-    margin-top:50px;
-    margin-bottom:10px;
-    
-    .titleImgDark{
-      margin:10px;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background-image: url("../public/Background.png");
+
+    .contentDark {
+      @include flexIt();
+      justify-content: flex-start;
+      flex-direction: column;
+      max-width: 600px;
+      width: 100%;
+      color: white;
+      margin: 0px 50px;
+      height: 100%;
+
+      .headerSettingDark {
+        @include flexIt();
+        width: 100%;
+        margin-top: 15px;
+        justify-content: left;
+      }
+
+      .titleDark {
+        @include flexIt();
+        margin-top: 50px;
+        margin-bottom: 10px;
+
+        .titleImgDark {
+          margin: 10px;
+        }
+      }
+      .settingListDark {
+        @include flexIt();
+        width: 100%;
+        justify-content: center;
+        height: 9%;
+      }
     }
   }
-  .settingListDark{
-    @include flexIt();
-    width:100%;
-  justify-content: center;
-    height:9%;
-    
+}
+
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
   }
-}
-}
+  h2 {
+    font-size: 1.7rem;
+  }
+
 }

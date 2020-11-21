@@ -9,22 +9,34 @@ function YourFriends() {
   return (
     <main className="main">
       <div className="content">
-        <div className= "topmenu">
-        <NavigationHeader text="My Events"> </NavigationHeader>
-        <SettingsIcon> </SettingsIcon>
-        </div>
-        <div className="searchbarbox">
-        <Searchbar></Searchbar>
-        </div>
+        <nav className="navigationBar">
+          <NavigationHeader text="My Events" displayArrow={false}>
+            {" "}
+          </NavigationHeader>
+          <SettingsIcon> </SettingsIcon>
+        </nav>
+          <Searchbar></Searchbar>
         <div className="ImageBadgeList">
-            <ImageCardWithBadge title="BURGER BREAKY" date="11/24/2020 9am" user="BestCookEver1!" profile="url('./profilephoto1.png')"></ImageCardWithBadge>
-            <ImageCardWithBadge title="PHO SOUP" date="11/29/2020 4pm" user="SoupKing55" image="url('./asianfood.jpg')" profile="url('./profilephoto3.png')"> </ImageCardWithBadge>
+          <ImageCardWithBadge
+            title="BURGER BREAKY"
+            date="11/24/2020 9am"
+            user="BestCookEver1!"
+            profile="url('./profilephoto1.png')"
+          ></ImageCardWithBadge>
+          <ImageCardWithBadge
+            title="PHO SOUP"
+            date="11/29/2020 4pm"
+            user="SoupKing55"
+            image="url('./asianfood.jpg')"
+            profile="url('./profilephoto3.png')"
+          >
+            {" "}
+          </ImageCardWithBadge>
         </div>
 
-        <div className="positionplusbutton"> 
-        <PlusButton></PlusButton>
+        <div className="plusButton">
+          <PlusButton></PlusButton>
         </div>
-
       </div>
       <MenuBar></MenuBar>
     </main>

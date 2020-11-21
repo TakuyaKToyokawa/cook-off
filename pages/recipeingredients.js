@@ -11,7 +11,7 @@ function RecipeIngredients() {
     <main className="main">
       <div className="content">
         <nav className="navigationBar">
-          <NavigationHeader text="Recipe" link="/recipepage"/>
+          <NavigationHeader text="Recipe" link="/recipepage" />
           <SettingsIcon />
         </nav>
         <RecipePost />
@@ -32,8 +32,8 @@ function RecipeIngredients() {
         <div className="plusButton">
           <PlusButton />
         </div>
-        <MenuBar />
       </div>
+      <MenuBar />
     </main>
   );
 }

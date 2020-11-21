@@ -20,7 +20,7 @@ function SignUp() {
         <InputForm label="Password" placeholder="Password"/>
         <InputForm label="Confirm Password" placeholder="Confirm Password"/>
         <div className="vMargin">
-          <PrimaryButton text="Signup" link="/signup"></PrimaryButton>
+          <PrimaryButton text="Signup" link="/profile"></PrimaryButton>
         </div>
       </div>
     </main>

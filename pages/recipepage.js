@@ -25,7 +25,10 @@ function RecipePage() {
             <h2 className="smallVMargin">Popular Recipes</h2>
             <p className="smallVMargin">Show All</p>
           </div>
-          <RecipePost title="Sushi tray for Thanksgiving!" link="/recipeingredients" />
+          <RecipePost
+            title="Sushi tray for Thanksgiving!"
+            link="/recipeingredients"
+          />
           <RecipePost />
           <RecipePost />
           <RecipePost />
@@ -34,8 +37,8 @@ function RecipePage() {
         <div className="plusButton">
           <PlusButton />
         </div>
-        <MenuBar />
       </div>
+      <MenuBar />
     </main>
   );
 }
