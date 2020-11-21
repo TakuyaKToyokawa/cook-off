@@ -1,9 +1,9 @@
-import MenuBar from "../comps/MenuBar";
-import PlusButton from "../comps/PlusButton";
-import RecipePost from "../comps/RecipePost";
-import NavigationHeader from "../comps/NavigationHeader";
-import SettingsIcon from "../comps/SettingsIcon";
-import CategoryRecipe from "../comps/CategoryRecipe";
+import MenuBar from "../../comps/MenuBar";
+import PlusButton from "../../comps/PlusButton";
+import RecipePost from "../../comps/RecipePost";
+import NavigationHeader from "../../comps/NavigationHeader";
+import SettingsIcon from "../../comps/SettingsIcon";
+import CategoryRecipe from "../../comps/CategoryRecipe";
 
 function RecipePage() {
   return (
@@ -27,7 +27,7 @@ function RecipePage() {
           </div>
           <RecipePost
             title="Sushi tray for Thanksgiving!"
-            link="/recipeingredients"
+            link="/recipe/ingredients"
           />
           <RecipePost />
           <RecipePost />

@@ -45,8 +45,8 @@ const CategoryRecipe = ({ text, img, onClick }) => {
 
 CategoryRecipe.defaultProps = {
   text: "",
-  img: "./sushi.svg",
+  img: "icons/recipe/sushi.svg",
   link: "default",
-  onClick: () => {},
+  onClick: () => {console.log("clicked")},
 };
 export default CategoryRecipe;

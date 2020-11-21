@@ -1,18 +1,15 @@
-import NavigationHeader from "../comps/NavigationHeader";
-import MenuBar from "../comps/MenuBar";
-import MenuList from "../comps/MenuList";
-import FontSizeSlider from "../comps/FontSizeSlider";
-import OnOffInput from "../comps/OnOffInput";
-
-
+import NavigationHeader from "../../comps/NavigationHeader";
+import MenuBar from "../../comps/MenuBar";
+import MenuList from "../../comps/MenuList";
+import FontSizeSlider from "../../comps/FontSizeSlider";
 
 function Appearance() {
   return (
     <main className="main">
       <div className="content">
-        <div className="headerSetting">
-          <NavigationHeader text="Setting" link="/setting.js"/>
-        </div>
+        <nav className="navigationBar">
+          <NavigationHeader text="Setting" link="/settings"/>
+        </nav>
         <div>
           <h2>Appearance</h2>
         </div>
@@ -23,7 +20,7 @@ function Appearance() {
           <FontSizeSlider />
         </div>
         <div className="settingList">
-          <MenuList icon="./appearance.svg" text="Appearance" />
+          <MenuList icon="/icons/settings/appearance.svg" text="Appearance" />
         </div>
       </div>
       <MenuBar />

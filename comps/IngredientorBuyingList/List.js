@@ -70,7 +70,7 @@ List.defaultProps = {
   textTwo: "$3.55",
   displayIcon: false,
   displayPrice: true,
-  Icon: "./walmart.svg"
+  Icon: "/icons/recipe/walmart.svg"
 };
 
 export default List;

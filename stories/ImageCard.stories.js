@@ -15,9 +15,7 @@ export const SecondaryImageButton = Template.bind({});
 
 PrimaryImageButton.args = {
   title: "Default Title",
-  profile: "url('./BackgroundImage.png')",
   viewers: 1000,
-  image: "url('./BackgroundImage.png')",
   date: "XX/XX/2020 XPM",
   user: "Default User"
   

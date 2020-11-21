@@ -14,8 +14,8 @@ const Icon = styled.img`
 
 const SettingsIcon = () => {
   return (
-    <Link href="/setting">
-      <Icon src="./settingsIcon.svg" />
+    <Link href="/settings">
+      <Icon src="/icons/general/settings.svg" />
     </Link>
   );
 };

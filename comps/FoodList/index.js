@@ -77,12 +77,12 @@ const FoodList = ({ title, time, img }) => {
       <InfoContainer style={{ flexDirection: "column" }}>
         <Title>{title}</Title>
         <TimeContainer>
-          <Time src="./clock.svg"></Time>
+          <Time src="icons/recipe/clock.svg"></Time>
           <p style={{ margin: "0px" }}>{time}</p>
         </TimeContainer>
         <ButtonContainer>
           <Button>View Recipe</Button>
-          <Arrow src="./Arrow.svg"></Arrow>
+          <Arrow src="/icons/general/Arrow.svg"></Arrow>
         </ButtonContainer>
       </InfoContainer>
     </Container>
@@ -92,7 +92,7 @@ const FoodList = ({ title, time, img }) => {
 FoodList.defaultProps = {
   title: "Title",
   time: "40m",
-  img: "./Image.jpg",
+  img: "/img/food/Image.jpg",
 };
 
 export default FoodList;

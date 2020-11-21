@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
+
 const ButtonDiv = styled.h2`
   background: ${(props) =>
     props.color
@@ -24,19 +25,28 @@ const ButtonDiv = styled.h2`
   }
 `;
 
-const SecondaryButton = ({ text, color, link }) => {
+const SecondaryButton = ({ text, color, link, onClick }) => {
   return (
-    <Link href={link}>
-      <div color={color}>
-        <ButtonDiv>{text}</ButtonDiv>
-      </div>
-    </Link>
+    <div>
+      {link == undefined ? (
+        <div onClick={onClick} color={color}>
+          <ButtonDiv>{text}</ButtonDiv>
+        </div>
+      ) : (
+        <Link href={link}>
+          <div color={color}>
+            <ButtonDiv>{text}</ButtonDiv>
+          </div>
+        </Link>
+      )}
+    </div>
   );
 };
 
 SecondaryButton.defaultProps = {
   text: "text",
-  link: "default",
+  link: undefined,
+  onClick: () => {console.log("clicked")},
 };
 
 export default SecondaryButton;

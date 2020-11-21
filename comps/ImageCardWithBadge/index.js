@@ -13,7 +13,7 @@ const Container = styled.div`
   overflow: hidden;
   box-shadow: inset 1000px 1000px 4px rgba(0, 0, 0, 0.4);
   background-image: ${(props) =>
-    props.image ? props.image : "url('./BackgroundImage.png')"};
+    props.image ? props.image : "url('/img/food/BackgroundImage.png')"};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -84,7 +84,7 @@ const Profile = styled.div`
   z-index: 0;
   background-size:cover;
   background-image: ${(props) =>
-    props.profile ? props.profile : "url('./BackgroundImage.png')"};
+    props.profile ? props.profile : "url('/img/food/BackgroundImage.png')"};
 `;
 
 const Status = styled.div`
@@ -114,11 +114,11 @@ const ImageButton = ({profile, viewers, image, date, title, user }) => {
     <Container image={image}>
       <BadgeContainer>
         <Badge>
-          <Icon src="./badgeprofile.svg" />
+          <Icon src="/icons/general/badgeprofile.svg" />
           <BadgeText>{viewers}</BadgeText>
         </Badge>
         <Badge>
-          <Icon src="./calendar.svg" />
+          <Icon src="/icons/general/calendar.svg" />
           <BadgeText>{date}</BadgeText>
         </Badge>
       </BadgeContainer>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Maindiv = styled.div`
   width: 100%;
@@ -48,20 +49,23 @@ const ArrowandTitle = styled.div`
 `;
 
 const Arrow = styled.img`
-  width: 20px;
-  height: 30px;
+  width: 40px;
+  height: 50px;
   cursor: pointer;
+  transform: rotate(180deg);
 `;
 
 const Textmini = styled.p``;
 
-const StreamHeader = ({ name, title, viewers }) => {
+const StreamHeader = ({ name, title, viewers, link }) => {
   return (
     <div>
       <Maindiv>
         <Flexeddiv>
           <ArrowandTitle>
-            <Arrow src="./Arrow.png" />
+            <Link href={link}>
+              <Arrow src="/icons/general/arrow-white.svg" />
+            </Link>
           </ArrowandTitle>
           <Textdiv>
             <Title>{name}</Title>
@@ -78,6 +82,7 @@ StreamHeader.defaultProps = {
   viewers: "999",
   name: "Lily Lee",
   title: "Chef Lily",
+  link: "default"
 };
 
 export default StreamHeader;

@@ -1,7 +1,7 @@
-import MenuBar from "../comps/MenuBar";
-import Inputform from "../comps/Inputform";
-import Logos from "../comps/Logos";
-import PrimaryButton from "../comps/PrimaryButton";
+import MenuBar from "../../comps/MenuBar";
+import Inputform from "../../comps/Inputform";
+import Logos from "../../comps/Logos";
+import PrimaryButton from "../../comps/PrimaryButton";
 
 function Login2() {
   return (

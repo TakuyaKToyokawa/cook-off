@@ -1,10 +1,10 @@
-import MenuBar from "../comps/MenuBar";
-import PlusButton from "../comps/PlusButton";
-import RecipePost from "../comps/RecipePost";
-import NavigationHeader from "../comps/NavigationHeader";
-import SettingsIcon from "../comps/SettingsIcon";
-import IngredientorBuyingList from "../comps/IngredientorBuyingList";
-import List from "../comps/IngredientorBuyingList/List.js";
+import MenuBar from "../../comps/MenuBar";
+import PlusButton from "../../comps/PlusButton";
+import RecipePost from "../../comps/RecipePost";
+import NavigationHeader from "../../comps/NavigationHeader";
+import SettingsIcon from "../../comps/SettingsIcon";
+import IngredientorBuyingList from "../../comps/IngredientorBuyingList";
+import List from "../../comps/IngredientorBuyingList/List.js";
 
 function RecipeIngredients() {
   return (

@@ -7,6 +7,7 @@ const RecipePostBox = styled.div`
   position: relative;
   width: 100%;
   border-radius: 9px;
+  cursor: pointer;
 `;
 
 const RecipePostImg = styled.img`
@@ -78,12 +79,12 @@ const RecipePost = ({ title, time, name, img, link }) => {
           </RecipePostDetails>
           <RecipePostUpDown>
             <RecipePostUp>
-              <Icon src="/upvote.svg" />
+              <Icon src="/icons/recipe/upvote.svg" />
               {/* get Data from database */}
               <RecipePostUpText>225</RecipePostUpText>
             </RecipePostUp>
             <RecipePostUp>
-              <Icon src="/downvote.svg" />
+              <Icon src="/icons/recipe/downvote.svg" />
               {/* get Data from database */}
               <RecipePostUpText>15</RecipePostUpText>
             </RecipePostUp>
@@ -97,7 +98,7 @@ const RecipePost = ({ title, time, name, img, link }) => {
 RecipePost.defaultProps = {
   title: "Mooncake quickly",
   time: "40m",
-  img: "./mooncake.png",
+  img: "/img/food/mooncake.png",
   name: "by Jenny Tran",
   link: "/welcome",
 };

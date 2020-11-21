@@ -1,5 +1,5 @@
-import Logos from "../comps/Logos";
-import PrimaryButton from "../comps/PrimaryButton";
+import Logos from "../../comps/Logos";
+import PrimaryButton from "../../comps/PrimaryButton";
 
 function LoginOrSignUp() {
   return (
@@ -11,8 +11,8 @@ function LoginOrSignUp() {
         <h1>Cookoff !</h1>
         <h4>the best cooking app ever</h4>
         <div className="vMargin">
-          <PrimaryButton text="Sign up" link="/signup"></PrimaryButton>
-          <PrimaryButton text="Log in" link="/login2"></PrimaryButton>
+          <PrimaryButton text="Sign up" link="/welcome-process/signup"></PrimaryButton>
+          <PrimaryButton text="Log in" link="/welcome-process/login"></PrimaryButton>
         </div>
       </div>
     </main>

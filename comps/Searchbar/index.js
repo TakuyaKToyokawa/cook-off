@@ -40,7 +40,7 @@ const Searchbar = ({ placeholder }) => {
   return (
     <Container>
       <SearchDiv placeholder={placeholder} />
-      <Icondiv src="./searchicon.png" />
+      <Icondiv src="/icons/general/searchicon.png" />
     </Container>
   );
 };

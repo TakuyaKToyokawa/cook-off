@@ -1,17 +1,17 @@
-import NavigationHeader from "../comps/NavigationHeader";
-import MenuList from "../comps/MenuList";
-import MenuBar from "../comps/MenuBar";
+import NavigationHeader from "../../comps/NavigationHeader";
+import MenuList from "../../comps/MenuList";
+import MenuBar from "../../comps/MenuBar";
 
 function Account() {
   return (
     <main className="main">
       <div className="content">
-        <div className="headerSetting">
-          <NavigationHeader text="Setting" />
-        </div>
+        <nav className="navigationBar">
+          <NavigationHeader text="Setting" link="/settings" />
+        </nav>
         <div className="title">
           <div className="titleImg">
-            <img src="./account.svg" />
+            <img src="/icons/settings/account.svg" />
           </div>
           <h2>Account</h2>
         </div>
@@ -20,7 +20,7 @@ function Account() {
         </div>
         <div className="accountList">
           <MenuList displayIcon="false" text="Change password" />
-        </div>        
+        </div>
       </div>
       <MenuBar />
     </main>

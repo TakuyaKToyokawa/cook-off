@@ -22,12 +22,16 @@ const ButtonPhoneImage = styled.img`
   border-radius: 30%;
 `;
 
-const ButtonMic = ({}) => {
+const ButtonMic = ({onClick}) => {
   return (
-    <ButtonPhoneContainer>
-      <ButtonPhoneImage src="./micro.svg" />
+    <ButtonPhoneContainer onClick={onClick}>
+      <ButtonPhoneImage src="/icon/events/micro.svg" />
     </ButtonPhoneContainer>
   );
 };
+
+ButtonMic.defaultProps = {
+  onClick: () => {console.log("clicked")}
+}
 
 export default ButtonMic;

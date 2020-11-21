@@ -5,7 +5,7 @@ function Profile() {
     <main className="main">
       <div className="content">
         <h3>Cook, share, connect, and have fun virtually!</h3>
-        <PrimaryButton text="Getting Started" link="/Loginorsignup"/>
+        <PrimaryButton text="Getting Started" link="/welcome-process"/>
       </div>
     </main>
   );
