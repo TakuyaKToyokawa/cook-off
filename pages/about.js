@@ -9,7 +9,7 @@ function About() {
   return (
     <main className="main">
     <div className="content">
-    <div className="headerSetting"><NavigationHeader text="Setting"/></div>
+    <div className="headerSetting"><NavigationHeader text="Setting"link="/setting.js"/></div>
     <div className="title">
      <div className="titleImg"></div>
        <h2>About</h2></div>

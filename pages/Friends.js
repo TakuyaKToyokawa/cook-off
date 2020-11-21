@@ -15,7 +15,7 @@ function YourFriends() {
       <div className="content">
 
         <div className= "topmenu">
-        <NavigationHeader text="My Friends"> </NavigationHeader>
+        <NavigationHeader text="My Friends" link="/profile"> </NavigationHeader>
         <SettingsIcon> </SettingsIcon>
         </div>
 

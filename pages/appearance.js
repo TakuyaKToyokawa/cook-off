@@ -11,7 +11,7 @@ function Appearance() {
     <main className="main">
       <div className="content">
         <div className="headerSetting">
-          <NavigationHeader text="Setting" />
+          <NavigationHeader text="Setting" link="/setting.js"/>
         </div>
         <div>
           <h2>Appearance</h2>
