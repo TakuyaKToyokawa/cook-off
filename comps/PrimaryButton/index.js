@@ -28,18 +28,28 @@ const ButtonDiv = styled.h2`
 
 const PrimaryButton = ({ text, color, link, onClick }) => {
   return (
-    <Link href={link}>
-      <div style={{ width: "100%" }}>
-        <ButtonDiv color={color}> {text} </ButtonDiv>
-      </div>
-    </Link>
+    <div>
+      {link == undefined ? (
+        <div onClick={onClick} style={{ width: "100%" }}>
+          <ButtonDiv color={color}> {text} </ButtonDiv>
+        </div>
+      ) : (
+        <Link href={link}>
+          <div style={{ width: "100%" }}>
+            <ButtonDiv color={color}> {text} </ButtonDiv>
+          </div>
+        </Link>
+      )}
+    </div>
   );
 };
 
 PrimaryButton.defaultProps = {
   text: "text",
-  link: "default",
-  onClick: () => {},
+  onClick: () => {
+    console.log("hello");
+  },
+  link: undefined
 };
 
 export default PrimaryButton;

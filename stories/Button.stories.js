@@ -28,7 +28,8 @@ Primary.args = {
     rgba(255, 85, 32, 0.8) 9.75%,
     rgba(236, 29, 29, 0.8) 49.93%,
     rgba(201, 92, 252, 0.8) 100%
-  );`
+  );`,
+  link: undefined,
 };
 
 Secondary.args = {

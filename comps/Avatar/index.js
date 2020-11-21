@@ -2,8 +2,9 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const InfoContainer = styled.div`
-  display: flex;
+  display: inline-flex;
   position:relative;
+  justify-content: center;
 `;
 
 const Profile = styled.div`

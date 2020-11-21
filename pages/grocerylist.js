@@ -25,8 +25,8 @@ function RecipeIngredients() {
         <div className="plusButton">
           <PlusButton />
         </div>
-        <MenuBar />
       </div>
+      <MenuBar />
     </main>
   );
 }

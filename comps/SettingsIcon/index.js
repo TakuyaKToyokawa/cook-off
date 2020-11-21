@@ -6,7 +6,7 @@ const Icon = styled.img`
   transition: 0.3s ease-in-out;
   cursor: pointer;
   width: 10%;
-  height: 50%;
+  height: 40px;
   &:hover {
     transform: scale(0.9);
   }

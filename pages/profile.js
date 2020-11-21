@@ -13,11 +13,14 @@ function Profile() {
           <NavigationHeader text="Profile" displayArrow={false} />
           <SettingsIcon />
         </nav>
-        <Avatar />
+        <div className="alignCenter">
+          <Avatar />
+        </div>
         <LevelBar />
         <ProfileList />
-        <MenuBar />
+        
       </div>
+      <MenuBar />
     </main>
   );
 }
