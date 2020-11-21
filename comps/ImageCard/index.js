@@ -13,7 +13,7 @@ const Container = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: inset 400px 400px 4px rgba(0, 0, 0, 0.4);
-  background-image: ${props => props.image ? props.image : "url('./BackgroundImage.png')"};
+  background-image: ${props => props.image ? props.image : "url('/img/food/BackgroundImage.png')"};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;

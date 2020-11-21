@@ -15,13 +15,13 @@ const Container = styled.div`
 const ProfileList = () => {
   return (
     <Container>
-      <Link href="/Events">
+      <Link href="/profile/event-list">
         <p>Your Events</p>
       </Link>
-      <Link href="/myrecipes">
+      <Link href="/profile/recipe-list">
         <p>Your Recipe List</p>
       </Link>
-      <Link href="/Friends">
+      <Link href="/profile/friend-list">
         <p>Friends</p>
       </Link>
     </Container>

@@ -51,7 +51,7 @@ const MenuList = ({ name, message, status, profile }) => {
               <Message>{message}</Message>
             </TextCont>
           </IconTextCont>
-          <img src="./arrow.svg" />{" "}
+          <img src="/icons/general/arrow.svg" />{" "}
         </Text1div>
       </Maindiv>
     </div>

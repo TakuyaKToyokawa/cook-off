@@ -7,9 +7,8 @@ const Logo = styled.div`
 
 const Logos = ({}) => {
   return <Logo>
-   <img src="/Logo.svg"></img>
+   <img src="/icons/general/Logo.svg"></img>
  </Logo>
-
 }
 
 export default Logos;

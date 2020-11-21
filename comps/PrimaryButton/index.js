@@ -47,7 +47,7 @@ const PrimaryButton = ({ text, color, link, onClick }) => {
 PrimaryButton.defaultProps = {
   text: "text",
   onClick: () => {
-    console.log("hello");
+    console.log("clicked");
   },
   link: undefined
 };

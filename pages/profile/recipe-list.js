@@ -1,9 +1,9 @@
-import MenuBar from "../comps/MenuBar";
-import PlusButton from "../comps/PlusButton";
-import SettingsIcon from "../comps/SettingsIcon";
-import Searchbar from "../comps/Searchbar";
-import NavigationHeader from "../comps/NavigationHeader";
-import ImageCard from "../comps/ImageCard";
+import MenuBar from "../../comps/MenuBar";
+import PlusButton from "../../comps/PlusButton";
+import SettingsIcon from "../../comps/SettingsIcon";
+import Searchbar from "../../comps/Searchbar";
+import NavigationHeader from "../../comps/NavigationHeader";
+import ImageCard from "../../comps/ImageCard";
 
 function MyRecipes() {
   return (

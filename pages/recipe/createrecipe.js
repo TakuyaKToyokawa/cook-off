@@ -1,11 +1,11 @@
-import MenuBar from "../comps/MenuBar";
-import PlusButton from "../comps/PlusButton";
-import InputForm from "../comps/InputForm";
-import NavigationHeader from "../comps/NavigationHeader";
-import SettingsIcon from "../comps/SettingsIcon";
-import AddIng from "../comps/AddIng/index.js";
-import NewIng from "../comps/AddIng/NewIng.js";
-import PrimaryButton from "../comps/PrimaryButton";
+import MenuBar from "../../comps/MenuBar";
+import PlusButton from "../../comps/PlusButton";
+import InputForm from "../../comps/InputForm";
+import NavigationHeader from "../../comps/NavigationHeader";
+import SettingsIcon from "../../comps/SettingsIcon";
+import AddIng from "../../comps/AddIng/index.js";
+import NewIng from "../../comps/AddIng/NewIng.js";
+import PrimaryButton from "../../comps/PrimaryButton";
 
 function CreateRecipe() {
   return (

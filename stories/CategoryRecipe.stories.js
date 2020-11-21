@@ -7,4 +7,4 @@ export default {
 };
 
 export const BasicJapaneseRecipe= () => <CategoryRecipe text="Japanese"/>;
-export const BasicChineseRecipe = () => <CategoryRecipe text="Chinese" img="./chinese.svg"/>;
+export const BasicChineseRecipe = () => <CategoryRecipe text="Chinese" img="/icons/recipe/chinese.svg"/>;

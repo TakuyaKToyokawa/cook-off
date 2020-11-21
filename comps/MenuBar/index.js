@@ -81,7 +81,7 @@ const MenuBar = ({}) => {
     <Position>
       <Container>
         <OptionContainer>
-          <Link href="/recipepage">
+          <Link href="/recipe">
             <IconContainer
               onClick={() => {
                 setRecipe(1);
@@ -89,7 +89,7 @@ const MenuBar = ({}) => {
                 setProfile(0);
               }}
             >
-              <RecipeIcon src="./recipe.svg" active={recipe}></RecipeIcon>
+              <RecipeIcon src="/icons/general/recipe.svg" active={recipe}></RecipeIcon>
               <Text>Recipe</Text>
             </IconContainer>
           </Link>
@@ -101,11 +101,11 @@ const MenuBar = ({}) => {
                 setProfile(1);
               }}
             >
-              <ProfileIcon src="./profile.svg" active={profile}></ProfileIcon>
+              <ProfileIcon src="/icons/general/profile.svg" active={profile}></ProfileIcon>
               <Text>Profile</Text>
             </IconContainer>
           </Link>
-          <Link href="/Events">
+          <Link href="/events">
             <IconContainer
               onClick={() => {
                 setRecipe(0);
@@ -113,7 +113,7 @@ const MenuBar = ({}) => {
                 setProfile(0);
               }}
             >
-              <EventsIcon src="./events.svg" active={events}></EventsIcon>
+              <EventsIcon src="/icons/general/events.svg" active={events}></EventsIcon>
               <Text>Events</Text>
             </IconContainer>
           </Link>

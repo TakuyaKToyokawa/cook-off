@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const ButtonDiv = styled.div`
   border-radius: 50%;
@@ -40,17 +41,36 @@ const Seconddiv = styled.div`
   padding: 3px;
 `;
 
-const PlusButton = ({ color, border, plusColor }) => {
+const PlusButton = ({ color, border, plusColor, link, onClick }) => {
   return (
     <div>
-      <ButtonDiv color={color} border={border}>
-        <Plussign>
-          <Firstdiv plusColor={plusColor}></Firstdiv>
-          <Seconddiv plusColor={plusColor}></Seconddiv>
-        </Plussign>
-      </ButtonDiv>
+      {link == undefined ? (
+        <div onClick={onClick}>
+          <ButtonDiv color={color} border={border}>
+            <Plussign>
+              <Firstdiv plusColor={plusColor}></Firstdiv>
+              <Seconddiv plusColor={plusColor}></Seconddiv>
+            </Plussign>
+          </ButtonDiv>
+        </div>
+      ) : (
+        <Link href={link}>
+          <ButtonDiv color={color} border={border}>
+            <Plussign>
+              <Firstdiv plusColor={plusColor}></Firstdiv>
+              <Seconddiv plusColor={plusColor}></Seconddiv>
+            </Plussign>
+          </ButtonDiv>
+        </Link>
+      )}
     </div>
   );
 };
 
+PlusButton.defaultProps = {
+  link: undefined,
+  onClick: () => {
+    console.log("clicked");
+  },
+};
 export default PlusButton;

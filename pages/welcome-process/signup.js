@@ -1,8 +1,7 @@
-import MenuBar from "../comps/MenuBar";
-import PlusButton from "../comps/PlusButton";
-import InputForm from "../comps/InputForm";
-import Logos from "../comps/Logos";
-import PrimaryButton from "../comps/PrimaryButton";
+import PlusButton from "../../comps/PlusButton";
+import InputForm from "../../comps/InputForm";
+import Logos from "../../comps/Logos";
+import PrimaryButton from "../../comps/PrimaryButton";
 
 function SignUp() {
   return (
