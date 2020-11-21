@@ -10,6 +10,7 @@ const Template = (args) => <MenuList {...args} />;
 
 export const WithIcon = Template.bind({});
 export const NoIcon = Template.bind({});
+export const NoArrow = Template.bind({});
 
 WithIcon.args = {
     displayIcon: true,
@@ -19,4 +20,10 @@ WithIcon.args = {
 NoIcon.args = {
     displayIcon: false,
     text: "Default Text"
+}
+
+NoArrow.args = {
+    displayIcon: false,
+    text: "Default Text",
+    displayArrow: false,
 }

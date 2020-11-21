@@ -1,10 +1,15 @@
-// import Template from "../comps/Template";
-import Switch from "react-switch";
+import PrimaryButton from "../comps/PrimaryButton";
 
-export default function Home() {
+function Profile() {
   return (
-    <div>
-      <Switch />
-    </div>
+    <main className="main">
+      <div className="content">
+        <h3>Cook, share, connect, and have fun virtually!</h3>
+        <PrimaryButton text="Getting Started" link="/welcome-process"/>
+      </div>
+    </main>
   );
 }
+
+export default Profile;
+ 

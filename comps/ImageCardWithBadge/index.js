@@ -7,13 +7,13 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 250px;
   padding: 20px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: inset 1000px 1000px 4px rgba(0, 0, 0, 0.4);
   background-image: ${(props) =>
-    props.image ? props.image : "url('./BackgroundImage.png')"};
+    props.image ? props.image : "url('/img/food/BackgroundImage.png')"};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -44,13 +44,13 @@ const ProfileContainer = styled.div`
 const InfoContainer = styled.div`
   display: flex;
   width: 100%;
-
-  flex: 6;
+  flex: 10;
+  margin: 0px;
   align-items: flex-end;
 `;
 
 const TextContainer = styled.div`
-  margin-left: 20px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   flex: 3;
@@ -82,8 +82,9 @@ const Profile = styled.div`
   min-height: 100px;
   border-radius: 50%;
   z-index: 0;
+  background-size:cover;
   background-image: ${(props) =>
-    props.profile ? props.profile : "url('./BackgroundImage.png')"};
+    props.profile ? props.profile : "url('/img/food/BackgroundImage.png')"};
 `;
 
 const Status = styled.div`
@@ -100,16 +101,24 @@ const BadgeText = styled.p`
   margin: 0px 5px;
 `;
 
+const Title = styled.h2 `
+margin: 10px 0px;
+`
+
+const Username = styled.p `
+font-weight: 0; 
+margin: 5px 0 ;
+`
 const ImageButton = ({profile, viewers, image, date, title, user }) => {
   return (
     <Container image={image}>
       <BadgeContainer>
         <Badge>
-          <Icon src="./badgeprofile.svg" />
+          <Icon src="/icons/general/badgeprofile.svg" />
           <BadgeText>{viewers}</BadgeText>
         </Badge>
         <Badge>
-          <Icon src="./calendar.svg" />
+          <Icon src="/icons/general/calendar.svg" />
           <BadgeText>{date}</BadgeText>
         </Badge>
       </BadgeContainer>
@@ -121,8 +130,8 @@ const ImageButton = ({profile, viewers, image, date, title, user }) => {
           </Profile>
         </ProfileContainer>
         <TextContainer>
-          <h2>{title}</h2>
-  <h3>{user}</h3>
+          <Title>{title}</Title>
+  <Username>{user}</Username>
         </TextContainer>
       </InfoContainer>
     </Container>

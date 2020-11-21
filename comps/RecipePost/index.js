@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const RecipePostBox = styled.div`
   display: flex;
   position: relative;
   width: 100%;
   border-radius: 9px;
+  cursor: pointer;
 `;
 
 const RecipePostImg = styled.img`
@@ -13,7 +15,7 @@ const RecipePostImg = styled.img`
   position: relative;
   object-fit: cover;
   margin-right: 10px;
-  flex:3;
+  flex: 3;
   border-radius: 9px;
 `;
 
@@ -27,7 +29,7 @@ const RecipePostContent = styled.div`
 const RecipePostDetails = styled.div`
   display: flex;
   padding-top: 2%;
-  align-items:center;
+  align-items: center;
 `;
 
 const RecipePostDetailsMin = styled.div`
@@ -53,11 +55,9 @@ const RecipePostUpText = styled.div`
   margin: 5px;
 `;
 
-
-const Title = styled.h3 ` 
-margin-top: 0px;
-`
-
+const Title = styled.h3`
+  margin-top: 0px;
+`;
 
 const Icon = styled.img`
   transition: 0.2s ease-in-out;
@@ -66,38 +66,41 @@ const Icon = styled.img`
     transform: scale(0.9);
   }
 `;
-const RecipePost = ({ title, time, name, img }) => {
+const RecipePost = ({ title, time, name, img, link }) => {
   return (
-    <RecipePostBox>
-      <RecipePostImg src={img} />
-      <RecipePostContent>
-  <Title>{title}</Title>
-        <RecipePostDetails>
-          <RecipePostDetailsMin>{time}</RecipePostDetailsMin>
-          <RecipePostDetailsMin>{name}</RecipePostDetailsMin>
-        </RecipePostDetails>
-        <RecipePostUpDown>
-          <RecipePostUp>
-            <Icon src="/upvote.svg" />
-            {/* get Data from database */}
-            <RecipePostUpText>225</RecipePostUpText>
-          </RecipePostUp>
-          <RecipePostUp>
-            <Icon src="/downvote.svg" />
-            {/* get Data from database */}
-            <RecipePostUpText>15</RecipePostUpText>
-          </RecipePostUp>
-        </RecipePostUpDown>
-      </RecipePostContent>
-    </RecipePostBox>
+    <Link href={link}>
+      <RecipePostBox>
+        <RecipePostImg src={img} />
+        <RecipePostContent>
+          <Title>{title}</Title>
+          <RecipePostDetails>
+            <RecipePostDetailsMin>{time}</RecipePostDetailsMin>
+            <RecipePostDetailsMin>{name}</RecipePostDetailsMin>
+          </RecipePostDetails>
+          <RecipePostUpDown>
+            <RecipePostUp>
+              <Icon src="/icons/recipe/upvote.svg" />
+              {/* get Data from database */}
+              <RecipePostUpText>225</RecipePostUpText>
+            </RecipePostUp>
+            <RecipePostUp>
+              <Icon src="/icons/recipe/downvote.svg" />
+              {/* get Data from database */}
+              <RecipePostUpText>15</RecipePostUpText>
+            </RecipePostUp>
+          </RecipePostUpDown>
+        </RecipePostContent>
+      </RecipePostBox>
+    </Link>
   );
 };
 
 RecipePost.defaultProps = {
   title: "Mooncake quickly",
   time: "40m",
-  img: "./mooncake.png",
+  img: "/img/food/mooncake.png",
   name: "by Jenny Tran",
+  link: "/welcome",
 };
 
 export default RecipePost;

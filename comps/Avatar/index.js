@@ -2,8 +2,9 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const InfoContainer = styled.div`
-  display: flex;
-  position:relative;
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
 `;
 
 const Profile = styled.div`
@@ -12,7 +13,8 @@ const Profile = styled.div`
   border-radius: 50%;
   z-index: 0;
   background-image: ${(props) =>
-    props.profile ? props.profile : "url('./BackgroundImage.png')"};
+    props.profile ? props.profile : "url('./img/food/BackgroundImage.png')"};
+  background-size: cover;
 `;
 
 const Status = styled.div`
@@ -28,12 +30,10 @@ const Status = styled.div`
 const Avatar = ({ profile, status }) => {
   return (
     <InfoContainer>
-   
-        <Profile profile={profile}>
-          {" "}
-          <Status status={status}></Status>
-        </Profile>
-
+      <Profile profile={profile}>
+        {" "}
+        <Status status={status}></Status>
+      </Profile>
     </InfoContainer>
   );
 };

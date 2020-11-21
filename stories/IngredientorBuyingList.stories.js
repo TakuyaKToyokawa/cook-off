@@ -30,8 +30,6 @@ export const IconIngredientsList = () => (
   </IngredientorBuyingList>
 );
 
-
-
 export const NoPriceList= () => (
   <IngredientorBuyingList title="Used for Cooking Steps">
     <List displayPrice={false}/>

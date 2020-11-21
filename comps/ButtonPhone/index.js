@@ -22,12 +22,16 @@ const ButtonPhoneImage = styled.img`
   border-radius: 50%;
 `;
 
-const ButtonPhone = ({}) => {
+const ButtonPhone = ({onClick}) => {
   return (
-    <ButtonPhoneContainer>
-      <ButtonPhoneImage src="./phone.svg" />
+    <ButtonPhoneContainer onClick={onClick}>
+      <ButtonPhoneImage src="/icon/events/phone.svg" />
     </ButtonPhoneContainer>
   );
 };
+
+ButtonPhone.defaultProps = {
+  onClick: () => {console.log("clicked")}
+}
 
 export default ButtonPhone;

@@ -10,7 +10,9 @@ const Container = styled.div`
 `;
 
 const NameCont = styled(Container)`
+  display: inline-flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 const LevelContainer = styled.div`
@@ -43,14 +45,17 @@ const Name = styled.h2`
 const TagLine = styled.p`
   margin: 0px 0px 15px 0px;
 `;
-const Icon = styled.img``;
+const Icon = styled.img`
+  width: 25px;
+  height: 25px;
+`;
 
-const LevelBar = ({ width, name, tagline, level }) => {
+const LevelBar = ({ width, name, tagline, level, edit }) => {
   return (
     <Container>
       <NameCont>
         <Name>{name}</Name>
-        <Icon src="./Edit.svg" />
+        <Icon src="/icons/profile/Edit.svg" onClick={edit} />
       </NameCont>
       <TagLine>{tagline}</TagLine>
       <TagLine>
@@ -67,6 +72,7 @@ LevelBar.defaultProps = {
   name: "Default Name",
   tagline: "Master Chef",
   level: "9",
+  onClick: ()=> {console.log("clicked")},
 };
 
 export default LevelBar;
