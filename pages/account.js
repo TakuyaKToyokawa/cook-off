@@ -9,7 +9,6 @@ function Account() {
         <div className="headerSetting">
           <NavigationHeader text="Setting" />
         </div>
-
         <div className="title">
           <div className="titleImg">
             <img src="./account.svg" />
