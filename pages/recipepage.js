@@ -4,7 +4,6 @@ import RecipePost from "../comps/RecipePost";
 import NavigationHeader from "../comps/NavigationHeader";
 import SettingsIcon from "../comps/SettingsIcon";
 import CategoryRecipe from "../comps/CategoryRecipe";
-import Scrollbar from "../comps/ScrollBar";
 
 function RecipePage() {
   return (
@@ -26,7 +25,6 @@ function RecipePage() {
             <h2 className="smallVMargin">Popular Recipes</h2>
             <p className="smallVMargin">Show All</p>
           </div>
-
           <RecipePost title="Sushi tray for Thanksgiving!" link="/recipeingredients" />
           <RecipePost />
           <RecipePost />

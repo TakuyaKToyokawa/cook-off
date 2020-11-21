@@ -7,7 +7,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 250px;
   padding: 20px;
   border-radius: 20px;
   overflow: hidden;
@@ -37,7 +37,6 @@ const ProfileContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-
   max-width: 100px;
   max-height: 100px;
 `;
@@ -46,11 +45,12 @@ const InfoContainer = styled.div`
   display: flex;
   width: 100%;
   flex: 10;
+  margin: 0px;
   align-items: flex-end;
 `;
 
 const TextContainer = styled.div`
-  margin-left: 20px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   flex: 3;

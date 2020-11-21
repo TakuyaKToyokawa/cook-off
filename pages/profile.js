@@ -8,11 +8,11 @@ import MenuBar from "../comps/MenuBar";
 function Profile() {
   return (
     <main className="main">
+      <nav className="navigationBar">
+        <NavigationHeader text="Profile" displayArrow={false} />
+        <SettingsIcon />
+      </nav>
       <div className="content">
-        <nav className="navigationBar">
-          <NavigationHeader text="Profile" displayArrow={false} />
-          <SettingsIcon />
-        </nav>
         <Avatar />
         <LevelBar />
         <ProfileList />

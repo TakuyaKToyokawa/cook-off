@@ -10,7 +10,9 @@ const Container = styled.div`
 `;
 
 const NameCont = styled(Container)`
+  display:inline-flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 const LevelContainer = styled.div`
@@ -43,7 +45,10 @@ const Name = styled.h2`
 const TagLine = styled.p`
   margin: 0px 0px 15px 0px;
 `;
-const Icon = styled.img``;
+const Icon = styled.img`
+width: 25px;
+height: 25px;
+`;
 
 const LevelBar = ({ width, name, tagline, level }) => {
   return (

@@ -38,7 +38,7 @@ h1 {
 
 .main {
   @include flexIt();
-
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   background-image: url("../public/Background.png");
@@ -70,7 +70,7 @@ h1 {
 .navigationBar {
   @include flexIt();
   width: 100%;
-  margin: 15px 20px;
+  margin: 20px 20px;
   justify-content: space-between;
 }
 
@@ -167,7 +167,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  & div{
+  & > div{
     margin: 15px 0px;
   }
 }

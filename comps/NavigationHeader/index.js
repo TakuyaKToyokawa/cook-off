@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
 
-const Maindiv = styled.h1`
+const Maindiv = styled.div`
   width: 100px;
   color: #f04b4a;
   display: inline-flex;
@@ -11,10 +11,12 @@ const Maindiv = styled.h1`
   margin-left: ${(props) => (props.displayArrow ? "0px" : "0px")};
 `;
 
-const Textdiv = styled.div`
+const Textdiv = styled.h1`
   display: flex;
+  color: #f14b4a;
   flex-direction: column;
   width: 50px;
+  margin: 0px;
   margin-left: 20px;
   padding-left: ${(props) => (props.displayArrow ? "25px" : "0px")};
 `;
