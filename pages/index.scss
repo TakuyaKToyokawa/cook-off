@@ -28,7 +28,6 @@ button {
 h1 {
   color: #a904f8;
   font-size: 3rem;
-  margin: 1rem;
 }
 
 .vMargin {
@@ -64,6 +63,14 @@ h1 {
   }
 }
 
+.list{
+  padding:0px;
+  li{
+    list-style: none;
+    
+  }
+}
+
 .flexColumn {
   @include flexIt();
   flex-direction: column;
@@ -77,6 +84,13 @@ h1 {
 }
 
 //Takuya CSS stuff
+
+.eventTitle{
+  text-align: center;
+  width: 100%;
+
+}
+
 .navigationBar {
   @include flexIt();
   width: 100%;
@@ -90,7 +104,6 @@ h1 {
   min-height: 160px;
   width: 100%;
   margin: 0px;
-  max-width: 430px;
   flex-direction: row;
   overflow-x: auto;
   div {
@@ -143,9 +156,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-}
-
-.ImagecardList {
   & div {
     width: 100%;
     display: flex;
@@ -155,8 +165,9 @@ h1 {
   }
 }
 
+
 .ImageBadgeList {
-  padding-top: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

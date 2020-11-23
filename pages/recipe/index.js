@@ -35,7 +35,7 @@ function RecipePage() {
           <RecipePost />
         </div>
         <div className="plusButton">
-          <PlusButton />
+          <PlusButton link="/recipe/createrecipe"/>
         </div>
       </div>
       <MenuBar />

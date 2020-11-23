@@ -1,10 +1,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const Container = styled.div`
   padding: 15px 0px;
   border-bottom: 1px solid #e2e2e2;
   display: flex;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: #eee;
+  }
 `;
 
 const Profile = styled.img`
@@ -45,7 +50,7 @@ const Button = styled.button`
   margin-right: 50%;
   transition: 0.3s ease-in-out;
   cursor: pointer;
-  &:hover{
+  &:hover {
     transform: scale(0.99);
   }
 `;
@@ -68,24 +73,30 @@ const ButtonContainer = styled.div`
   flex: 1;
   width: 100%;
   justify-content: space-between;
+  z-index: 1;
 `;
 
-const FoodList = ({ title, time, img }) => {
+const FoodList = ({ title, time, img, link, recipeLink }) => {
   return (
-    <Container>
-      <Profile src={img} />
-      <InfoContainer style={{ flexDirection: "column" }}>
-        <Title>{title}</Title>
-        <TimeContainer>
-          <Time src="icons/recipe/clock.svg"></Time>
-          <p style={{ margin: "0px" }}>{time}</p>
-        </TimeContainer>
-        <ButtonContainer>
-          <Button>View Recipe</Button>
-          <Arrow src="/icons/general/Arrow.svg"></Arrow>
-        </ButtonContainer>
-      </InfoContainer>
-    </Container>
+    <Link href={link}>
+      <Container>
+        <Profile src={img} />
+        <InfoContainer style={{ flexDirection: "column" }}>
+          <Title>{title}</Title>
+          <TimeContainer>
+            <Time src="/icons/recipe/clock.svg"></Time>
+            <p style={{ margin: "0px" }}>{time}</p>
+          </TimeContainer>
+
+          <ButtonContainer>
+            <Link href={recipeLink}>
+              <Button>View Recipe</Button>
+            </Link>
+            <Arrow src="/icons/general/Arrow.svg"></Arrow>
+          </ButtonContainer>
+        </InfoContainer>
+      </Container>
+    </Link>
   );
 };
 
@@ -93,6 +104,8 @@ FoodList.defaultProps = {
   title: "Title",
   time: "40m",
   img: "/img/food/Image.jpg",
+  link: "/index",
+  recipeLink: "/recipe",
 };
 
 export default FoodList;

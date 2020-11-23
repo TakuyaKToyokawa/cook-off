@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const Container = styled.div`
   display: flex;
@@ -12,13 +13,12 @@ const Container = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: inset 1000px 1000px 4px rgba(0, 0, 0, 0.4);
-  background-image: ${(props) =>
-    props.image ? props.image : "url('/img/food/BackgroundImage.png')"};
+  background-image: ${(props) => (props.image ? props.image : "url('/img/food/BackgroundImage.png')")};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  transition: .3s ease-in-out;
-  &:hover{
+  transition: 0.3s ease-in-out;
+  &:hover {
     transform: scale(0.99);
   }
 `;
@@ -54,7 +54,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 3;
-  color:white;
+  color: white;
 `;
 
 const Badge = styled.div`
@@ -82,9 +82,8 @@ const Profile = styled.div`
   min-height: 100px;
   border-radius: 50%;
   z-index: 0;
-  background-size:cover;
-  background-image: ${(props) =>
-    props.profile ? props.profile : "url('/img/food/BackgroundImage.png')"};
+  background-size: cover;
+  background-image: ${(props) => (props.profile ? props.profile : "url('/img/food/BackgroundImage.png')")};
 `;
 
 const Status = styled.div`
@@ -101,40 +100,42 @@ const BadgeText = styled.p`
   margin: 0px 5px;
 `;
 
-const Title = styled.h2 `
-margin: 10px 0px;
-`
+const Title = styled.h2`
+  margin: 10px 0px;
+`;
 
-const Username = styled.p `
-font-weight: 0; 
-margin: 5px 0 ;
-`
-const ImageButton = ({profile, viewers, image, date, title, user }) => {
+const Username = styled.p`
+  font-weight: 0;
+  margin: 5px 0;
+`;
+const ImageButton = ({ profile, viewers, image, date, title, user, link }) => {
   return (
-    <Container image={image}>
-      <BadgeContainer>
-        <Badge>
-          <Icon src="/icons/general/badgeprofile.svg" />
-          <BadgeText>{viewers}</BadgeText>
-        </Badge>
-        <Badge>
-          <Icon src="/icons/general/calendar.svg" />
-          <BadgeText>{date}</BadgeText>
-        </Badge>
-      </BadgeContainer>
-      <InfoContainer>
-        <ProfileContainer>
-          <Profile profile={profile}>
-            {" "}
-            <Status></Status>
-          </Profile>
-        </ProfileContainer>
-        <TextContainer>
-          <Title>{title}</Title>
-  <Username>{user}</Username>
-        </TextContainer>
-      </InfoContainer>
-    </Container>
+    <Link href={link}>
+      <Container image={image}>
+        <BadgeContainer>
+          <Badge>
+            <Icon src="/icons/general/badgeprofile.svg" />
+            <BadgeText>{viewers}</BadgeText>
+          </Badge>
+          <Badge>
+            <Icon src="/icons/general/calendar.svg" />
+            <BadgeText>{date}</BadgeText>
+          </Badge>
+        </BadgeContainer>
+        <InfoContainer>
+          <ProfileContainer>
+            <Profile profile={profile}>
+              {" "}
+              <Status></Status>
+            </Profile>
+          </ProfileContainer>
+          <TextContainer>
+            <Title>{title}</Title>
+            <Username>{user}</Username>
+          </TextContainer>
+        </InfoContainer>
+      </Container>
+    </Link>
   );
 };
 
@@ -142,7 +143,8 @@ ImageButton.defaultProps = {
   title: "title",
   user: "user",
   viewers: "viewers",
-  date: "10/25/2020 2PM 'date'"
+  date: "10/25/2020 2PM 'date'",
+  link: "/index",
 };
 
 export default ImageButton;

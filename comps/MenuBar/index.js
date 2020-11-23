@@ -6,6 +6,7 @@ const Position = styled.div`
   position: fixed;
   bottom: 0px;
   width: 100%;
+  z-index: 2;
 `;
 
 const Container = styled.div`
@@ -16,6 +17,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #f14b4a;
+
 `;
 
 const OptionContainer = styled.div`
@@ -105,7 +107,7 @@ const MenuBar = ({}) => {
               <Text>Profile</Text>
             </IconContainer>
           </Link>
-          <Link href="/events">
+          <Link href="/newevent">
             <IconContainer
               onClick={() => {
                 setRecipe(0);

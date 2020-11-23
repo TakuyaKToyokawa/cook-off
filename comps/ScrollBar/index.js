@@ -2,7 +2,9 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Container = styled.div`
+
   overflow: auto;
+  margin-top: 25px;
   background-color: ${(props) => (props.bgcolor ? props.bgcolor : "none")};
   width: ${(props) => (props.width ? props.width : "auto")};
   height: ${(props) => (props.height ? props.height : "auto")};
@@ -42,7 +44,7 @@ const ScrollBar = ({ children, width, height, bgcolor, padding, radius }) => {
         padding={padding}
         radius={radius}
       >
-        {children}
+        <div style={{paddingRight:"35px"}}>{children}</div>
       </Container>
     </div>
   );
