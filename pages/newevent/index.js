@@ -8,7 +8,7 @@ import ImageCardWithBadge from "../../comps/ImageCardWithBadge";
 function YourFriends() {
   return (
     <main className="main">
-      <div className="content">
+      <div className="content centerFlex">
         <nav className="navigationBar">
           <NavigationHeader text="My Events" link="/profile">
             {" "}
@@ -22,6 +22,7 @@ function YourFriends() {
             date="11/24/2020 9am"
             user="BestCookEver1!"
             profile="url('/img/general/profilephoto1.png')"
+            link="/cookoff/1"
           ></ImageCardWithBadge>
           <ImageCardWithBadge
             title="PHO SOUP"

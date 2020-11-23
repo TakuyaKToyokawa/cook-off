@@ -61,13 +61,17 @@ h1 {
       align-items: center;
     }
   }
+  .centerFlex {
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+  }
 }
 
-.list{
-  padding:0px;
-  li{
+.list {
+  padding: 0px;
+  li {
     list-style: none;
-    
   }
 }
 
@@ -83,12 +87,14 @@ h1 {
   justify-content: space-between;
 }
 
+.textCenter {
+  text-align: center;
+}
 //Takuya CSS stuff
 
-.eventTitle{
+.eventTitle {
   text-align: center;
   width: 100%;
-
 }
 
 .navigationBar {
@@ -165,9 +171,7 @@ h1 {
   }
 }
 
-
 .ImageBadgeList {
-
   display: flex;
   flex-direction: column;
   justify-content: center;

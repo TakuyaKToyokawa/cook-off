@@ -7,7 +7,7 @@ function SignUp() {
   return (
     <main className="main">
       <div className="content">
-        <h1 >Welcome!</h1>
+        <h1 className="textCenter">Welcome!</h1>
         <div className="vMargin flexColumn">
           <Logos />
         </div>

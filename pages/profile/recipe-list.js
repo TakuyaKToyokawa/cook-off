@@ -16,10 +16,10 @@ function MyRecipes() {
         <div className="searchbarbox">
           <Searchbar></Searchbar>
         </div>
-        <div className="ImagecardList">
-          <ImageCard text="Favourites" image="url('./burger.jpg')"></ImageCard>
-          <ImageCard text="Italian" image="url('./pasta.jpg')"></ImageCard>
-          <ImageCard text="Asian" image="url('./asianfood.jpg')"></ImageCard>
+        <div className="ImageBadgeList">
+          <ImageCard text="Favourites" image="url('/img/food/burger.jpg')"></ImageCard>
+          <ImageCard text="Italian" image="url('/img/food/pasta.jpg')"></ImageCard>
+          <ImageCard text="Asian" image="url('/img/food/asianfood.jpg')"></ImageCard>
         </div>
         <div className="plusButton">
           <PlusButton />
