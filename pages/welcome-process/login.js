@@ -6,8 +6,8 @@ import PrimaryButton from "../../comps/PrimaryButton";
 function Login2() {
   return (
     <main className="main">
-      <div className="content">
-        <h1>Welcome back!</h1>
+      <div className="content centerFlex">
+        <h1 className="textCenter">Welcome back!</h1>
         <div className="vMargin flexColumn">
           <Logos />
         </div>

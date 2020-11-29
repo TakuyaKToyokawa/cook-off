@@ -15,13 +15,14 @@ function YourFriends() {
           </NavigationHeader>
           <SettingsIcon> </SettingsIcon>
         </nav>
-          <Searchbar></Searchbar>
+        <Searchbar></Searchbar>
         <div className="ImageBadgeList">
           <ImageCardWithBadge
             title="BURGER BREAKY"
             date="11/24/2020 9am"
             user="BestCookEver1!"
             profile="url('/img/general/profilephoto1.png')"
+            link="/cookoff/1"
           ></ImageCardWithBadge>
           <ImageCardWithBadge
             title="PHO SOUP"

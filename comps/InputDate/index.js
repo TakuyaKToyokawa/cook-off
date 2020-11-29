@@ -7,6 +7,7 @@ const InputDateBox = styled.div`
 display: block;
 position: relative;
 `; 
+
 const InputDateLabel = styled.h3`
 margin-left:3px;
 
@@ -30,15 +31,14 @@ padding: 5px 15px;
 width:100%;
 outline: none;
 `; 
+
 const InputDate = ({}) => {
   return <InputDateBox>
   <InputDateLabel>Label</InputDateLabel>
   <InputDateForm>
     <InputDateFormInput format="mm/dd/yyyy">
-        
     </InputDateFormInput>
   </InputDateForm>
-
  </InputDateBox> 
 }
 

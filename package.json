@@ -10,9 +10,11 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "next": "^9.5.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-lottie": "^1.2.3",
     "react-styled-toggle": "^1.0.18",
     "react-switch": "^5.0.1",
     "sass": "^1.28.0",

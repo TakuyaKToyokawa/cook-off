@@ -47,7 +47,7 @@ const Button = styled.button`
   border-radius: 15px;
   color: white;
   flex: 1;
-  margin-right: 50%;
+  margin-right: 20%;
   transition: 0.3s ease-in-out;
   cursor: pointer;
   &:hover {

@@ -35,7 +35,6 @@ const Container = styled.div`
 
 const ScrollBar = ({ children, width, height, bgcolor, padding, radius }) => {
   return (
-    <div>
       <Container
         width={width}
         height={height}
@@ -46,7 +45,6 @@ const ScrollBar = ({ children, width, height, bgcolor, padding, radius }) => {
       >
         <div style={{paddingRight:"35px"}}>{children}</div>
       </Container>
-    </div>
   );
 };
 
