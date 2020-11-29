@@ -2,7 +2,6 @@ import NavigationHeader from "../comps/NavigationHeader";
 import MenuBar from "../comps/MenuBar";
 import MenuList from "../comps/MenuList";
 import FontSizeSlider from "../comps/FontSizeSlider";
-import SwitchInput from "../comps/SwitchInput";
 
 function AppearanceDark() {
   return (
@@ -25,7 +24,6 @@ function AppearanceDark() {
         </div>
         <div className="settingListDark">
           <MenuList icon="./appearance.svg" text="Darkmode/lightmode" />
-          <SwitchInput />
         </div>
       </div>
       <MenuBar />z
