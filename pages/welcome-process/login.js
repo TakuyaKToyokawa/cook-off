@@ -1,4 +1,3 @@
-import MenuBar from "../../comps/MenuBar";
 import InputForm from "../../comps/InputForm";
 import Logos from "../../comps/Logos";
 import PrimaryButton from "../../comps/PrimaryButton";
@@ -12,8 +11,8 @@ function Login2() {
           <Logos />
         </div>
         <div className="flexColumn"></div>
-        <Inputform label="Email or Username" placeholder="Email" />
-        <Inputform label="Password" placeholder="Password" />
+        <InputForm label="Email or Username" placeholder="Email" />
+        <InputForm label="Password" placeholder="Password" />
         <div className="vMargin">
           <PrimaryButton text="Login"></PrimaryButton>
         </div>
