@@ -1,7 +1,9 @@
-import NavigationHeader from "../comps/NavigationHeader";
-import MenuBar from "../comps/MenuBar";
-import MenuList from "../comps/MenuList";
-import FontSizeSlider from "../comps/FontSizeSlider";
+
+import NavigationHeader from "../../comps/NavigationHeader";
+import MenuBar from "../../comps/MenuBar";
+import MenuList from "../../comps/MenuList";
+import FontSizeSlider from "../../comps/FontSizeSlider";
+import SwitchInput from "../../comps/SwitchInput";
 
 function AppearanceDark() {
   return (
