@@ -1,5 +1,5 @@
 import MenuBar from "../../comps/MenuBar";
-import Inputform from "../../comps/Inputform";
+import InputForm from "../../comps/InputForm";
 import Logos from "../../comps/Logos";
 import PrimaryButton from "../../comps/PrimaryButton";
 

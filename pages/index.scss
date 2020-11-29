@@ -120,10 +120,12 @@ h1 {
 .recipePost {
   @include flexIt();
   align-items: flex-start;
-  max-width: 480px;
   width: 100%;
   flex-direction: column;
   & > div {
+    width: 100%;
+  }
+  & > div > div > div{
     margin: 15px 0px;
   }
 }

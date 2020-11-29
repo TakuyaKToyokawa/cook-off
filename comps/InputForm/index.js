@@ -30,22 +30,22 @@ text-align:right;
 margin-top: 5px;
 `;
 
-const Generalinputform = ({label, placeholder, link, displayLink }) => {
+const InputForm = ({label, placeholder, link, displayLink, name }) => {
   return <div style={{width: "100%"}}>
       <Maindiv>
           <Labeldiv>{label}</Labeldiv>
-          <Inputdiv placeholder={placeholder}></Inputdiv>
+          <Inputdiv placeholder={placeholder} name={name}></Inputdiv>
           {displayLink == true ? <Linkdiv>{link}</Linkdiv> : undefined }
-      </Maindiv>
-    
+      </Maindiv>   
   </div>;
 };
 
-Generalinputform.defaultProps = {
+InputForm.defaultProps = {
   label: "label",
   placeholder: "placeholder",
   link: "link",
   displayLink: false,
+  name: "default",
 }
 
-export default Generalinputform;
+export default InputForm;

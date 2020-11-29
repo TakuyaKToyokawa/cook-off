@@ -8,14 +8,14 @@ import ImageCardWithBadge from "../../comps/ImageCardWithBadge";
 function YourFriends() {
   return (
     <main className="main">
-      <div className="content centerFlex">
+      <div className="content">
         <nav className="navigationBar">
           <NavigationHeader text="My Events" link="/profile">
             {" "}
           </NavigationHeader>
           <SettingsIcon> </SettingsIcon>
         </nav>
-          <Searchbar></Searchbar>
+        <Searchbar></Searchbar>
         <div className="ImageBadgeList">
           <ImageCardWithBadge
             title="BURGER BREAKY"
