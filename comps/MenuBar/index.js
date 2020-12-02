@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
 
@@ -17,7 +17,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #f14b4a;
-
 `;
 
 const OptionContainer = styled.div`
@@ -29,45 +28,70 @@ const OptionContainer = styled.div`
 `;
 
 const IconContainer = styled.div`
+  -webkit-transition: all 0.3s ease-out 0.1s;
+  -moz-transition: all 0.3s ease-out 0.1s;
+  -o-transition: all 0.3s ease-out 0.1s;
+  transition: all 0.3s ease-out 0.1s;
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding: 5px 20px;
   cursor: pointer;
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 10px;
+    height: 5px;
+    width: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: white;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+`;
+
+const RecipeCont = styled(IconContainer)`
+  &:after {
+    opacity: ${(props) => (props.active == 1 ? "1" : "0")};
+  }
+`;
+
+const ProfileCont = styled(IconContainer)`
+  &:after {
+    opacity: ${(props) => (props.active == 2 ? "1" : "0")};
+  }
+`;
+
+const EventsCont = styled(IconContainer)`
+  &:after {
+    opacity: ${(props) => (props.active == 3 ? "1" : "0")};
+  }
 `;
 
 const RecipeIcon = styled.img`
-  transition: 0.3s ease-in-out;
   filter: ${(props) =>
-    props.active
+    props.active == 1
       ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #8B3B3A)"
       : "drop-shadow(0 5px 0px #8B3B3A)"};
 `;
 
 const EventsIcon = styled.img`
-  transition: 0.3s ease-in-out;
   filter: ${(props) =>
-    props.active
+    props.active == 3
       ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #8B3B3A)"
       : "drop-shadow(0 5px 0px #8B3B3A)"};
 `;
 
 const ProfileIcon = styled.img`
-  transition: 0.3s ease-in-out;
   filter: ${(props) =>
-    props.active
+    props.active == 2
       ? "invert(.3) sepia(1) saturate(2) hue-rotate(10deg) drop-shadow(0 5px 0px #8B3B3A)"
       : "drop-shadow(0 5px 0px #8B3B3A)"};
-`;
-
-const AnimatedLine = styled.div`
-  background-color: #fff9f9;
-  height: 3px;
-  width: 40px;
-  position: relative;
-  transition: 0.3s ease-in-out;
-  border-radius: 5px;
-  opacity: ${(props) => (props.active ? "1" : "0")};
 `;
 
 const Text = styled.p`
@@ -75,55 +99,42 @@ const Text = styled.p`
   margin: 13px 0px;
 `;
 
-const MenuBar = ({}) => {
-  const [recipe, setRecipe] = useState(0);
-  const [events, setEvents] = useState(0);
-  const [profile, setProfile] = useState(0);
+const MenuBar = ({ propActive }) => {
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    setActive(propActive);
+  });
   return (
     <Position>
       <Container>
         <OptionContainer>
           <Link href="/recipe">
-            <IconContainer
-              onClick={() => {
-                setRecipe(1);
-                setEvents(0);
-                setProfile(0);
-              }}
-            >
-              <RecipeIcon src="/icons/general/recipe.svg" active={recipe}></RecipeIcon>
+            <RecipeCont active={active}>
+              <RecipeIcon
+                src="/icons/general/recipe.svg"
+                active={active}
+              ></RecipeIcon>
               <Text>Recipe</Text>
-            </IconContainer>
+            </RecipeCont>
           </Link>
           <Link href="/profile">
-            <IconContainer
-              onClick={() => {
-                setRecipe(0);
-                setEvents(0);
-                setProfile(1);
-              }}
-            >
-              <ProfileIcon src="/icons/general/profile.svg" active={profile}></ProfileIcon>
+            <ProfileCont active={active}>
+              <ProfileIcon
+                src="/icons/general/profile.svg"
+                active={active}
+              ></ProfileIcon>
               <Text>Profile</Text>
-            </IconContainer>
+            </ProfileCont>
           </Link>
           <Link href="/newevent">
-            <IconContainer
-              onClick={() => {
-                setRecipe(0);
-                setEvents(1);
-                setProfile(0);
-              }}
-            >
-              <EventsIcon src="/icons/general/events.svg" active={events}></EventsIcon>
+            <EventsCont active={active}>
+              <EventsIcon
+                src="/icons/general/events.svg"
+                active={active}
+              ></EventsIcon>
               <Text>Events</Text>
-            </IconContainer>
+            </EventsCont>
           </Link>
-        </OptionContainer>
-        <OptionContainer>
-          <AnimatedLine active={recipe}></AnimatedLine>
-          <AnimatedLine active={profile}></AnimatedLine>
-          <AnimatedLine active={events}></AnimatedLine>
         </OptionContainer>
       </Container>
     </Position>

@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import MenuBar from "../../comps/MenuBar";
 import PlusButton from "../../comps/PlusButton";
 import InputForm from "../../comps/InputForm";
@@ -8,6 +10,18 @@ import NewIng from "../../comps/AddIng/NewIng.js";
 import PrimaryButton from "../../comps/PrimaryButton";
 
 function CreateRecipe() {
+  const [title, setTitle] = useState();
+  const [desc, setDesc] = useState();
+
+  const HandleRecipe = async () => {
+    console.log("logging in", title, desc);
+    var resp = await axios.post("http://35.183.61.181:1337/recipes", {
+      title: title,
+      desc: desc,
+    });
+    console.log("response", resp.data);
+  };
+
   return (
     <main className="main">
       <div className="content">
@@ -15,8 +29,18 @@ function CreateRecipe() {
           <NavigationHeader text="Recipe" link="/recipepage" />
           <SettingsIcon />
         </nav>
-        <InputForm label="Name" />
-        <InputForm label="Short Description" />
+        <InputForm
+          label="Name"
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
+        <InputForm
+          label="Short Description"
+          onChange={(e) => {
+            setDesc(e.target.value);
+          }}
+        />
         <AddIng title="Add Ingredients">
           <NewIng />
         </AddIng>
@@ -25,7 +49,7 @@ function CreateRecipe() {
           <PlusButton />
         </div>
         <div className="vMargin">
-          <PrimaryButton text="Publish"></PrimaryButton>
+          <PrimaryButton text="Publish" onClick={HandleRecipe}></PrimaryButton>
         </div>
       </div>
       <MenuBar />

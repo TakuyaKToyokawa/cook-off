@@ -99,7 +99,7 @@ RecipePost.defaultProps = {
   title: "Mooncake quickly",
   time: "40m",
   img: "/img/food/mooncake.png",
-  name: "by Jenny Tran",
+  name: "Jenny Tran",
   link: "/welcome",
 };
 

@@ -13,7 +13,7 @@ const Container = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: inset 1000px 1000px 4px rgba(0, 0, 0, 0.4);
-  background-image: ${(props) => (props.image ? props.image : "url('/img/food/BackgroundImage.png')")};
+  background-image: ${(props) => (props.image ? "url('" + props.image + "');"  : "url('/img/food/BackgroundImage.png')")};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -83,9 +83,9 @@ const Profile = styled.div`
   border-radius: 50%;
   z-index: 0;
   background-size: cover;
-  background-image: ${(props) => (props.profile ? props.profile : "url('/img/food/BackgroundImage.png')")};
+  background-image: ${(props) => (props.profile ? "url('" + props.profile + "');" : "url('/img/food/BackgroundImage.png')")};
 `;
-
+ 
 const Status = styled.div`
   height: 20px;
   width: 20px;
@@ -102,6 +102,9 @@ const BadgeText = styled.p`
 
 const Title = styled.h2`
   margin: 10px 0px;
+  text-overflow: ellipsis;
+  height: 90px;
+  overflow-y:scroll;
 `;
 
 const Username = styled.p`
