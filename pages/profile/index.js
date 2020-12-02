@@ -20,7 +20,7 @@ function Profile() {
         <ProfileList />
         
       </div>
-      <MenuBar />
+      <MenuBar propActive={2}/>
     </main>
   );
 }

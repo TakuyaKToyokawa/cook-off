@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 const Container = styled.div`
 
   overflow: auto;
-  margin-top: 25px;
+
   background-color: ${(props) => (props.bgcolor ? props.bgcolor : "none")};
   width: ${(props) => (props.width ? props.width : "auto")};
   height: ${(props) => (props.height ? props.height : "auto")};

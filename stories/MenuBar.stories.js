@@ -6,4 +6,4 @@ export default {
   component: MenuBar,
 };
 
-export const BaseMenuBar = () => <MenuBar/>;
+export const BaseMenuBar = () => <MenuBar propActive={1}/>;
