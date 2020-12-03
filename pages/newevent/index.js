@@ -30,6 +30,7 @@ function YourFriends() {
         <Searchbar></Searchbar>
         <div className="ImageBadgeList">
           {events.map((o, i) => {
+            let d = new Date(o.when);
             return (
               <motion.div
                 animate={{
@@ -42,9 +43,10 @@ function YourFriends() {
                 <ImageCardWithBadge
                   key={i}
                   title={o.title}
-                  user={o.participants.username}
-                  date={o.when}
+                  user={o.participants[0].username}
+                  date={d.toLocaleString()}
                   image={o.thumbnail.formats.medium.url}
+                  
                 />
               </motion.div>
             );
