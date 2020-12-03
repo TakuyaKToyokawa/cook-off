@@ -210,6 +210,17 @@ h1 {
   }
 }
 
+.icons{
+  display: flex;
+  justify-content: space-evenly;
+  width:100%;
+  svg{
+    background-color: #eee;
+    height:25px;
+    width:25px;
+    cursor: pointer;
+  }
+}
 .subtitle{
   margin-top: 10px;
 }

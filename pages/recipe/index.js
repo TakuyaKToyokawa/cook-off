@@ -56,6 +56,7 @@ function RecipePage() {
                     title={o.title}
                     desc={o.description}
                     name={o.author.username}
+                    
                   />
                 </motion.div>
               );
