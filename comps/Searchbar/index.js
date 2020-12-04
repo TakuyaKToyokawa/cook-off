@@ -16,6 +16,10 @@ const SearchDiv = styled.input`
   padding-left: 20px;
   padding-right: 20px;
   outline: none;
+  &::placeholder{
+    color: black;
+    font-weight: 500;
+  }
 `;
 
 const Icondiv = styled.img`
@@ -23,7 +27,7 @@ const Icondiv = styled.img`
   margin-right: 5px;
   position: absolute;
   right: 0px;
-  bottom: 5px;
+  bottom: 4px;
   padding: 3px;
   margin-right: 10px;
 `;
@@ -36,10 +40,10 @@ const Container = styled.div`
   }
 `;
 
-const Searchbar = ({ placeholder }) => {
+const Searchbar = ({ placeholder, onChange }) => {
   return (
     <Container>
-      <SearchDiv placeholder={placeholder} />
+      <SearchDiv placeholder={placeholder} onChange={onChange} />
       <Icondiv src="/icons/general/searchicon.png" />
     </Container>
   );
@@ -47,6 +51,7 @@ const Searchbar = ({ placeholder }) => {
 
 Searchbar.defaultProps = {
   placeholder: "Search...",
+  onChange: () => {},
 };
 
 export default Searchbar;

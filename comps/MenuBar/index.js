@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import Link from "next/link";
 
 const Position = styled.div`
+  display: block;
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -13,6 +14,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  padding-top: 5px;
   height: 110px;
   justify-content: center;
   align-items: center;
@@ -42,7 +44,7 @@ const IconContainer = styled.div`
   &:after {
     position: absolute;
     content: "";
-    bottom: 10px;
+    bottom: 8px;
     height: 5px;
     width: 50px;
     border-radius: 10px;
@@ -126,7 +128,7 @@ const MenuBar = ({ propActive }) => {
               <Text>Profile</Text>
             </ProfileCont>
           </Link>
-          <Link href="/newevent">
+          <Link href="/event">
             <EventsCont active={active}>
               <EventsIcon
                 src="/icons/general/events.svg"
