@@ -31,14 +31,7 @@ function SignUp() {
           <div className="vMargin flexColumn">
             <Logos />
           </div>
-          <div className="flexColumn">
-            <PlusButton
-              border="2px solid #D680FF"
-              color="transparent"
-              plusColor="#D680FF"
-            />
-            <p>Add Profile Picture</p>
-          </div>
+
           <InputForm
             label="Email"
             placeholder="Email"
@@ -63,19 +56,22 @@ function SignUp() {
             type="password"
           />
           <div className="vMargin">
-            <PrimaryButton text="Signup" onClick={() => {
-              setLoading(true);
-              registerUser(user, email, pass)
-                .then((res) => {
-                  // set authed user in global context object
-                  appContext.setUser(res.data.user);
-                  setLoading(false);
-                })
-                .catch((error) => {
-                  setError(error.response.data);
-                  setLoading(false);
-                });
-            }}></PrimaryButton>
+            <PrimaryButton
+              text="Signup"
+              onClick={() => {
+                setLoading(true);
+                registerUser(user, email, pass)
+                  .then((res) => {
+                    // set authed user in global context object
+                    appContext.setUser(res.data.user);
+                    setLoading(false);
+                  })
+                  .catch((error) => {
+                    setError(error.response.data);
+                    setLoading(false);
+                  });
+              }}
+            ></PrimaryButton>
           </div>
         </motion.div>
       </div>
