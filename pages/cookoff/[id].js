@@ -7,7 +7,7 @@ const fetchCookOff = (id) => {
     <>
       <div className="stream-cont">
         <iframe
-          src="https://player.twitch.tv/?channel=niyo_ssb&parent=localhost"
+          src="https://player.twitch.tv/?channel=niyo_ssb&parent=cookoff.live"
           frameborder="0"
           allowFullScreen="true"
           scrolling="no"
@@ -17,7 +17,7 @@ const fetchCookOff = (id) => {
         ></iframe>
         <iframe
           id="chat_embed"
-          src="https://www.twitch.tv/embed/niyo_ssb/chat?parent=localhost"
+          src="https://www.twitch.tv/embed/niyo_ssb/chat?parent=cookoff.live"
           height="30%"
           width="100%"
           className="chat"
