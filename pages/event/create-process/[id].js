@@ -40,7 +40,7 @@ function renderSwitch(id) {
   const [cook, setCook] = useState();
 
   const LoadRecipe = async () => {
-    var resp = await axios.get("http://35.183.61.181:1337/recipes");
+    var resp = await axios.get("https://cookoff.lazysphynx.xyz/recipes");
     setRecipe([...resp.data]);
   };
 

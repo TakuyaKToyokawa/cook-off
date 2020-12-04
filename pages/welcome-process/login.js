@@ -10,7 +10,7 @@ function Login2() {
 
   const HandleLogin = async (email, pass) => {
     console.log("logging in", email, pass);
-    var resp = await axios.post("http://35.183.61.181:1337/auth/local", {
+    var resp = await axios.post("https://cookoff.lazysphynx.xyz/auth/local", {
       email: email,
       password: pass,
     });

@@ -17,7 +17,7 @@ function RecipePage() {
 
   const SearchRecipe = async (e) => {
     setTitle(e.target.value);
-    var resp = await axios.post("http://35.183.61.181:1337/recipe", {
+    var resp = await axios.post("https://cookoff.lazysphynx.xyz/recipe", {
       title: title,
     });
     setRecipe([...resp.data]);
@@ -34,7 +34,7 @@ function RecipePage() {
   }
 
   const LoadRecipe = async () => {
-    var resp = await axios.get("http://35.183.61.181:1337/recipes");
+    var resp = await axios.get("https://cookoff.lazysphynx.xyz/recipes");
     setRecipe([...resp.data]);
   };
 
