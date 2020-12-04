@@ -19,7 +19,7 @@ function Login2() {
 
   useEffect(() => {
     if (appContext.isAuthenticated) {
-      router.push("/events"); // redirect if you're already logged in
+      router.push("/event"); // redirect if you're already logged in
     }
   }, []);
 
