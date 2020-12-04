@@ -1,12 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useRouter } from "next/router";
 import InputForm from "../../comps/InputForm";
 import Logos from "../../comps/Logos";
 import PrimaryButton from "../../comps/PrimaryButton";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { login } from "../../lib/auth";
+import AppContext from "../../context/AppContext";
+
 function Login2() {
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const router = useRouter();
+  const appContext = useContext(AppContext);
+
+
+  useEffect(() => {
+    if (appContext.isAuthenticated) {
+      router.push("/event"); // redirect if you're already logged in
+    }
+  }, []);
 
   const HandleLogin = async (email, pass) => {
     console.log("logging in", email, pass);
@@ -33,7 +48,7 @@ function Login2() {
           </div>
           <div className="flexColumn"></div>
           <InputForm
-            label="Email or Username"
+            label="Email"
             placeholder="Email"
             onChange={(e) => {
               setEmail(e.target.value);
@@ -42,12 +57,25 @@ function Login2() {
           <InputForm
             label="Password"
             placeholder="Password"
+            type="password"
             onChange={(e) => {
               setPass(e.target.value);
             }}
           />
           <div className="vMargin">
-            <PrimaryButton text="Login" onClick={HandleLogin}></PrimaryButton>
+            <PrimaryButton text="Login" onClick={() => {
+              setLoading(true);
+              login(email, pass)
+                .then((res) => {
+                  setLoading(false);
+                  // set authed User in global context to update header/app state
+                  appContext.setUser(res.data.user);
+                })
+                .catch((error) => {
+                  setError(error.response.data);
+                  setLoading(false);
+                });
+            }}></PrimaryButton>
           </div>
         </motion.div>
       </div>

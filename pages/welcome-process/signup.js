@@ -1,28 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import PlusButton from "../../comps/PlusButton";
 import InputForm from "../../comps/InputForm";
 import Logos from "../../comps/Logos";
 import PrimaryButton from "../../comps/PrimaryButton";
 import { motion } from "framer-motion";
-import axios from "axios";
+import { registerUser } from "../../lib/auth";
+import AppContext from "../../context/AppContext";
 
 function SignUp() {
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
   const [user, setUser] = useState();
-  const [signup, setSignUp] = useState([]);
 
-  const HandleSignup = async () => {
-    console.log("signup", email, pass, user);
-    var resp = await axios.post("https://cookoff.lazysphynx.xyz/users", {
-      email: email,
-      username: user,
-      password: pass,
-    });
-    console.log("response", resp.data);
-    console.log(resp.blocked);
-    window.location.href = "/profile";
-  };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({});
+
+  const appContext = useContext(AppContext);
 
   return (
     <main className="main">
@@ -70,7 +63,19 @@ function SignUp() {
             type="password"
           />
           <div className="vMargin">
-            <PrimaryButton text="Signup" onClick={HandleSignup}></PrimaryButton>
+            <PrimaryButton text="Signup" onClick={() => {
+              setLoading(true);
+              registerUser(user, email, pass)
+                .then((res) => {
+                  // set authed user in global context object
+                  appContext.setUser(res.data.user);
+                  setLoading(false);
+                })
+                .catch((error) => {
+                  setError(error.response.data);
+                  setLoading(false);
+                });
+            }}></PrimaryButton>
           </div>
         </motion.div>
       </div>
