@@ -5,6 +5,7 @@ import Link from "next/link";
 const Maindiv = styled.div`
   width: 100%;
   padding: 15px;
+  flex: 15%;
   background-color: #f04b4a;
 `;
 

@@ -14,7 +14,8 @@ const Container = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: inset 400px 400px 4px rgba(0, 0, 0, 0.4);
-  background-image: ${(props) => (props.image ? props.image : "url('/img/food/BackgroundImage.png')")};
+  background-image: ${(props) =>
+    props.image ? props.image : "url('/img/food/BackgroundImage.png')"};
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -23,21 +24,24 @@ const Container = styled.div`
     transform: scale(0.99);
   }
 `;
-
-const ImageButton = ({ text, image, link, onClick}) => {
+const ImageCard = React.forwardRef(({ onClick, href, image, text }, ref) => {
   return (
-    <Link href={link} onClick={onClick}>
-      <Container image={image}>
-        <h2 style={{ color: "white" }}>{text}</h2>
-      </Container>
-    </Link>
+    <Container href={href} onClick={onClick} ref={ref} image={image}>
+      <h2 style={{ color: "white" }}>{text}</h2>
+    </Container>
   );
+});
+
+const ImageButton = ({ text, image, link, onClick }) => {
+  return <Link href={link} passHref>
+    <ImageCard onClick={onClick} text={text} image={image}/>
+  </Link>;
 };
 
 ImageButton.defaultProps = {
   text: "text",
   link: "/index",
-  onClick: ()=>{}
+  onClick: () => {},
 };
 
 export default ImageButton;

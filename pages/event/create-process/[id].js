@@ -38,10 +38,40 @@ function renderSwitch(id) {
   const [time, setTime] = useState();
   const [privacy, setPrivacy] = useState();
   const [cook, setCook] = useState();
+  const [twitchLink, setTwitchLink] = useState();
+  // Text for private or public; function for PublicPrivateText
+  const [text, setText] = useState();
+  const [thumbnail, setThumbnail] = useState();
 
   const LoadRecipe = async () => {
     var resp = await axios.get("https://cookoff.lazysphynx.xyz/recipes");
     setRecipe([...resp.data]);
+  };
+
+  const PostEvent = async () => {
+    var resp = await axios.post("https://cookoff.lazysphynx.xyz/events", {
+      participants: [
+        {
+          confirmed: true,
+          blocked: false,
+          _id: "5fa443e8985bf6014114b7ca",
+          username: "dmitrymatio",
+          email: "dmitrymatio@gmail.com",
+          provider: "local",
+          createdAt: "2020-11-05T18:26:48.130Z",
+          updatedAt: "2020-11-20T11:41:33.002Z",
+          __v: 0,
+          role: "5fa3a690d8f07a025c9e8cfa",
+          id: "5fa443e8985bf6014114b7ca",
+        },
+      ],
+      when: date,
+      title: title,
+      private: privacy,
+      cooked_meals: [],
+      thumbnail: thumbnail,
+    });
+    console.log(resp);
   };
 
   useEffect(() => {
@@ -76,25 +106,59 @@ function renderSwitch(id) {
                 placeholder="Name"
                 onChange={(e) => {
                   setTitle(e.target.value);
-                  console.log(title, date, time, privacy, cook);
                 }}
               />
               <InputDate
                 label="Date of the Event"
-                onInput={async (e) => {
+                onChange={(e) => {
                   setDate(e.target.value);
-                  console.log(title, date, time, privacy, cook);
                 }}
               />
-              <InputTime
+              {/* <InputTime
                 label="Time of the Event"
                 onChange={(e) => {
                   setTime(e.target.value);
-                  console.log(title, date, time, privacy, cook);
+                }}
+              />
+              <InputForm
+                label="Twitch Link"
+                placeholder="Twitch"
+                onChange={(e) => {
+                  setTwitchLink(e.target.value);
+                }}
+              /> */}
+              <InputForm
+                label="Add Image"
+                placeholder="Add Image"
+                type="file"
+                onChange={(e) => {
+                  setThumbnail(e.target.files[0]);
+                  console.log(e.target.files[0]);
                 }}
               />
             </div>
-            <SecondaryButton text="Next" link="1b" />
+            <SecondaryButton
+              text="Next"
+              onClick={async () => {
+                setTitle(title);
+                setDate(date);
+                setTime(time);
+                setTwitchLink(twitchLink);
+                setThumbnail(thumbnail);
+
+                const formData = new FormData();
+                formData.append("files", thumbnail);
+                console.log(formData);
+                const imageResponse = await axios.post(
+                  "https://cookoff.lazysphynx.xyz/upload",
+                  formData,
+                  { headers: { "Content-Type": "multipart/form/data" } }
+                );
+                console.log(imageResponse.data[0]);
+                setThumbnail(imageResponse.data[0]);
+              }}
+              link={"1b"}
+            />
             <div className="step-dots">
               <StepsDots step1={true} />
             </div>
@@ -115,6 +179,7 @@ function renderSwitch(id) {
               text="Private"
               link="2a"
               onClick={(e) => {
+                setText("Public");
                 setPrivacy(false);
               }}
               image="url('/img/events/private.jpg')"
@@ -123,6 +188,7 @@ function renderSwitch(id) {
               text="Public"
               link="2a"
               onClick={(e) => {
+                setText("Private");
                 setPrivacy(true);
               }}
               image="url('/img/events/public.jpg')"
@@ -221,13 +287,9 @@ function renderSwitch(id) {
           <div style={{ "margin-bottom": "50px" }}>
             <MenuList displayIcon={false} icon="./appearance.svg" text={date} />
             <MenuList displayIcon={false} icon="./appearance.svg" text={time} />
-            <MenuList
-              displayIcon={false}
-              icon="./appearance.svg"
-              text={privacy}
-            />
+            <MenuList displayIcon={false} icon="./appearance.svg" text={text} />
             <MenuList displayIcon={false} icon="./appearance.svg" text={cook} />
-            <SecondaryButton text="Confirm" link="3b" />
+            <SecondaryButton text="Confirm" link="3b" onClick={PostEvent} />
           </div>
           <div className="step-dots">
             <StepsDots step3={true} />
