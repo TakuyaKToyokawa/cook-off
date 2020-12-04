@@ -27,13 +27,13 @@ const InputDateFormInput = styled.input.attrs({
   outline: none;
 `;
 
-const InputDate = ({ label, onInput }) => {
+const InputDate = ({ label, onChange }) => {
   return (
     <InputDateBox>
       <InputDateLabel>{label}</InputDateLabel>
       <InputDateForm>
         <InputDateFormInput
-          onInput={onInput}
+          onChange={onChange}
           format="mm/dd/yyyy"
         ></InputDateFormInput>
       </InputDateForm>
@@ -43,6 +43,6 @@ const InputDate = ({ label, onInput }) => {
 
 InputDate.defaultProps = {
   label: "label",
-  onInput: () => {},
+  onChange: () => {},
 };
 export default InputDate;

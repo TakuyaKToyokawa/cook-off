@@ -76,10 +76,10 @@ const ButtonContainer = styled.div`
   z-index: 1;
 `;
 
-const FoodList = ({ title, time, img, link, recipeLink, onClick }) => {
-  return (
-    <Link href={link}>
-      <Container>
+const List = React.forwardRef(
+  ({ onClick, href, img, time, title, recipeLink }, ref) => {
+    return (
+      <Container href={href} onClick={onClick} ref={ref}>
         <Profile src={img} />
         <InfoContainer style={{ flexDirection: "column" }}>
           <Title>{title}</Title>
@@ -89,13 +89,27 @@ const FoodList = ({ title, time, img, link, recipeLink, onClick }) => {
           </TimeContainer>
 
           <ButtonContainer>
-            <Link onClick={onClick} href={recipeLink}>
+            <Link href={recipeLink}>
               <Button>View Recipe</Button>
             </Link>
             <Arrow src="/icons/general/Arrow.svg"></Arrow>
           </ButtonContainer>
         </InfoContainer>
       </Container>
+    );
+  }
+);
+
+const FoodList = ({ title, time, img, link, recipeLink, onClick }) => {
+  return (
+    <Link href={link} passHref>
+      <List
+        onClick={onClick}
+        recipeLink={recipeLink}
+        img={img}
+        title={title}
+        time={time}
+      />
     </Link>
   );
 };
@@ -106,7 +120,7 @@ FoodList.defaultProps = {
   img: "/img/food/Image.jpg",
   link: "/index",
   recipeLink: "/recipe",
-  onClick: ()=>{},
+  onClick: () => {},
 };
 
 export default FoodList;
