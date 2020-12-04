@@ -10,12 +10,13 @@ import List from "../../comps/IngredientorBuyingList/List.js";
 import axios from "axios";
 
 function RecipeIngredients() {
-  const router = useRouter();
+ const router = useRouter();
   const { id } = router.query;
 
   const [name, setName] = useState();
   const [title, setTitle] = useState();
   const [time, setTime] = useState();
+
 
   const upRandomVote = () => {
     let num = Math.floor(Math.random() * 1000);
@@ -37,8 +38,9 @@ function RecipeIngredients() {
 
   useEffect(() => {
     LoadRecipe();
+  
   }, []);
-
+ 
   const fetchCookOff = (id) => {
     return (
       <>

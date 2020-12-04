@@ -55,11 +55,24 @@ function RecipeIngredients() {
           <p>{desc}</p>
         </IngredientorBuyingList>
         <IngredientorBuyingList title="Ingredients" height="300px">
-          <List textOne="Egg" textTwo="$4.00" displayIcon={true} displayArrow={false}></List>
-          <List></List>
-          <List></List>
-          <List></List>
-          <List></List>
+          <List
+            textOne="Egg"
+            textTwo="2"
+            displayArrow={true}
+            link={"/recipe/grocery/" + id}
+          ></List>
+          <List
+            textOne="Pasta"
+            textTwo="400g"
+            displayArrow={true}
+            link={"/recipe/grocery/" + id}
+          ></List>
+          <List
+            textOne="Squash"
+            textTwo="200g"
+            displayArrow={true}
+            link={"/recipe/grocery/" + id}
+          ></List>
         </IngredientorBuyingList>
       </>
     );
@@ -73,7 +86,6 @@ function RecipeIngredients() {
           <SettingsIcon />
         </nav>
         {fetchCookOff({ id }.id)}
-
       </div>
       <MenuBar />
     </main>

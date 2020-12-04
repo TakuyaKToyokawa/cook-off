@@ -17,10 +17,10 @@ function RecipePage() {
 
   const SearchRecipe = async (e) => {
     setTitle(e.target.value);
+    console.log(title);
     var resp = await axios.post("https://cookoff.lazysphynx.xyz/recipe", {
       title: title,
     });
-  
     setRecipe([...resp.data]);
   };
 
@@ -42,6 +42,7 @@ function RecipePage() {
   useEffect(() => {
     LoadRecipe();
   }, []);
+
   console.log(recipe);
   return (
     <main className="main">
@@ -58,11 +59,9 @@ function RecipePage() {
           transition={{ ease: "easeInOut", duration: 0.5 }}
         >
           <div className="categories">
-            <CategoryRecipe text="default" />
-            <CategoryRecipe text="default" />
-            <CategoryRecipe text="default" />
-            <CategoryRecipe text="default" />
-            <CategoryRecipe text="default" />
+            <CategoryRecipe text="Italian" img="/icons/recipe/italian.svg"/>
+            <CategoryRecipe text="Japanese" />
+            <CategoryRecipe text="Chinese" img="/icons/recipe/chinese.svg"/>
           </div>
           <Searchbar onChange={SearchRecipe} />
           <div className="recipePost">
@@ -72,26 +71,30 @@ function RecipePage() {
             </div>
             <ScrollBar height="40vh">
               {recipe.map((o, i) => {
-                return (
-                  <motion.div
-                    animate={{
-                      opacity: [0, 1],
-                      y: [100, 0],
-                    }}
-                    whileHover={{ scale: 0.98, transition: { duration: 0.3 } }}
-                    transition={{ ease: "easeInOut", duration: 1 }}
-                  >
-                    <RecipePost
-                      key={i}
-                      title={o.title}
-                      desc={o.description}
-                      name={o.author.username}
-                      link={"/recipe/" + o.id}
-                      up={upRandomVote()}
-                      down={downRandomVote()}
-                    />
-                  </motion.div>
-                );
+                try{
+                  return (
+                    <motion.div
+                      animate={{
+                        opacity: [0, 1],
+                        y: [100, 0],
+                      }}
+                      whileHover={{ scale: 0.98, transition: { duration: 0.3 } }}
+                      transition={{ ease: "easeInOut", duration: 1 }}
+                    >
+                      <RecipePost
+                        key={i}
+                        title={o.title}
+                        desc={o.description}
+                        name={o.author.username}
+                        link={"/recipe/" + o.id}
+                        up={upRandomVote()}
+                        down={downRandomVote()}
+                      />
+                    </motion.div>
+                  );
+                }catch(e){
+                  console.log(e.message);
+                }
               })}
             </ScrollBar>
           </div>

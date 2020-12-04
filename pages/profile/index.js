@@ -7,11 +7,11 @@ import ProfileList from "../../comps/ProfileList";
 import MenuBar from "../../comps/MenuBar";
 
 function Profile() {
+  
   return (
     <main className="main">
       <div className="content">
         <nav className="navigationBar">
-          
           <NavigationHeader text="Profile" displayArrow={false} />
           <SettingsIcon />
         </nav>

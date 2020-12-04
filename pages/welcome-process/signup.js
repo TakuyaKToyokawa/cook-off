@@ -13,16 +13,15 @@ function SignUp() {
   const [signup, setSignUp] = useState([]);
 
   const HandleSignup = async () => {
-    console.log("logging in", email, pass, user);
+    console.log("signup", email, pass, user);
     var resp = await axios.post("https://cookoff.lazysphynx.xyz/users", {
       email: email,
       username: user,
       password: pass,
     });
     console.log("response", resp.data);
-    console.log(resp.blocked)
+    console.log(resp.blocked);
     window.location.href = "/profile";
-
   };
 
   return (
