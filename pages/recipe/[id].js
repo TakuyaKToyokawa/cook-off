@@ -16,6 +16,7 @@ function RecipeIngredients() {
   const [name, setName] = useState();
   const [title, setTitle] = useState();
   const [time, setTime] = useState();
+  const [desc, setDesc] = useState();
 
   const upRandomVote = () => {
     let num = Math.floor(Math.random() * 1000);
@@ -32,6 +33,7 @@ function RecipeIngredients() {
     console.log(resp.data.title);
     setName(resp.data.author.username);
     setTitle(resp.data.title);
+    setDesc(resp.data.description);
     setTime("40m");
   };
 
@@ -49,19 +51,15 @@ function RecipeIngredients() {
           up={upRandomVote()}
           down={downRandomVote()}
         />
-        <IngredientorBuyingList title="Ingredients" height="300px">
-          <List></List>
-          <List></List>
-          <List></List>
-          <List></List>
-          <List></List>
+        <IngredientorBuyingList title="Description" height="auto">
+          <p>{desc}</p>
         </IngredientorBuyingList>
-        <IngredientorBuyingList title="How to Cook">
-          <List displayPrice={false}></List>
-          <List displayPrice={false}></List>
-          <List displayPrice={false}></List>
-          <List displayPrice={false}></List>
-          <List displayPrice={false}></List>
+        <IngredientorBuyingList title="Ingredients" height="300px">
+          <List textOne="Egg" textTwo="$4.00" displayIcon={true} displayArrow={false}></List>
+          <List></List>
+          <List></List>
+          <List></List>
+          <List></List>
         </IngredientorBuyingList>
       </>
     );
@@ -75,9 +73,7 @@ function RecipeIngredients() {
           <SettingsIcon />
         </nav>
         {fetchCookOff({ id }.id)}
-        <div className="plusButton">
-          <PlusButton />
-        </div>
+
       </div>
       <MenuBar />
     </main>

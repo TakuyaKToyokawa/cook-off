@@ -56,7 +56,7 @@ const List = ({ textOne, textTwo, Icon, displayIcon, displayPrice}) => {
           </IconCont>
           <IconCont>
           {displayPrice == true ? <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice> : undefined}
-          {displayIcon == true ? <Arrow src="./Arrow.svg" /> : undefined}
+          {displayIcon == true ? <Arrow src="/icons/general/Arrow.svg" /> : undefined}
           </IconCont>
         </RecipeBuyListContent>
       </RecipeBuyListList>

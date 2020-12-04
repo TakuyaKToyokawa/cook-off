@@ -37,6 +37,7 @@ const InputForm = ({
   displayLink,
   name,
   onChange,
+  type,
 }) => {
   return (
     <Maindiv>
@@ -45,6 +46,7 @@ const InputForm = ({
         placeholder={placeholder}
         name={name}
         onChange={onChange}
+        type={type}
       ></Inputdiv>
       {displayLink == true ? <Linkdiv>{link}</Linkdiv> : undefined}
     </Maindiv>
@@ -58,6 +60,7 @@ InputForm.defaultProps = {
   displayLink: false,
   name: "default",
   onChange: () => {},
+  type: "text",
 };
 
 export default InputForm;
