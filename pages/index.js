@@ -10,7 +10,7 @@ function Profile() {
 
   return (
     <main className="main">
-      <div className="content centerFlex">
+      <div className="centerFlex content ">
         <Lottie options={defaultOptions} height={"400px"} />
         <h3 className="textCenter">Cook, share, connect, and have fun virtually!</h3>
         <PrimaryButton text="Getting Started" link="/welcome-process" />

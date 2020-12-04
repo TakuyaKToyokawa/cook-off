@@ -102,9 +102,10 @@ h3{
     }
   }
   .centerFlex {
+    display:flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: auto;
+    align-items: center;
+    justify-content: center;
   }
 }
 
