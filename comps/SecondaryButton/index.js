@@ -24,6 +24,13 @@ const ButtonDiv = styled.h2`
     transform: scale(0.99);
   }
 `;
+const MyButton = React.forwardRef(({ onClick, href, color, text }, ref) => {
+  return (
+    <div href={href} onClick={onClick} ref={ref} color={color}>
+      <ButtonDiv>{text}</ButtonDiv>
+    </div>
+  );
+});
 
 const SecondaryButton = ({ text, color, link, onClick }) => {
   return (
@@ -33,10 +40,8 @@ const SecondaryButton = ({ text, color, link, onClick }) => {
           <ButtonDiv>{text}</ButtonDiv>
         </div>
       ) : (
-        <Link href={link}>
-          <div color={color}>
-            <ButtonDiv>{text}</ButtonDiv>
-          </div>
+        <Link href={link} passHref>
+          <MyButton color={color} text={text} onClick={onClick} />
         </Link>
       )}
     </div>
@@ -46,7 +51,9 @@ const SecondaryButton = ({ text, color, link, onClick }) => {
 SecondaryButton.defaultProps = {
   text: "text",
   link: undefined,
-  onClick: () => {console.log("clicked")},
+  onClick: () => {
+    console.log("clicked");
+  },
 };
 
 export default SecondaryButton;

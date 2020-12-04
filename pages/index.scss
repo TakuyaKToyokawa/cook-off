@@ -78,11 +78,11 @@ h3{
   background: #d680ff;
 }
 
+
 .main {
   @include flexIt();
   position:relative;
   flex-direction: column;
-
   justify-content: flex-start;
   width: 100%;
   height: 100vh;
@@ -109,6 +109,11 @@ h3{
   }
 }
 
+.noPadding{
+  padding: 0px!important;
+  max-width: 100vw!important;
+}
+
 .list {
   padding: 0px;
   li {
@@ -126,6 +131,13 @@ h3{
   @include flexIt();
   flex-direction: row;
   justify-content: space-between;
+}
+
+.stream-cont{
+  @include flexIt();
+  flex-direction: row;
+  justify-content: flex-start;
+  height:85vh;
 }
 
 .textCenter {
@@ -187,6 +199,15 @@ h3{
   bottom: 130px;
 }
 
+.stream{
+  height:100%;
+  width: 75%;
+}
+
+.chat{
+  height: 100%;
+  width: 25%;
+}
 //amina css stuff
 
 .topmenu {
@@ -345,5 +366,24 @@ h3{
 @media only screen and (max-width: 568px) {
   html{
     font-size: 14px;
+  }
+  .noPadding{
+    padding: 0px!important;
+    flex-direction: column!important;
+  }
+  
+  .stream{
+    height:50%;
+    width:100%
+  }
+  
+  .chat{
+    height: 35%;
+    width:100%;
+  }
+
+  .stream-cont {
+    flex-direction: column;
+    height:100%;
   }
 }

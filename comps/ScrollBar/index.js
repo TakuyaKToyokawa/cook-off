@@ -44,7 +44,7 @@ const ScrollBar = ({ children, width, height, bgcolor, padding, radius }) => {
         padding={padding}
         radius={radius}
       >
-        <div style={{paddingRight:"35px"}}>{children}</div>
+        <div style={{paddingRight:"15px"}}>{children}</div>
       </Container>
   );
 };

@@ -18,18 +18,18 @@ function CreateRecipe() {
       custom: true,
       title: title,
       description: desc,
-      "author": {
-        "confirmed": true,
-        "blocked": false,
-        "_id": "5fa443e8985bf6014114b7ca",
-        "username": "dmitrymatio",
-        "email": "dmitrymatio@gmail.com",
-        "provider": "local",
-        "createdAt": "2020-11-05T18:26:48.130Z",
-        "updatedAt": "2020-11-20T11:41:33.002Z",
-        "__v": 0,
-        "role": "5fa3a690d8f07a025c9e8cfa",
-        "id": "5fa443e8985bf6014114b7ca"
+      author: {
+        confirmed: true,
+        blocked: false,
+        _id: "5fa443e8985bf6014114b7ca",
+        username: "dmitrymatio",
+        email: "dmitrymatio@gmail.com",
+        provider: "local",
+        createdAt: "2020-11-05T18:26:48.130Z",
+        updatedAt: "2020-11-20T11:41:33.002Z",
+        __v: 0,
+        role: "5fa3a690d8f07a025c9e8cfa",
+        id: "5fa443e8985bf6014114b7ca",
       },
     });
     console.log(resp);
@@ -37,7 +37,6 @@ function CreateRecipe() {
 
   useEffect(() => {}, []);
 
-  useEffect;
   return (
     <main className="main">
       <div className="content">
@@ -54,14 +53,17 @@ function CreateRecipe() {
         />
         <InputForm
           label="Short Description"
+          placeholder="Type the name of the recipe!"
           onChange={(e) => {
             setDesc(e.target.value);
           }}
         />
-        <InputForm type="file" label="Add Image"></InputForm>
-        <AddIng title="Ingredients">
-          
-        </AddIng>
+        <InputForm
+          type="file"
+          label="Add Image"
+          placeholder="Add a Short Description!"
+        ></InputForm>
+        <AddIng title="Ingredients"></AddIng>
 
         <div className="vMargin">
           <PrimaryButton text="Publish" onClick={AddRecipe}></PrimaryButton>

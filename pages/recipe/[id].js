@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import MenuBar from "../../comps/MenuBar";
 import PlusButton from "../../comps/PlusButton";
 import RecipePost from "../../comps/RecipePost";
@@ -44,36 +45,45 @@ function RecipeIngredients() {
   const fetchCookOff = (id) => {
     return (
       <>
-        <RecipePost
-          title={title}
-          time={time}
-          name={name}
-          up={upRandomVote()}
-          down={downRandomVote()}
-        />
-        <IngredientorBuyingList title="Description" height="auto">
-          <p>{desc}</p>
-        </IngredientorBuyingList>
-        <IngredientorBuyingList title="Ingredients" height="300px">
-          <List
-            textOne="Egg"
-            textTwo="2"
-            displayArrow={true}
-            link={"/recipe/grocery/" + id}
-          ></List>
-          <List
-            textOne="Pasta"
-            textTwo="400g"
-            displayArrow={true}
-            link={"/recipe/grocery/" + id}
-          ></List>
-          <List
-            textOne="Squash"
-            textTwo="200g"
-            displayArrow={true}
-            link={"/recipe/grocery/" + id}
-          ></List>
-        </IngredientorBuyingList>
+        <motion.div
+          animate={{
+
+            opacity: [0, 1],
+            x: [-100, 0],
+          }}
+          transition={{ ease: "easeInOut", duration: 1, delay: 1,  }}
+        >
+          <RecipePost
+            title={title}
+            time={time}
+            name={name}
+            up={upRandomVote()}
+            down={downRandomVote()}
+          />
+          <IngredientorBuyingList title="Description" height="auto">
+            <p>{desc}</p>
+          </IngredientorBuyingList>
+          <IngredientorBuyingList title="Ingredients" height="300px">
+            <List
+              textOne="Egg"
+              textTwo="2"
+              displayArrow={true}
+              link={"/recipe/grocery/" + id}
+            ></List>
+            <List
+              textOne="Pasta"
+              textTwo="400g"
+              displayArrow={true}
+              link={"/recipe/grocery/" + id}
+            ></List>
+            <List
+              textOne="Squash"
+              textTwo="200g"
+              displayArrow={true}
+              link={"/recipe/grocery/" + id}
+            ></List>
+          </IngredientorBuyingList>
+        </motion.div>
       </>
     );
   };

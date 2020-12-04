@@ -18,6 +18,7 @@ function RecipeIngredients() {
   const [time, setTime] = useState();
 
 
+
   const upRandomVote = () => {
     let num = Math.floor(Math.random() * 1000);
     return num;

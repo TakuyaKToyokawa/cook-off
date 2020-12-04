@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import MenuBar from "../../../comps/MenuBar";
 import PlusButton from "../../../comps/PlusButton";
 import RecipePost from "../../../comps/RecipePost";
@@ -47,6 +48,14 @@ function RecipeIngredients() {
           <NavigationHeader text="Buy" link={"/recipe/" + id} />
           <SettingsIcon />
         </nav>
+        <motion.div
+          animate={{
+
+            opacity: [0, 1],
+            x: [-100, 0],
+          }}
+          transition={{ ease: "easeInOut", duration: 1, delay: 1,  }}
+        >
         <RecipePost
           title={title}
           time={time}
@@ -55,10 +64,11 @@ function RecipeIngredients() {
           down={downRandomVote()}
         />
         <IngredientorBuyingList title="Eggs" height="100%">
-          <List displayIcon={true} ></List>
-          <List displayIcon={true} Icon="/icons/recipe/superstore.svg"></List>
-          <List displayIcon={true}></List>
+          <List displayIcon={true} textOne="12 Pack" textTwo="$2.10"></List>
+          <List displayIcon={true} textOne="12 Pack Golden Eggs" textTwo="$3.20" Icon="/icons/recipe/superstore.svg"></List>
+          <List displayIcon={true} textOne="18 Pack" textTwo="$3.50" Icon="/icons/recipe/tandt.png"></List>
         </IngredientorBuyingList>
+        </motion.div>
         <div className="plusButton">
           <PlusButton />
         </div>

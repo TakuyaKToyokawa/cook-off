@@ -34,10 +34,10 @@ function Setting() {
           <h3>Our Company</h3>
         </div>
         <div className="settingList">
-          <MenuList displayIcon="false" text="Policies" />
+          <MenuList displayIcon="false" text="Policies" link="/settings/policies" />
         </div>
         <div className="settingList">
-          <MenuList displayIcon="false" text="About" />
+          <MenuList displayIcon="false" text="About" link="/settings/about" />
         </div>
       </div>
       <MenuBar />
