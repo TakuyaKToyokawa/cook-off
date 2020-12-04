@@ -39,36 +39,40 @@ function YourFriends() {
           <SettingsIcon> </SettingsIcon>
         </nav>
         <motion.div
-            animate={{
-              opacity: [0, 1],
-              x: [100, 0],
-            }}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
-          >
-        <Searchbar onChange={SearchEvents}></Searchbar>
-        <div className="ImageBadgeList">
-          {events.map((o, i) => {
-            let d = new Date(o.when);
-            return (
-              <motion.div
-                animate={{
-                  opacity: [0, 1],
-                  y: [100, 0],
-                }}
-                whileHover={{ scale: 0.98 }}
-                transition={{ ease: "easeInOut", duration: 1 }}
-              >
-                <ImageCardWithBadge
-                  key={i}
-                  title={o.title}
-                  user={o.participants[0].username}
-                  date={d.toLocaleString()}
-                  image={o.thumbnail.formats.medium.url}
-                />
-              </motion.div>
-            );
-          })}
-        </div>
+          animate={{
+            opacity: [0, 1],
+            x: [100, 0],
+          }}
+          transition={{ ease: "easeInOut", duration: 0.5 }}
+        >
+          <Searchbar onChange={SearchEvents}></Searchbar>
+          <div className="ImageBadgeList">
+            {events.map((o, i) => {
+              let d = new Date(o.when);
+              try {
+                return (
+                  <motion.div
+                    animate={{
+                      opacity: [0, 1],
+                      y: [100, 0],
+                    }}
+                    whileHover={{ scale: 0.98 }}
+                    transition={{ ease: "easeInOut", duration: 1 }}
+                  >
+                    <ImageCardWithBadge
+                      key={i}
+                      title={o.title}
+                      user={o.participants[0].username}
+                      date={d.toLocaleString()}
+                      image={o.thumbnail.formats.medium.url}
+                    />
+                  </motion.div>
+                );
+              } catch (e) {
+                console.log(e.message);
+              }
+            })}
+          </div>
         </motion.div>
         <div className="plusButton">
           <PlusButton link="/event/create-process/1a"></PlusButton>

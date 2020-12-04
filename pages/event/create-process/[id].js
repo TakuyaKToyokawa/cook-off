@@ -143,8 +143,16 @@ function renderSwitch(id) {
           </nav>
           <h2 className="eventTitle">Choose a recipe</h2>
           <div className="ImageBadgeList">
-            <ImageCard text="My List" link="2b" />
-            <ImageCard text="Browse Recipes" link="2b" />
+            <ImageCard
+              text="My List"
+              image="url('/img/events/my-list.jpg')"
+              link="2b"
+            />
+            <ImageCard
+              text="Browse Recipes"
+              image="url('/img/events/browse-list.jpg')"
+              link="2b"
+            />
           </div>
           <div className="step-dots">
             <StepsDots step2={true} />
@@ -208,7 +216,6 @@ function renderSwitch(id) {
             <NavigationHeader text="Events" displayArrow={true} link="2b" />
             <SettingsIcon />
           </nav>
-
           <h1 style={{ width: "100%", textAlign: "center" }}>Is this right?</h1>
           <h2 style={{ width: "100%", textAlign: "center" }}>{title}</h2>
           <div style={{ "margin-bottom": "50px" }}>
@@ -246,7 +253,7 @@ function renderSwitch(id) {
             </h2>
             <h3 style={{ width: "100%", textAlign: "center" }}>Share</h3>
             <h3 style={{ width: "100%", textAlign: "center" }}>
-              <div class=".icons">
+              <div class="icons">
                 <FiInstagram />
                 <FiTwitter />
                 <FiFacebook />

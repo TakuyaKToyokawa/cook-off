@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -5,8 +6,13 @@ const RecipeBuyListBigContainer = styled.div`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px 10px;
   border-bottom: 1px solid #ddd;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #EED9D9;
+  }
 `;
 
 const RecipeBuyListList = styled.div`
@@ -21,7 +27,7 @@ const RecipeBuyListContent = styled.div`
 `;
 
 const RecipeBuyListContentPrice = styled.div`
-  margin-right: 10px;
+  margin-right: 15px;
 `;
 
 const RecipeBuyListContentText = styled.div`
@@ -38,29 +44,34 @@ const IconCont = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  
 `;
 
-const Arrow = styled.img `
- object-fit: cover;
-`
+const Arrow = styled.img`
+  object-fit: cover;
+`;
 
-const List = ({ textOne, textTwo, Icon, displayIcon, displayPrice}) => {
+const List = ({ textOne, textTwo, Icon, displayIcon, displayPrice, displayArrow, link }) => {
   return (
-    <RecipeBuyListBigContainer>
-      <RecipeBuyListList>
-        <RecipeBuyListContent>
-          <IconCont>
-            {displayIcon == true ? <IconShop src={Icon} /> : undefined}
-            <RecipeBuyListContentText>{textOne}</RecipeBuyListContentText>
-          </IconCont>
-          <IconCont>
-          {displayPrice == true ? <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice> : undefined}
-          {displayIcon == true ? <Arrow src="./Arrow.svg" /> : undefined}
-          </IconCont>
-        </RecipeBuyListContent>
-      </RecipeBuyListList>
-    </RecipeBuyListBigContainer>
+    <Link href={link}>
+      <RecipeBuyListBigContainer>
+        <RecipeBuyListList>
+          <RecipeBuyListContent>
+            <IconCont>
+              {displayIcon == true ? <IconShop src={Icon} /> : undefined}
+              <RecipeBuyListContentText>{textOne}</RecipeBuyListContentText>
+            </IconCont>
+            <IconCont>
+              {displayPrice == true ? (
+                <RecipeBuyListContentPrice>{textTwo}</RecipeBuyListContentPrice>
+              ) : undefined}
+              {displayArrow == true ? (
+                <Arrow src="/icons/general/Arrow.svg" />
+              ) : undefined}
+            </IconCont>
+          </RecipeBuyListContent>
+        </RecipeBuyListList>
+      </RecipeBuyListBigContainer>
+    </Link>
   );
 };
 
@@ -70,7 +81,9 @@ List.defaultProps = {
   textTwo: "$3.55",
   displayIcon: false,
   displayPrice: true,
-  Icon: "/icons/recipe/walmart.svg"
+  displayArrow: false,
+  Icon: "/icons/recipe/walmart.svg",
+  link: "/",
 };
 
 export default List;

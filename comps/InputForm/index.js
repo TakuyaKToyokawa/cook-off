@@ -9,9 +9,7 @@ const Labeldiv = styled.h4`
   margin-bottom: 5px;
 `;
 
-const Inputdiv = styled.input.attrs({
-  type: "text",
-})`
+const Inputdiv = styled.input`
   width: 100%;
   border: 1px solid #d06bff;
   box-sizing: border-box;
@@ -35,16 +33,19 @@ const InputForm = ({
   placeholder,
   link,
   displayLink,
+  displayLabel,
   name,
   onChange,
+  type,
 }) => {
   return (
     <Maindiv>
-      <Labeldiv>{label}</Labeldiv>
+      {displayLabel == true ? <Labeldiv>{label}</Labeldiv> : undefined }
       <Inputdiv
         placeholder={placeholder}
         name={name}
         onChange={onChange}
+        type={type}
       ></Inputdiv>
       {displayLink == true ? <Linkdiv>{link}</Linkdiv> : undefined}
     </Maindiv>
@@ -56,8 +57,10 @@ InputForm.defaultProps = {
   placeholder: "placeholder",
   link: "link",
   displayLink: false,
+  displayLabel: true,
   name: "default",
   onChange: () => {},
+  type: "text",
 };
 
 export default InputForm;

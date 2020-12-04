@@ -1,10 +1,20 @@
 import { useRouter } from "next/router";
 import MenuBar from "../../comps/MenuBar";
-import NavigationHeader from "../../comps/NavigationHeader";
-import SettingsIcon from "../../comps/SettingsIcon";
+import StreamHeader from "../../comps/StreamHeader";
 
 const fetchCookOff = (id) => {
-  return "hello world";
+  return (
+    <>
+      <iframe
+        src="https://player.twitch.tv/?channel=niyo_ssb&parent=localhost"
+        frameborder="0"
+        allowfullscreen="true"
+        scrolling="no"
+        height="70%"
+        width="100%"
+      ></iframe>
+    </>
+  );
 };
 
 export default function newevent() {
@@ -14,14 +24,7 @@ export default function newevent() {
   return (
     <main className="main">
       <div className="content">
-        <nav className="navigationBar">
-          <NavigationHeader
-            text="Events"
-            link="/newevent"
-            displayArrow={true}
-          />
-          <SettingsIcon />
-        </nav>
+        <StreamHeader></StreamHeader>
         <div style={{ height: "100%" }}>{fetchCookOff({ id }.id)}</div>
       </div>
       <MenuBar />

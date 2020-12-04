@@ -13,26 +13,43 @@ function CreateRecipe() {
   const [title, setTitle] = useState();
   const [desc, setDesc] = useState();
 
-  const HandleRecipe = async () => {
-    console.log("logging in", title, desc);
+  const AddRecipe = async () => {
     var resp = await axios.post("https://cookoff.lazysphynx.xyz/recipes", {
+      custom: true,
       title: title,
-      desc: desc,
+      description: desc,
+      "author": {
+        "confirmed": true,
+        "blocked": false,
+        "_id": "5fa443e8985bf6014114b7ca",
+        "username": "dmitrymatio",
+        "email": "dmitrymatio@gmail.com",
+        "provider": "local",
+        "createdAt": "2020-11-05T18:26:48.130Z",
+        "updatedAt": "2020-11-20T11:41:33.002Z",
+        "__v": 0,
+        "role": "5fa3a690d8f07a025c9e8cfa",
+        "id": "5fa443e8985bf6014114b7ca"
+      },
     });
-    console.log("response", resp.data);
+    console.log(resp);
   };
 
+  useEffect(() => {}, []);
+
+  useEffect;
   return (
     <main className="main">
       <div className="content">
         <nav className="navigationBar">
-          <NavigationHeader text="Recipe" link="/recipepage" />
+          <NavigationHeader text="Recipe" link="/recipe" />
           <SettingsIcon />
         </nav>
         <InputForm
           label="Name"
           onChange={(e) => {
             setTitle(e.target.value);
+            console.log(title);
           }}
         />
         <InputForm
@@ -41,15 +58,16 @@ function CreateRecipe() {
             setDesc(e.target.value);
           }}
         />
-        <AddIng title="Add Ingredients">
-          <NewIng />
+        <InputForm type="file" label="Add Image"></InputForm>
+        <AddIng title="Ingredients">
+          
         </AddIng>
-        <AddIng title="Add Images"></AddIng>
+
+        <div className="vMargin">
+          <PrimaryButton text="Publish" onClick={AddRecipe}></PrimaryButton>
+        </div>
         <div className="plusButton">
           <PlusButton />
-        </div>
-        <div className="vMargin">
-          <PrimaryButton text="Publish" onClick={HandleRecipe}></PrimaryButton>
         </div>
       </div>
       <MenuBar />
