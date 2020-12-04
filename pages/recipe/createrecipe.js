@@ -15,7 +15,7 @@ function CreateRecipe() {
 
   const HandleRecipe = async () => {
     console.log("logging in", title, desc);
-    var resp = await axios.post("http://35.183.61.181:1337/recipes", {
+    var resp = await axios.post("https://cookoff.lazysphynx.xyz/recipes", {
       title: title,
       desc: desc,
     });

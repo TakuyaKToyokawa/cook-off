@@ -28,7 +28,7 @@ function RecipeIngredients() {
   };
 
   const LoadRecipe = async () => {
-    var resp = await axios.get("http://35.183.61.181:1337/recipes/" + id);
+    var resp = await axios.get("https://cookoff.lazysphynx.xyz/recipes/" + id);
     console.log(resp.data.title);
     setName(resp.data.author.username);
     setTitle(resp.data.title);

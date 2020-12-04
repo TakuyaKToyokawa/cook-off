@@ -13,13 +13,13 @@ function YourFriends() {
   const [title, setTitle] = useState();
 
   const LoadEvents = async () => {
-    var resp = await axios.get("http://35.183.61.181:1337/events");
+    var resp = await axios.get("https://cookoff.lazysphynx.xyz/events");
     setEvents([...resp.data]);
   };
 
   const SearchEvents = async (e) => {
     setTitle(e.target.value);
-    var resp = await axios.post("http://35.183.61.181:1337/events", {
+    var resp = await axios.post("https://cookoff.lazysphynx.xyz/events", {
       title: title,
     });
     setEvents([...resp.data]);
