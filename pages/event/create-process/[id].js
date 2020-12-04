@@ -162,7 +162,7 @@ function renderSwitch(id) {
           <h2 className="eventTitle">Choose a recipe</h2>
           <div style={{ "margin-bottom": "50px" }}>
             <SearchBar />
-            <Scrollbar height="400px">
+            <Scrollbar height="65vh">
               <ul className="list">
                 {recipe.map((o, i) => {
                   return (
