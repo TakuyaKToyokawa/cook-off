@@ -24,9 +24,9 @@ const Container = styled.div`
   }
 `;
 
-const ImageButton = ({ text, image, link}) => {
+const ImageButton = ({ text, image, link, onClick}) => {
   return (
-    <Link href={link}>
+    <Link href={link} onClick={onClick}>
       <Container image={image}>
         <h2 style={{ color: "white" }}>{text}</h2>
       </Container>
@@ -36,7 +36,8 @@ const ImageButton = ({ text, image, link}) => {
 
 ImageButton.defaultProps = {
   text: "text",
-  link: "/index"
+  link: "/index",
+  onClick: ()=>{}
 };
 
 export default ImageButton;

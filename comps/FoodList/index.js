@@ -76,7 +76,7 @@ const ButtonContainer = styled.div`
   z-index: 1;
 `;
 
-const FoodList = ({ title, time, img, link, recipeLink }) => {
+const FoodList = ({ title, time, img, link, recipeLink, onClick }) => {
   return (
     <Link href={link}>
       <Container>
@@ -89,7 +89,7 @@ const FoodList = ({ title, time, img, link, recipeLink }) => {
           </TimeContainer>
 
           <ButtonContainer>
-            <Link href={recipeLink}>
+            <Link onClick={onClick} href={recipeLink}>
               <Button>View Recipe</Button>
             </Link>
             <Arrow src="/icons/general/Arrow.svg"></Arrow>
@@ -106,6 +106,7 @@ FoodList.defaultProps = {
   img: "/img/food/Image.jpg",
   link: "/index",
   recipeLink: "/recipe",
+  onClick: ()=>{},
 };
 
 export default FoodList;

@@ -10,13 +10,24 @@ import axios from "axios";
 
 function YourFriends() {
   const [events, setEvents] = useState([]);
+  const [title, setTitle] = useState();
+
   const LoadEvents = async () => {
     var resp = await axios.get("http://35.183.61.181:1337/events");
     setEvents([...resp.data]);
   };
+
+  const SearchEvents = async (e) => {
+    setTitle(e.target.value);
+    var resp = await axios.post("http://35.183.61.181:1337/events", {
+      title: title,
+    });
+    setEvents([...resp.data]);
+  };
+
   useEffect(() => {
     LoadEvents();
-  });
+  }, []);
 
   return (
     <main className="main">
@@ -27,7 +38,14 @@ function YourFriends() {
           </NavigationHeader>
           <SettingsIcon> </SettingsIcon>
         </nav>
-        <Searchbar></Searchbar>
+        <motion.div
+            animate={{
+              opacity: [0, 1],
+              x: [100, 0],
+            }}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
+          >
+        <Searchbar onChange={SearchEvents}></Searchbar>
         <div className="ImageBadgeList">
           {events.map((o, i) => {
             let d = new Date(o.when);
@@ -46,15 +64,14 @@ function YourFriends() {
                   user={o.participants[0].username}
                   date={d.toLocaleString()}
                   image={o.thumbnail.formats.medium.url}
-                  
                 />
               </motion.div>
             );
           })}
         </div>
-
+        </motion.div>
         <div className="plusButton">
-          <PlusButton link="/newevent/1a"></PlusButton>
+          <PlusButton link="/event/create-process/1a"></PlusButton>
         </div>
       </div>
       <MenuBar propActive={3}></MenuBar>

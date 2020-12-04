@@ -66,7 +66,7 @@ const Icon = styled.img`
     transform: scale(0.9);
   }
 `;
-const RecipePost = ({ title, time, name, img, link }) => {
+const RecipePost = ({ title, time, name, img, link, up, down }) => {
   return (
     <Link href={link}>
       <RecipePostBox>
@@ -81,12 +81,12 @@ const RecipePost = ({ title, time, name, img, link }) => {
             <RecipePostUp>
               <Icon src="/icons/recipe/upvote.svg" />
               {/* get Data from database */}
-              <RecipePostUpText>225</RecipePostUpText>
+              <RecipePostUpText>{up}</RecipePostUpText>
             </RecipePostUp>
             <RecipePostUp>
               <Icon src="/icons/recipe/downvote.svg" />
               {/* get Data from database */}
-              <RecipePostUpText>15</RecipePostUpText>
+              <RecipePostUpText>{down}</RecipePostUpText>
             </RecipePostUp>
           </RecipePostUpDown>
         </RecipePostContent>
@@ -101,6 +101,8 @@ RecipePost.defaultProps = {
   img: "/img/food/mooncake.png",
   name: "Jenny Tran",
   link: "/welcome",
+  up: "200",
+  down: "200"
 };
 
 export default RecipePost;
